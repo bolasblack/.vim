@@ -1,0 +1,24 @@
+ScriptID SourceID Filename
+--------------------------
+642 	0 	GetLatestVimScripts.vim //获取插件的更新
+2540 	0 	snipMate.vim 			//自动生成代码块
+1879 	0 	AutoComplPop.vim 		//自动补全
+1849 	0 	AutoClose.vim 			//自动闭合' " ( 等标记
+42 		0 	bufexplorer.vim 		//buffer导航
+2222 	0 	CmdlineComplete.vim 	//命令行补全
+1298 	0 	csExplorer.vim 			//配色方案导航
+356 	0 	dbext.vim 				//数据库支持
+1708 	0 	FencView.vim 			//自动辨识带入文件的编码
+39 		0 	matchit.vim 			//使%能在标签之间跳转
+2059 	0 	matchparen.vim 			//高亮匹配括号
+521 	0 	mru.vim 				//打开最近打开的文件列表
+1218 	0 	NERDCommenter.vim 		//注释辅助插件
+1658 	0 	NERDtree.vim 			//打开目录树
+182 	0 	SuperTab.vim 			//真的是不看名字都知道
+273 	0 	taglist.vim 			//同上
+1097 	0 	txt2tags.vim 			//gVim menu for txt2tags
+1502 	0 	Vimball.vim 			//.vba后缀名vim插件安装的支持文件
+775 	0 	vimcdoc.vim 			//vim中文帮助文档的相关插件
+2226 	0 	vimwiki.vba 			//vimwiki插件
+2981 	0 	ZenCoding.vim 			//ZenCoding语法的vim实现插件
+705 	0 	sketch.vim 				//画图

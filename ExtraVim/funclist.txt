@@ -1,0 +1,3002 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>[cvs] Log of /phpdoc/funclist.txt</title>
+<meta name="generator" content="ViewVC 1.1-dev" />
+<link rel="stylesheet" href="/viewvc.cgi/*docroot*/styles.css" type="text/css" />
+<link rel="stylesheet" href="http://static.php.net/www.php.net/styles/site.css" />
+<link rel="stylesheet" href="http://static.php.net/www.php.net/styles/phpnet.css" />
+<link rel="shortcut icon" href="http://static.php.net/www.php.net/favicon.ico" />
+<style type="text/css">
+.paddinghack { margin-left: 5px; margin-top: 5px; }
+</style>
+
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#000099" alink="#0000ff" vlink="#000099">
+<div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr bgcolor="#9999cc">
+<td align="left" rowspan="2"><a href="/"><img src="http://static.php.net/www.php.net/images/php.gif" alt="PHP" width="120" height="67" hspace="3" /></a></td>
+<td>&nbsp;</td>
+</tr>
+<tr bgcolor="#9999cc">
+<td align="right" valign="bottom">
+<a style="font-size: 0.8em;" href="http://www.php.net/anoncvs.php">Anonymous CVS Access Instructions</a> &nbsp;
+</td>
+</tr>
+<tr bgcolor="#666699">
+<td style="padding:2px;"><strong><a href="/viewvc.cgi?view=roots"><span class="pathdiv">/</span></a><a href="/viewvc.cgi/">[cvs]</a><span class="pathdiv">/</span><a href="/viewvc.cgi/phpdoc/">phpdoc</a><span class="pathdiv">/</span>funclist.txt</strong></td>
+<td align="right" valign="top" class="quicksearch">
+Main trees: <a href="/viewvc.cgi/php-src/">php-src</a> |
+<a href="/viewvc.cgi/pecl/">pecl</a> |
+<a href="/viewvc.cgi/pear/">pear</a> |
+<a href="/viewvc.cgi/pear-core/">pear-core</a> &nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div class="paddinghack">
+
+<p style="margin:0;">
+
+<a href="/viewvc.cgi/phpdoc/"><img src="/viewvc.cgi/*docroot*/images/back_small.png" class="vc_icon" alt="Parent Directory" /> Parent Directory</a>
+
+| <a href="/viewvc.cgi/phpdoc/funclist.txt?view=log"><img src="/viewvc.cgi/*docroot*/images/log.png" class="vc_icon" alt="Revision Log" /> Revision Log</a>
+
+
+| <a href="/viewvc.cgi/phpdoc/funclist.txt?view=graph"><img src="/viewvc.cgi/*docroot*/images/cvsgraph_16x16.png" class="vc_icon" alt="View Revision Graph" /> Revision Graph</a>
+
+
+
+</p>
+
+<hr />
+<table class="auto">
+
+
+
+<tr>
+<td>Links to HEAD:</td>
+<td>
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?view=markup">view</a>)
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?view=annotate">annotate</a>)
+</td>
+</tr>
+
+
+
+<tr>
+<td>Sticky Tag:</td>
+<td><form method="get" action="/viewvc.cgi/phpdoc/funclist.txt" style="display: inline">
+<div style="display: inline">
+<input type="hidden" name="view" value="log"/>
+
+
+<select name="pathrev" onchange="submit()">
+<option value=""></option>
+
+<optgroup label="Branches">
+
+
+<option>tr</option>
+
+
+
+<option>initial</option>
+
+
+
+<option>dev_docbook4</option>
+
+
+
+<option>REF_STRUCT_DEV</option>
+
+
+
+<option>MAIN</option>
+
+
+</optgroup>
+
+<optgroup label="Non-branch tags">
+
+
+<option>import</option>
+
+
+
+<option>dev_docbook4_branchpoint</option>
+
+
+
+<option>dev/</option>
+
+
+
+<option>PRE_REF_CLEANUP</option>
+
+
+
+<option>PRE_EXCEPTIONS_ROLE_CHANGE</option>
+
+
+
+<option>POST_EXCEPTIONS_ROLE_CHANGE</option>
+
+
+
+<option>POST_DOCBOOK5</option>
+
+
+
+<option>HEAD</option>
+
+
+
+<option>BEFORE_STRUCT_REF_DEV_MERGE</option>
+
+
+
+<option>AFTER_REF_STRUCT_DEV_MERGE</option>
+
+
+</optgroup>
+
+</select>
+
+<input type="submit" value="Set" />
+</div>
+</form>
+
+</td>
+</tr>
+</table>
+ 
+
+
+
+
+
+
+
+
+<div>
+<hr />
+
+<a name="rev1.39"></a>
+<a name="BEFORE_STRUCT_REF_DEV_MERGE"></a>
+<a name="AFTER_REF_STRUCT_DEV_MERGE"></a>
+<a name="PRE_REF_CLEANUP"></a>
+<a name="HEAD"></a>
+
+
+Revision <strong>1.39</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.39&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.39&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.39">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.39&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Thu Aug 23 12:17:04 2007 UTC</em>
+(2 years, 9 months ago)
+by <em>rquadling</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=AFTER_REF_STRUCT_DEV_MERGE"><strong>AFTER_REF_STRUCT_DEV_MERGE</strong></a>,
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=BEFORE_STRUCT_REF_DEV_MERGE"><strong>BEFORE_STRUCT_REF_DEV_MERGE</strong></a>,
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=HEAD"><strong>HEAD</strong></a>,
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=PRE_REF_CLEANUP"><strong>PRE_REF_CLEANUP</strong></a>
+
+
+
+<br />Branch point for:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=REF_STRUCT_DEV"><strong>REF_STRUCT_DEV</strong></a>
+
+
+
+
+
+<br />Changes since <strong>1.38: +28 -10 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.38&amp;r2=1.39">previous 1.38</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">New functions
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.38"></a>
+
+
+Revision <strong>1.38</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.38&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.38&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.38">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.38&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Thu Jul 12 15:12:36 2007 UTC</em>
+(2 years, 10 months ago)
+by <em>rquadling</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.37: +6 -3 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.37&amp;r2=1.38">previous 1.37</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update index and reference files and forced make to always use a clean stripped manual.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.37"></a>
+<a name="POST_DOCBOOK5"></a>
+
+
+Revision <strong>1.37</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.37&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.37&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.37">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.37&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed May  2 14:47:03 2007 UTC</em>
+(3 years, 1 month ago)
+by <em>rquadling</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=POST_DOCBOOK5"><strong>POST_DOCBOOK5</strong></a>
+
+
+
+
+
+
+<br />Changes since <strong>1.36: +6 -4571 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.36&amp;r2=1.37">previous 1.36</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updated funcindex.xml funcsummary.txt funclist.txt
+No ZendAPI and no PECL entries.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.36"></a>
+
+
+Revision <strong>1.36</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.36&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.36&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.36">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.36&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Thu Mar 15 09:45:21 2007 UTC</em>
+(3 years, 2 months ago)
+by <em>rquadling</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.35: +2186 -1225 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.35&amp;r2=1.36">previous 1.35</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updated quickref.txt funclist.txt funcsummary.txt funcindex.xml
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.35"></a>
+<a name="POST_EXCEPTIONS_ROLE_CHANGE"></a>
+<a name="PRE_EXCEPTIONS_ROLE_CHANGE"></a>
+
+
+Revision <strong>1.35</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.35&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.35&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.35">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.35&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Apr  4 21:52:15 2005 UTC</em>
+(5 years, 2 months ago)
+by <em>didou</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=POST_EXCEPTIONS_ROLE_CHANGE"><strong>POST_EXCEPTIONS_ROLE_CHANGE</strong></a>,
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=PRE_EXCEPTIONS_ROLE_CHANGE"><strong>PRE_EXCEPTIONS_ROLE_CHANGE</strong></a>
+
+
+
+
+
+
+<br />Changes since <strong>1.34: +3622 -230 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.34&amp;r2=1.35">previous 1.34</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update with a fresh pecl checkout
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.34"></a>
+
+
+Revision <strong>1.34</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.34&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.34&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.34">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.34&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Dec 26 17:46:39 2004 UTC</em>
+(5 years, 5 months ago)
+by <em>nlopess</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.33: +21 -5 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.33&amp;r2=1.34">previous 1.33</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">update indexes
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.33"></a>
+
+
+Revision <strong>1.33</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.33&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.33&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.33">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.33&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Tue Sep  7 14:04:26 2004 UTC</em>
+(5 years, 8 months ago)
+by <em>goba</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.32: +158 -129 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.32&amp;r2=1.33">previous 1.32</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">updated function files from sources
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.32"></a>
+
+
+Revision <strong>1.32</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.32&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.32&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.32">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.32&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Thu Apr 29 15:33:48 2004 UTC</em>
+(6 years, 1 month ago)
+by <em>nlopess</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.31: +51 -176 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.31&amp;r2=1.32">previous 1.31</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">quick update of generated files: funcsummary/index/quickref
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.31"></a>
+
+
+Revision <strong>1.31</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.31&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.31&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.31">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.31&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Jan 28 16:10:24 2004 UTC</em>
+(6 years, 4 months ago)
+by <em>nlopess</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.30: +19 -11 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.30&amp;r2=1.31">previous 1.30</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">fix &amp;#62; instead of &lt;
+update of protos and new functions
+php-src instead of php4
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.30"></a>
+
+
+Revision <strong>1.30</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.30&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.30&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.30">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.30&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Jan  9 16:27:08 2004 UTC</em>
+(6 years, 4 months ago)
+by <em>nlopess</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.29: +133 -129 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.29&amp;r2=1.30">previous 1.29</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">s/php4/php-src/
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.29"></a>
+
+
+Revision <strong>1.29</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.29&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.29&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.29">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.29&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Jan  3 12:39:11 2004 UTC</em>
+(6 years, 5 months ago)
+by <em>nlopess</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.28: +579 -420 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.28&amp;r2=1.29">previous 1.28</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">update
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.28"></a>
+
+
+Revision <strong>1.28</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.28&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.28&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.28">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.28&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Dec 14 16:35:49 2003 UTC</em>
+(6 years, 5 months ago)
+by <em>ali</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.27: +3075 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.27&amp;r2=1.28">previous 1.27</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">restoring correct version
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.27"></a>
+
+
+Revision <strong>1.27</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.27&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.27&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.27">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.27&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Dec 14 16:26:11 2003 UTC</em>
+(6 years, 5 months ago)
+by <em>ali</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.26: +0 -3075 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.26&amp;r2=1.27">previous 1.26</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">sync to en
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.26"></a>
+
+
+Revision <strong>1.26</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.26&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.26&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.26">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.26&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Aug  6 16:59:23 2003 UTC</em>
+(6 years, 10 months ago)
+by <em>didou</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.25: +1 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.25&amp;r2=1.26">previous 1.25</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">wasn't so bad =D
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.25"></a>
+
+
+Revision <strong>1.25</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.25&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.25&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.25">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.25&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Aug  6 16:29:38 2003 UTC</em>
+(6 years, 10 months ago)
+by <em>didou</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.24: +0 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.24&amp;r2=1.25">previous 1.24</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">bad entry
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.24"></a>
+
+
+Revision <strong>1.24</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.24&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.24&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.24">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.24&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Tue Jul 15 17:57:56 2003 UTC</em>
+(6 years, 10 months ago)
+by <em>thetaphi</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.23: +1 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.23&amp;r2=1.24">previous 1.23</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">update
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.23"></a>
+
+
+Revision <strong>1.23</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.23&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.23&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.23">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.23&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Jul 14 21:21:16 2003 UTC</em>
+(6 years, 10 months ago)
+by <em>thetaphi</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.22: +101 -109 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.22&amp;r2=1.23">previous 1.22</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">NSAPI changes
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.22"></a>
+
+
+Revision <strong>1.22</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.22&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.22&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.22">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.22&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Jan  4 04:40:57 2003 UTC</em>
+(7 years, 5 months ago)
+by <em>jmcastagnetto</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.21: +463 -370 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.21&amp;r2=1.22">previous 1.21</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updating for reference
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.21"></a>
+<a name="dev/"></a>
+
+
+Revision <strong>1.21</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.21&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.21&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.21">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.21&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Mar  8 11:44:46 2002 UTC</em>
+(8 years, 2 months ago)
+by <em>helly</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=dev/"><strong>dev/</strong></a>
+
+
+
+
+
+
+<br />Changes since <strong>1.20: +3 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.20&amp;r2=1.21">previous 1.20</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">-added exif_thumbnail, exif_read_data
+-changed read_exif_data, GetImageSize
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.20"></a>
+
+
+Revision <strong>1.20</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.20&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.20&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.20">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.20&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Jan 27 17:32:22 2002 UTC</em>
+(8 years, 4 months ago)
+by <em>hholzgra</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.19: +574 -534 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.19&amp;r2=1.20">previous 1.19</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">regenerated summary files using new scripts
+(should lead to smaller diffs in the future)
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.19"></a>
+
+
+Revision <strong>1.19</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.19&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.19&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.19">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.19&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Jan 27 15:39:37 2002 UTC</em>
+(8 years, 4 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.18: +11 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.18&amp;r2=1.19">previous 1.18</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updated funclist.txt and funcsummary.txt.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.18"></a>
+
+
+Revision <strong>1.18</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.18&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.18&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.18">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.18&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Jan 12 20:09:32 2002 UTC</em>
+(8 years, 4 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.17: +935 -939 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.17&amp;r2=1.18">previous 1.17</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update of funclist.txt and funcsummary.txt.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.17"></a>
+
+
+Revision <strong>1.17</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.17&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.17&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.17">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.17&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Tue Jan  8 20:27:50 2002 UTC</em>
+(8 years, 4 months ago)
+by <em>hholzgra</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.16: +1913 -2021 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.16&amp;r2=1.17">previous 1.16</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">auto-generate rules for all files generated by configure but makefile.xml
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.16"></a>
+
+
+Revision <strong>1.16</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.16&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.16&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.16">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.16&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Jan  7 07:58:29 2002 UTC</em>
+(8 years, 4 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.15: +1 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.15&amp;r2=1.16">previous 1.15</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updated funclist.txt and funcsummary.txt.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.15"></a>
+
+
+Revision <strong>1.15</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.15&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.15&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.15">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.15&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Jan  5 07:58:33 2002 UTC</em>
+(8 years, 5 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.14: +116 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.14&amp;r2=1.15">previous 1.14</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Newer versions.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.14"></a>
+
+
+Revision <strong>1.14</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.14&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.14&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.14">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.14&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Dec 30 08:49:48 2001 UTC</em>
+(8 years, 5 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.13: +57 -4 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.13&amp;r2=1.14">previous 1.13</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Newer version.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.13"></a>
+
+
+Revision <strong>1.13</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.13&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.13&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.13">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.13&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Dec  7 09:58:52 2001 UTC</em>
+(8 years, 5 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.12: +44 -69 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.12&amp;r2=1.13">previous 1.12</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">New version. dbplus doesn't look correct.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.12"></a>
+<a name="dev_docbook4_branchpoint"></a>
+
+
+Revision <strong>1.12</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.12&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.12&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.12">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.12&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Oct 12 07:45:16 2001 UTC</em>
+(8 years, 7 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=dev_docbook4_branchpoint"><strong>dev_docbook4_branchpoint</strong></a>
+
+
+
+<br />Branch point for:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=dev_docbook4"><strong>dev_docbook4</strong></a>
+
+
+
+
+
+<br />Changes since <strong>1.11: +13 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.11&amp;r2=1.12">previous 1.11</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updated funclist.txt and funcsummary.txt.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.11"></a>
+
+
+Revision <strong>1.11</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.11&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.11&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.11">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.11&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Thu Sep 20 19:35:33 2001 UTC</em>
+(8 years, 8 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.10: +564 -432 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.10&amp;r2=1.11">previous 1.10</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Updated funclist.txt and funcsummary.txt.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.10"></a>
+
+
+Revision <strong>1.10</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.10&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.10&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.10">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.10&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Tue Jul 17 05:59:12 2001 UTC</em>
+(8 years, 10 months ago)
+by <em>jmcastagnetto</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+<br />Branch point for:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=tr"><strong>tr</strong></a>
+
+
+
+
+
+<br />Changes since <strong>1.9: +375 -66 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.9&amp;r2=1.10">previous 1.9</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update of funclis.txt and funcsummary.txt
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.9"></a>
+
+
+Revision <strong>1.9</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.9&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.9&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.9">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.9&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Apr 23 00:42:43 2001 UTC</em>
+(9 years, 1 month ago)
+by <em>jmcastagnetto</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.8: +124 -44 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.8&amp;r2=1.9">previous 1.8</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update of funclist.txt and funcsummary.txt
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.8"></a>
+
+
+Revision <strong>1.8</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.8&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.8&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.8">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.8&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Mar 23 07:08:41 2001 UTC</em>
+(9 years, 2 months ago)
+by <em>jmcastagnetto</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.7: +1101 -1031 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.7&amp;r2=1.8">previous 1.7</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update funclist and funcsummary
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.7"></a>
+
+
+Revision <strong>1.7</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.7&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.7&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.7">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.7&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Feb 14 11:33:10 2001 UTC</em>
+(9 years, 3 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.6: +169 -15 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.6&amp;r2=1.7">previous 1.6</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update funclist and funcsummary.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.6"></a>
+
+
+Revision <strong>1.6</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.6&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.6&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.6">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.6&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Jan 26 22:00:29 2001 UTC</em>
+(9 years, 4 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.5: +79 -3 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.5&amp;r2=1.6">previous 1.5</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Should now contain every functions with protos.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.5"></a>
+
+
+Revision <strong>1.5</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.5&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.5&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.5">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.5&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Dec 27 15:03:43 2000 UTC</em>
+(9 years, 5 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.4: +7 -7 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.4&amp;r2=1.5">previous 1.4</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Sorry, now without the asterisk at the end of the description.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.4"></a>
+
+
+Revision <strong>1.4</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.4&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.4&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.4">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.4&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Dec 27 14:21:26 2000 UTC</em>
+(9 years, 5 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.3: +22 -14 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.3&amp;r2=1.4">previous 1.3</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">From the latest CVS.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.3"></a>
+
+
+Revision <strong>1.3</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.3&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.3&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.3">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.3&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Dec  1 14:00:30 2000 UTC</em>
+(9 years, 6 months ago)
+by <em>eschmid</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.2: +1594 -642 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.2&amp;r2=1.3">previous 1.2</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Added funclist.txt and funcsummary.txt.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+Revision <strong>1.2</strong>
+
+
+<br />
+
+<em>Sun Jun 20 03:27:52 1999 UTC</em>
+(10 years, 11 months ago)
+by <em>jim</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.1: +0 -0 lines</strong>
+
+
+
+
+
+
+<br /><strong><em>FILE REMOVED</em></strong>
+
+<pre class="vc_log">Clean up the support programs a bit.
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.1.1.1"></a>
+<a name="import"></a>
+
+<a name="initial"></a>
+
+Revision <strong>1.1.1.1</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.1.1.1&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.1.1.1&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.1.1.1">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.1.1.1&amp;view=log">[select for diffs]</a>
+
+
+
+
+<em>(vendor branch)</em>
+
+<br />
+
+<em>Sun Jun  6 18:50:25 1999 UTC</em>
+(11 years ago)
+by <em>sas</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=initial"><strong>initial</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=import"><strong>import</strong></a>
+
+
+
+
+
+
+<br />Changes since <strong>1.1: +0 -0 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.1&amp;r2=1.1.1.1">previous 1.1</a>
+
+
+
+
+
+
+, to <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.39&amp;r2=1.1.1.1">next main 1.39</a>
+
+
+
+
+
+
+
+<pre class="vc_log">taken from php3/doc on 19990606
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.1"></a>
+
+
+Revision <strong>1.1</strong> -
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.1&amp;view=markup">view</a>)
+
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?revision=1.1&amp;view=co">download</a>)
+
+(<a href="/viewvc.cgi/phpdoc/funclist.txt?annotate=1.1">annotate</a>)
+
+
+
+- <a href="/viewvc.cgi/phpdoc/funclist.txt?r1=1.1&amp;view=log">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Jun  6 18:50:25 1999 UTC</em>
+(11 years ago)
+by <em>sas</em>
+
+
+<br />Branch:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+<br />Branch point for:
+
+<a href="/viewvc.cgi/phpdoc/funclist.txt?view=log&amp;pathrev=initial"><strong>initial</strong></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Initial revision
+</pre>
+</div>
+
+ 
+
+
+
+ <hr />
+<p><a name="diff"></a>
+This form allows you to request diffs between any two revisions of this file.
+For each of the two "sides" of the diff,
+
+select a symbolic revision name using the selection box, or choose
+'Use Text Field' and enter a numeric revision.
+
+</p>
+<form method="get" action="/viewvc.cgi/phpdoc/funclist.txt" id="diff_select">
+<table cellpadding="2" cellspacing="0" class="auto">
+<tr>
+<td>&nbsp;</td>
+<td>
+<input type="hidden" name="view" value="diff"/>
+Diffs between
+
+<select name="r1">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.10:tr">tr</option>
+
+<option value="1.1.1.1:initial">initial</option>
+
+<option value="1.1.1.1:import">import</option>
+
+<option value="1.12:dev_docbook4_branchpoint">dev_docbook4_branchpoint</option>
+
+<option value="1.12:dev_docbook4">dev_docbook4</option>
+
+<option value="1.21:dev/">dev/</option>
+
+<option value="1.39:REF_STRUCT_DEV">REF_STRUCT_DEV</option>
+
+<option value="1.39:PRE_REF_CLEANUP">PRE_REF_CLEANUP</option>
+
+<option value="1.35:PRE_EXCEPTIONS_ROLE_CHANGE">PRE_EXCEPTIONS_ROLE_CHANGE</option>
+
+<option value="1.35:POST_EXCEPTIONS_ROLE_CHANGE">POST_EXCEPTIONS_ROLE_CHANGE</option>
+
+<option value="1.37:POST_DOCBOOK5">POST_DOCBOOK5</option>
+
+<option value="1.39:MAIN">MAIN</option>
+
+<option value="1.39:HEAD">HEAD</option>
+
+<option value="1.39:BEFORE_STRUCT_REF_DEV_MERGE">BEFORE_STRUCT_REF_DEV_MERGE</option>
+
+<option value="1.39:AFTER_REF_STRUCT_DEV_MERGE">AFTER_REF_STRUCT_DEV_MERGE</option>
+
+</select>
+<input type="text" size="12" name="tr1"
+value="1.39"
+onchange="document.getElementById('diff_select').r1.selectedIndex=0" />
+
+and
+
+<select name="r2">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.10:tr">tr</option>
+
+<option value="1.1.1.1:initial">initial</option>
+
+<option value="1.1.1.1:import">import</option>
+
+<option value="1.12:dev_docbook4_branchpoint">dev_docbook4_branchpoint</option>
+
+<option value="1.12:dev_docbook4">dev_docbook4</option>
+
+<option value="1.21:dev/">dev/</option>
+
+<option value="1.39:REF_STRUCT_DEV">REF_STRUCT_DEV</option>
+
+<option value="1.39:PRE_REF_CLEANUP">PRE_REF_CLEANUP</option>
+
+<option value="1.35:PRE_EXCEPTIONS_ROLE_CHANGE">PRE_EXCEPTIONS_ROLE_CHANGE</option>
+
+<option value="1.35:POST_EXCEPTIONS_ROLE_CHANGE">POST_EXCEPTIONS_ROLE_CHANGE</option>
+
+<option value="1.37:POST_DOCBOOK5">POST_DOCBOOK5</option>
+
+<option value="1.39:MAIN">MAIN</option>
+
+<option value="1.39:HEAD">HEAD</option>
+
+<option value="1.39:BEFORE_STRUCT_REF_DEV_MERGE">BEFORE_STRUCT_REF_DEV_MERGE</option>
+
+<option value="1.39:AFTER_REF_STRUCT_DEV_MERGE">AFTER_REF_STRUCT_DEV_MERGE</option>
+
+</select>
+<input type="text" size="12" name="tr2"
+value="1.1"
+onchange="document.getElementById('diff_select').r2.selectedIndex=0" />
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+Type of Diff should be a
+<select name="diff_format" onchange="submit()">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="f" >Full Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</td>
+</tr>
+</table>
+</form>
+
+
+
+<form method="get" action="/viewvc.cgi/phpdoc/funclist.txt">
+<div>
+<hr />
+<a name="logsort"></a>
+<input type="hidden" name="view" value="log"/>
+Sort log by:
+<select name="logsort" onchange="submit()">
+<option value="cvs" >Not sorted</option>
+<option value="date" selected="selected">Commit date</option>
+<option value="rev" >Revision</option>
+</select>
+<input type="submit" value=" Sort " />
+</div>
+</form>
+
+
+<hr />
+<table>
+<tr>
+<td>&nbsp;</td>
+<td style="text-align: right;"><strong><a href="/viewvc.cgi/*docroot*/help_log.html">ViewVC Help</a></strong></td>
+</tr>
+<tr>
+<td>Powered by <a href="http://viewvc.tigris.org/">ViewVC 1.1-dev</a></td>
+<td style="text-align: right;">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>
+
+
