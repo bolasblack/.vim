@@ -69,14 +69,13 @@ if g:iswindows==1
 else
     set fileencoding=utf-8
 endif
-"set fileencodings=ucs-bom,utf-8,chinese,latin-1
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set langmenu=zh_CN.utf-8
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-language messages zh_cn.utf-8
+"source $VIMRUNTIME/delmenu.vim
+"source $VIMRUNTIME/menu.vim
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"language messages zh_cn.utf-8
 
 "…Ë÷√—≈∫⁄◊÷ÃÂ
 "set guifont=YaHei\ Consolas\ Hybrid:h8
