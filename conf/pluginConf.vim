@@ -53,21 +53,21 @@ nmap <silent> <leader>ntf :Sexplore!<cr>
 " Use neocomplcache. 
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase. 
-let g:neocomplcache_enable_smart_case = 1 
+let g:neocomplcache_enable_smart_case = 0 
 " Use camel case completion. 
-let g:neocomplcache_enable_camel_case_completion = 1 
+let g:neocomplcache_enable_camel_case_completion = 0 
 " Use underbar completion. 
-let g:neocomplcache_enable_underbar_completion = 1 
+let g:neocomplcache_enable_underbar_completion = 0 
 " Set minimum syntax keyword length. 
 let g:neocomplcache_min_syntax_length = 3 
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*' 
 
-" Define dictionary. 
+"Define dictionary. 
 let g:neocomplcache_dictionary_filetype_lists = { 
-    \ 'default' : '', 
-    \ 'vimshell' : $HOME.'/.vimshell_hist', 
-    \ 'scheme' : $HOME.'/.gosh_completions' 
-    \ } 
+	\ 'default' : '', 
+	\ 'vimshell' : $HOME.'/.vimshell_hist', 
+	\ 'scheme' : $HOME.'/.gosh_completions' 
+	\ } 
 
 " Define keyword. 
 if !exists('g:neocomplcache_keyword_patterns') 
@@ -82,7 +82,7 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string() 
 
 " SuperTab like snippets behavior. 
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>" 
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>" 
 
 " Recommended key-mappings. 
 " <CR>: close popup and save indent. 
@@ -92,7 +92,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char. 
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>" 
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>" 
-inoremap <expr><C-y>  neocomplcache#close_popup() 
+inoremap <expr><C-d>  neocomplcache#close_popup() 
 inoremap <expr><C-e>  neocomplcache#cancel_popup() 
 
 " AutoComplPop like behavior. 
@@ -120,8 +120,3 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete 
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "}}}
-"设置NeoComplCache不自动弹出补全列表
-let g:NeoComplCache_DisableAutoComplete = 1
-"由于NeoComplCache在手工模式下使用快捷键组合<C-X><C-U>打开补全列表，故设置SuperTab的默认补全操作为<C-X><C-U>，即在vimrc中加入：
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
-"这样，NeoComplCache只负责补全关键词缓存的生成，SuperTab控制Tab键的行为并在需要触发补全操作时打开补全列表、进而在列表中的选项间移动焦点，而当光标前的关键词是snippet时，SnipMate会被优先调用并完成代码块的替换。
