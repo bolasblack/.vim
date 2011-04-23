@@ -65,8 +65,9 @@ map <F5> :call CheckSyntax()<CR>
 " <F6>打开Mru
 map <silent> <F6> :Mru<CR>
 
-" 使用<F8>打开Taglist
-map <silent> <F10> :TlistToggle<CR>
+" 使用<F8>打开Taglist或者Tagbar
+"map <silent> <F10> :TlistToggle<CR>
+nmap <silent> <F4> :TagbarToggle<CR>
 
 " F11判定/打开NERDtree
 map <silent> <F11> :NERDTree<CR>

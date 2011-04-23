@@ -66,6 +66,7 @@ endif
 
 if g:iswindows==1
     set fileencoding=utf-8
+	"language messages zh_cn.utf-8
 else
     set fileencoding=utf-8
 endif
@@ -75,11 +76,10 @@ set langmenu=zh_CN.utf-8
 "source $VIMRUNTIME/menu.vim
 "source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
-"language messages zh_cn.utf-8
 
 "设置雅黑字体
-"set guifont=YaHei\ Consolas\ Hybrid:h8
-set guifont=Lucida\ Console:h8
+set guifont=YaHei\ Consolas\ Hybrid\ 8
+"set guifont=Lucida\ Console:h8
 
 " 取消自动备份功能
 set nobackup
