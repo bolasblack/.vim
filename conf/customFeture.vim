@@ -1,8 +1,11 @@
-" 加入t2t后缀名支持
-au BufNewFile,BufRead *.t2t set ft=txt2tags
+" t2t 后缀名支持
+au BufNewFile,BufRead *.t2t set filetype=txt2tags
 
 " JSON 后缀名支持
-au BufRead,BufNewFile *.json setfiletype json 
+au BufRead,BufNewFile *.json set filetype=json 
+
+" mustache 模版语言对 HTML 文件的支持
+au BufNewFile,BufRead *.mhtml set filetype=mustache
 
 " 对php后缀名文件实现通过字典补全
 au FileType php call AddPHPFuncList()
@@ -10,22 +13,6 @@ function! AddPHPFuncList()
     set dictionary-=$VIM/vimfiles/ExtraVim/php_funclist.txt dictionary+=$VIM/vimfiles/ExtraVim/php_funclist.txt
     set complete-=k complete+=k
 endfunction
-
-" 有关 dokuVimki 的设置 {{{
-" looks for DokuWiki headlines in the first 20 lines
-" of the current buffer
-fun IsDokuWiki()
-	if match(getline(1,20),'^ \=\(=\{2,6}\).\+\1 *$') >= 0
-        set textwidth=0
-        set wrap
-        set linebreak
-        set filetype=dokuwiki
-	endif
-endfun
- 
-" check for dokuwiki syntax (检查当前Buffer是否为dokuwiki)
-autocmd BufWinEnter *.txt call IsDokuWiki()
-"}}}
 
 "单个文件编译 {{{
 map <F5> :call Do_OneFileMake()<CR>
