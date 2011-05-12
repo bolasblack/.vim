@@ -71,7 +71,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
 
 " Define keyword. 
 if !exists('g:neocomplcache_keyword_patterns') 
-    let g:neocomplcache_keyword_patterns = {} 
+	let g:neocomplcache_keyword_patterns = {} 
 endif 
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*' 
 

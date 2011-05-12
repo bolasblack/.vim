@@ -1,8 +1,17 @@
 "----------- base setting -----------
+" 启用 Pathhogen
+call pathogen#runtime_append_all_bundles()
+
 " 高亮语法
 syntax on
 behave mswin
 filetype plugin on
+
+"不在单词中间断行
+set lbr
+
+"打开断行模块对亚洲语言支持
+set fo+=mB
 
 " 自动载入当前编辑文件的目录
 set autochdir
@@ -88,5 +97,5 @@ set nowritebackup
 " 设置主题
 colorscheme lilypink 
 
-"Set mapleader
+" Set mapleader
 let mapleader = ","
