@@ -60,6 +60,7 @@ endif
 "}}}
 
 " 以特定标记作为折叠规则
+let g:foldIsMarker=1
 set foldmethod=marker
 
 " encoding
