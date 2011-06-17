@@ -32,6 +32,10 @@ function! Todo()
 	set syntax=Todo
 endfunction
 
+" 在可视模式下，<TAB> 等于 >，<S-TAB> 等于 <
+vmap <silent> <TAB> >
+vmap <silent> <S-TAB> <
+
 "<F3>改变折叠模式 "{{{
 map <F3> :call ToggleFoldMethod()<CR>
 func ToggleFoldMethod()
@@ -161,6 +165,7 @@ map <F5> :call CheckSyntax()<CR>
 " 使用<F8>打开Taglist或者Tagbar
 "map <silent> <F8> :TlistToggle<CR>
 nmap <silent> <F8> :TagbarToggle<CR>
+
 
 " F11判定/打开NERDtree
 map <silent> <F11> :NERDTree<CR>

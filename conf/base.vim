@@ -26,6 +26,8 @@ set nocompatible
 " 让一个tab等于4个空格
 set shiftwidth=4
 set softtabstop=4
+set expandtab
+set autoindent
 
 " 显示行号
 set number
@@ -69,26 +71,24 @@ set termencoding=utf-8
 
 "判定当前操作系统类型
 if(has("win32") || has("win95") || has("win64") || has("win16")) 
+    "set fileencoding=chinese
     let g:iswindows=1
+	language messages zh_CN.utf-8
+	source $VIMRUNTIME/vimrc_example.vim
+	source $VIMRUNTIME/mswin.vim
+	behave mswin
+	" 解决菜单乱码
+	source $VIMRUNTIME/delmenu.vim
+	source $VIMRUNTIME/menu.vim
 else
+    set fileencoding=utf-8
     let g:iswindows=0
 endif
-
-if g:iswindows==1
-    set fileencoding=utf-8
-	"language messages zh_cn.utf-8
-else
-    set fileencoding=utf-8
-endif
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set langmenu=zh_CN.utf-8
-"source $VIMRUNTIME/delmenu.vim
-"source $VIMRUNTIME/menu.vim
-"source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 "设置雅黑字体
-set guifont=YaHei\ Consolas\ Hybrid\ 8
+set guifont=YaHei\ Consolas\ Hybrid\ 8.5
 "set guifont=Lucida\ Console:h8
 
 " 取消自动备份功能
