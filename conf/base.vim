@@ -88,8 +88,7 @@ set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 "设置雅黑字体
-set guifont=YaHei\ Consolas\ Hybrid\ 8.5
-"set guifont=Lucida\ Console:h8
+set guifont=YaHei\ Consolas\ Hybrid\ 9
 
 " 取消自动备份功能
 set nobackup
