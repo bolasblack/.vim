@@ -34,7 +34,7 @@ set number
 
 " 启动时默认大小 {{{
 " 不论什么方法启动都是这个尺寸
-set lines=140 columns=82
+set lines=44 columns=84
 
 " GUI 启动方式尺寸
 "au GUIEnter * set lines=140 columns=82
