@@ -8,17 +8,17 @@ behave mswin
 filetype plugin on
 
 "不在单词中间断行
-set lbr
+set linebreak
 
 "打开断行模块对亚洲语言支持
-set fo+=mB
+set formatoptions+=mB
 
 " 自动载入当前编辑文件的目录
 set autochdir
 
 " 简洁界面
 let g:havemanu=0
-set go=
+set guioptions=
 
 " 不要vim模仿vi模式
 set nocompatible
@@ -69,7 +69,7 @@ set foldmethod=marker
 set encoding=utf-8
 set termencoding=utf-8
 
-"判定当前操作系统类型
+"判定当前操作系统类型 {{{
 if(has("win32") || has("win95") || has("win64") || has("win16")) 
     "set fileencoding=chinese
     let g:iswindows=1
@@ -86,8 +86,9 @@ else
 endif
 set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+" }}}
 
-"设置雅黑字体
+" 设置雅黑字体
 set guifont=YaHei\ Consolas\ Hybrid\ 9
 
 " 取消自动备份功能

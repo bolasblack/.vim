@@ -21,6 +21,18 @@ let Tlist_Inc_Winwidth=30
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
 
+" Doxygen ≈‰÷√ {{{
+let g:DoxygenToolkit_briefTag_funcName = "yes"
+let g:Doxygen_enhanced_color = 1
+let g:DoxygenToolkit_authorName = "yicuan bolasblack[at]gmail.com"
+let g:DoxygenToolkit_licenseTag = "Do any thing you like"
+let g:DoxygenToolkit_blockHeader = "======================================="
+let g:DoxygenToolkit_briefTag_pre = "@Description:"
+let g:DoxygenToolkit_paramTag_pre = "@Param:"
+let g:DoxygenToolkit_returnTag_pre = "@Return:"
+let g:DoxygenToolkit_blockFooter = "======================================="
+" }}}
+
 " TxtBrowser …Ë÷√ {{{
 au BufEnter *.txt setlocal ft=txt
 " let g:default_web_browser=chrome
