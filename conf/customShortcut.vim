@@ -174,12 +174,10 @@ map <silent> <F11> :NERDTree<CR>
 " F12 ºô³ö/Òþ²Ø ¹¤¾ßÀ¸
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
-	if g:havemanu==1
+	if &guioptions =~# 'm'
 		set go=
-		let g:havemanu=0
 	else
 		set go=m
-		let g:havemanu=1
 	endif
 endfunction
 

@@ -17,7 +17,6 @@ set formatoptions+=mB
 set autochdir
 
 " 简洁界面
-let g:havemanu=0
 set guioptions=
 
 " 不要vim模仿vi模式
