@@ -14,16 +14,11 @@ map <M-c> :tabclose<CR>
 " }}}
 
 " 定义了“<leader>e”快捷键，当输入“,e”时，会打开_vimrc进行编辑
-map <silent> <leader>e :call EditVimrc()<CR>
-function! EditVimrc()
-	:e $VIM/_vimrc
-endfunction
+"map <silent> <leader>e :call EditVimrc()<CR>
+map <silent> <leader>e :e $V<CR>
 
 " ,t Temp调用
-map	<silent> <leader>t :call EditTemp()<CR>
-function! EditTemp()
-	:e $VIM/vimfiles/TEMP.txt
-endfunction
+map	<silent> <leader>t :e $VIMFILES/TEMP.txt<CR>
 
 " ,g Todo调用
 map <silent> <leader>g :call Todo()<CR>
@@ -32,13 +27,45 @@ function! Todo()
 	set syntax=Todo
 endfunction
 
+" NewFunc script for Python {{{
+map <leader>nf :call Py_NewFunc()<CR>
+map <leader>pf :call Py_PasteFunc()<CR>
+
+func! Py_NewFunc() range "{{{
+    try
+        >
+        execute a:firstline.",".a:lastline." delete z"
+        let visText = @z
+        let funcName = input("Function name:")
+        let s:py_newFuncText = "def ".funcName."():\n".visText
+    catch
+        redraw
+        echo "Sorry, Some Error Happend"
+    endtry
+endfunc
+"}}}
+
+func! Py_PasteFunc() "{{{
+    if exists('s:py_newFuncText')
+        let @z = s:py_newFuncText
+        normal "zP
+        normal f)
+        unlet s:py_newFuncText
+    else
+        echo "Need Create Function First."
+    endif
+endfunc
+"}}}
+
+"}}}
+
 " 在可视模式下，<TAB> 等于 >，<S-TAB> 等于 <
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 
 "<F3>改变折叠模式 "{{{
 map <F3> :call ToggleFoldMethod()<CR>
-func ToggleFoldMethod()
+func! ToggleFoldMethod()
 	if g:foldIsMarker==1
 		set foldmethod=indent
 		let g:foldIsMarker=0
