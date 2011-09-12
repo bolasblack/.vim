@@ -7,6 +7,9 @@ au BufRead,BufNewFile *.json set filetype=json
 " mustache 模版语言对 HTML 文件的支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache
 
+" todo 后缀名支持
+au BufNewFile,BufRead *.todo set syntax=Todo
+
 " markdown syntax settings
 "augroup mkd
     "autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set ai formatoptions=tcroqn2 comments=n:>

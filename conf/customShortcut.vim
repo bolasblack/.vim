@@ -21,11 +21,7 @@ map <silent> <leader>e :e $V<CR>
 map	<silent> <leader>t :e $VIMFILES/TEMP.txt<CR>
 
 " ,g Todo调用
-map <silent> <leader>g :call Todo()<CR>
-function! Todo()
-	:e $VIM/vimfiles/todo.txt
-	set syntax=Todo
-endfunction
+map <silent> <leader>g :e $VIMFILES/own.todo<CR>
 
 " NewFunc script for Python {{{
 map <leader>nf :call Py_NewFunc()<CR>
@@ -63,7 +59,8 @@ endfunc
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 
-"<F3>改变折叠模式 "{{{
+" <F3>改变折叠模式 
+"{{{
 map <F3> :call ToggleFoldMethod()<CR>
 func! ToggleFoldMethod()
 	if g:foldIsMarker==1
@@ -78,14 +75,11 @@ func! ToggleFoldMethod()
 endfunc
 "}}}
 
-"<F4>进行版权声明的设置 authorinfo 插件配置{{{
-let g:vimrc_author='yicuan' 
-let g:vimrc_email='bolasblack@gmail.com' 
-let g:vimrc_homepage='http://plafer.tk' 
+" <F4>进行版权声明 authorinfo
 nmap <F4> :AuthorInfoDetect<CR> 
-"}}}
 
-"<F5>单个文件编译{{{
+" <F5>单个文件编译
+"{{{
 map <F5> :call Do_OneFileMake()<CR>
 function! Do_OneFileMake()
   if expand("%:p:h")!=getcwd()
@@ -167,7 +161,8 @@ endfunction
 " <F6>打开Mru
 map <silent> <F6> :Mru<CR>
 
-" <F7>检查 PHP 代码语法 {{{
+" <F7>检查 PHP 代码语法 
+"{{{
 function! CheckSyntax()
  if &filetype!="php"
   echohl WarningMsg | echo "Fail to check syntax! Please select the right file!" | echohl None
@@ -189,16 +184,17 @@ endfunction
 map <F5> :call CheckSyntax()<CR>
 "}}}
 
-" 使用<F8>打开Taglist或者Tagbar
-"map <silent> <F8> :TlistToggle<CR>
+" <F8>打开Taglist或者Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
 
 
-" F11判定/打开NERDtree
-map <silent> <F11> :NERDTree<CR>
-" map <silent> <F12> :NERDTreeClose<CR>
+" <F9>判定/打开NERDtree
+map <silent> <F9> :NERDTree<CR>
 
-" F12 呼出/隐藏 工具栏
+" <F11> 在很多 DWM 里是作为软件全屏的快捷键的
+
+" <F12> 呼出/隐藏 工具栏
+"{{{
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
 	if &guioptions =~# 'm'
@@ -207,4 +203,5 @@ function! CallManu()
 		set go=m
 	endif
 endfunction
+"}}}
 

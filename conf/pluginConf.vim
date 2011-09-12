@@ -17,6 +17,11 @@ let Tlist_Inc_Winwidth=30
 "set tags += tags;
 " }}}
 
+" AuthorInfo ≈‰÷√
+let g:vimrc_author='yicuan' 
+let g:vimrc_email='bolasblack@gmail.com' 
+let g:vimrc_homepage='http://plafer.tk' 
+
 " Tagbar ≈‰÷√
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
