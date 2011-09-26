@@ -8,7 +8,7 @@ behave mswin
 filetype plugin on
 
 "不在单词中间断行
-set linebreak
+"set linebreak
 
 "打开断行模块对亚洲语言支持
 set formatoptions+=mB

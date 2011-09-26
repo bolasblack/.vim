@@ -59,6 +59,11 @@ endfunc
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 
+" 定义快捷键 ,/ ，查找光标所在单词（可编辑），将查找出来的所有结果显示在
+" quickfix 中，双击一行就能定位到文件中的相应行上
+" ver http://pseudo.hoop.blog.163.com/blog/static/132509117201151811727993/
+nmap <Leader>/ :exec 'lvimgrep /' . input('/', expand('<cword>')) . '/j % <bar> lopen'<CR>
+
 " <F3>改变折叠模式 
 "{{{
 map <F3> :call ToggleFoldMethod()<CR>
@@ -186,7 +191,6 @@ map <F5> :call CheckSyntax()<CR>
 
 " <F8>打开Taglist或者Tagbar
 nmap <silent> <F8> :TagbarToggle<CR>
-
 
 " <F9>判定/打开NERDtree
 map <silent> <F9> :NERDTree<CR>

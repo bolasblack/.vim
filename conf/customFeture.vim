@@ -19,7 +19,7 @@ au BufNewFile,BufRead *.todo set syntax=Todo
 " gjsLint
 " 文件在 ~/.vim/ftplugin/javascript/
 " 由 jsLint http://www.vim.org/scripts/script.php?script_id=2729 修改而来
-" 修改文件在 https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/jslint.vim
+" 修改文件在 https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
 " 作者文章：http://wiki.ktmud.com/tips/Vim.html
 
 " 对php后缀名文件实现通过字典补全

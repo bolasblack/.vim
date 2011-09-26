@@ -4,12 +4,12 @@
 "map <F3> :silent! Tlist<CR> "按下F3就可以呼出了
 let Tlist_Ctags_Cmd='ctags' "因为我们放在环境变量里，所以可以直接执行
 let Tlist_Use_Right_Window=0 "让窗口显示在右边，0的话就是显示在左边
-let Tlist_Show_One_File=0 "让taglist可以同时展示多个文件的函数列表，如果想只有1个，设置为1
+"let Tlist_Show_One_File=0 "让taglist可以同时展示多个文件的函数列表，如果想只有1个，设置为1
 let Tlist_File_Fold_Auto_Close=1 "非当前文件，函数列表折叠隐藏
 let Tlist_Exit_OnlyWindow=1 "当taglist是最后一个分割窗口时，自动推出vim
 "是否一直处理tags.1:处理;0:不处理
-"let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必要
-let Tlist_Inc_Winwidth=30
+let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必要
+"let Tlist_Inc_Winwidth=30
 " 这项必须设定，否则出错,配置taglist的ctags路径，不过也可以把ctags路径添
 " 加进系统变量 path 里，就不用设置了
 "let Tlist_Ctags_Cmd = '~/ctags.exe'
