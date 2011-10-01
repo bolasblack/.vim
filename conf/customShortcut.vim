@@ -15,8 +15,6 @@ map <M-c> :tabclose<CR>
 
 " 定义了“<leader>e”快捷键，当输入“,e”时，会打开_vimrc进行编辑
 " map <silent> <leader>e :e $V<CR>
-map	<silent> <leader>t :e $VIMFILES/TEMP.txt<CR> " ,t Temp调用
-map <silent> <leader>g :e $VIMFILES/own.todo<CR> " ,g Todo调用
 
 " 定义快捷键 ,/ ，查找光标所在单词（可编辑），将查找出来的所有结果显示在
 " quickfix 中，双击一行就能定位到文件中的相应行上
@@ -190,14 +188,16 @@ endfunc
 " 在可视模式下，<TAB> 等于 >，<S-TAB> 等于 <
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
+im jj <ESC>
+im oj <ESC>o
+im ok <ESC>O
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
-im jj <ESC>o
-im kk <ESC>O
 no!<M-k> <Up>
 no!<M-j> <Down>
 no!<M-h> <Left>
 no!<M-l> <Right>
 au BufRead,BufNewFile *.html setf html
+au FileType python,ruby,sh :call Py()
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python :call AutoSpace()
 func! AutoSpace() "{{{
@@ -214,6 +214,10 @@ func! AutoSpace() "{{{
 	ino && <SPACE>&&<SPACE>
 	ino != <SPACE>!=<SPACE>
 endf "}}}
+func! Py() "{{{
+    im ;; <ESC>
+    im ,, <ESC>
+endfunc "}}}
 func! Cc() "{{{
     "im mm <ESC>A;<ESC>
 	"im nn <ESC>A;<ESC>o
