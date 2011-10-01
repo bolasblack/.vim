@@ -2,34 +2,40 @@
 " 启用 Pathhogen
 call pathogen#runtime_append_all_bundles()
 
+colorscheme lilypink                   " 设置主题
+let mapleader = ','                    " Set mapleader
+set linebreak                          " 不在单词中间断行
+set formatoptions+=mB                  " 打开断行模块对亚洲语言支持
+set autochdir                          " 自动载入当前编辑文件的目录
+set guioptions=                        " 简洁界面
+set ignorecase                         " 忽略大小写匹配
+set scrolloff=10                       " 设置光标距离上下边界的距离
+set showcmd                            " 在窗口右下角显示完整命令已输入部分
+set cursorline                         " 高亮光标所在行
+set nocompatible                       " 不要vim模仿vi模式
+set number                             " 显示行号
+set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
+" edit from http://www.vim.org/scripts/script.php?script_id=3341
+set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
+set autoindent                         " 自动缩进
+set smartindent                        " 智能缩进
+set incsearch                          " 搜索时显示目前输入模式的匹配位置                                               "
+set cindent                            " 自动 C 程序缩进
+set showmode                           " 显示当前模式
+set wildmenu                           " 增强模式命令行补全
+set magic                              " 改变搜索模式使用的特殊字符，打开就好，只有在 Vi 里才需要关掉
+"set exrc                              " 允许读入当前目录的 .vimrc .exrc .gvimrc
+
+" 让一个tab等于4个空格
+set expandtab
+set tabstop=4 "<TAB> 代表的空格数
+set shiftwidth=4 "（自动）缩进使用的空白数目
+set softtabstop=4 "编辑时把 <TAB> 当作的空格数目
+
 " 高亮语法
 syntax on
 behave mswin
 filetype plugin on
-
-"不在单词中间断行
-"set linebreak
-
-"打开断行模块对亚洲语言支持
-set formatoptions+=mB
-
-" 自动载入当前编辑文件的目录
-set autochdir
-
-" 简洁界面
-set guioptions=
-
-" 不要vim模仿vi模式
-set nocompatible
-
-" 让一个tab等于4个空格
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set autoindent
-
-" 显示行号
-set number
 
 " 启动时默认大小 {{{
 " 不论什么方法启动都是这个尺寸
@@ -87,15 +93,6 @@ set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 " }}}
 
-" 设置雅黑字体
-set guifont=YaHei\ Consolas\ Hybrid\ 9
-
 " 取消自动备份功能
 set nobackup
 set nowritebackup
-
-" 设置主题
-colorscheme lilypink 
-
-" Set mapleader
-let mapleader = ","
