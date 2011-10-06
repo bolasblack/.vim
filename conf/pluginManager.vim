@@ -1,8 +1,8 @@
 "----------- Plugin Manager Config -----------
 " 启用 Pathhogen
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect('plugins')
 " 刷新 bundle/ 里的插件的 helptags
-call pathogen#helptags()
+"call pathogen#helptags()
 
 " let Vundle manage Vundle
 call vundle#rc()
@@ -79,6 +79,8 @@ Bundle 'python.vim--Vasiliev'
 Bundle 'JSON.vim'
 "在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
 Bundle 'css_color.vim'
+"也是用于管理插件
+"Bundle 'pathogen.vim'
 "
 
 " original repos on github
@@ -98,4 +100,5 @@ Bundle 'groenewege/vim-less'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
+
 

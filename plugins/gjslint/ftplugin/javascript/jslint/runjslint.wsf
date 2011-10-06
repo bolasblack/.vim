@@ -1,0 +1,22 @@
+<job>
+<script src="jslint-core.js" language="javascript"></script>
+<script language="javascript">
+/*global JSLINT load readline WScript */
+
+var body = WScript.StdIn.ReadAll() || arguments[0],
+    ok = JSLINT(body),
+    i,
+    error,
+    errorCount;
+
+if (!ok) {
+    errorCount = JSLINT.errors.length;
+    for (i = 0; i < errorCount; i += 1) {
+        error = JSLINT.errors[i];
+        if (error && error.reason && error.reason.match(/^Stopping/) === null) {
+            WScript.echo([error.line, error.character, error.reason].join(":"));
+        }
+    }
+}
+</script>
+</job>

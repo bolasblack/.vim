@@ -16,8 +16,8 @@ set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
 set autoindent                         " 自动缩进
 set smartindent                        " 智能缩进
-set incsearch                          " 搜索时显示目前输入模式的匹配位置                                               "
-set cindent                            " 自动 C 程序缩进
+"set incsearch                          " 搜索时显示目前输入模式的匹配位置
+"set cindent                            " 自动 C 程序缩进
 set showmode                           " 显示当前模式
 set wildmenu                           " 增强模式命令行补全
 set magic                              " 改变搜索模式使用的特殊字符，打开就好，只有在 Vi 里才需要关掉
