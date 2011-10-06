@@ -22,16 +22,8 @@ Bundle 'FuzzyFinder'
 Bundle 'bufexplorer.zip'
 "强大的自动补全
 Bundle 'neocomplcache'
-"目录树
-Bundle 'The-NERD-tree'
-"代码注释工具
-Bundle 'The-NERD-Commenter'
 "Python 纠错
 Bundle 'pyflakes.vim'
-"让 Vim 拥有标签页
-Bundle 'Tabular'
-"代码浏览工具，更适合 OO 语言
-Bundle 'Tagbar'
 "代码浏览工具，似乎更适合 C ，TxtBrowser 依赖
 Bundle 'taglist.vim'
 "文本浏览工具
@@ -96,6 +88,14 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'drmingdrmer/xptemplate'
 "LESS 文件语法高亮
 Bundle 'groenewege/vim-less'
+"代码浏览工具，更适合 OO 语言
+Bundle 'majutsushi/tagbar'
+"标点对齐
+Bundle 'godlygeek/tabular'
+"目录树
+Bundle 'scrooloose/nerdtree'
+"代码注释工具
+Bundle 'scrooloose/nerdcommenter'
 "
 
 " non github repos
