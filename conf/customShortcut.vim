@@ -1,16 +1,16 @@
 "------------自定义快捷键---------------
-"tabpage mappings {{{
-map <M-1> 1gt
-map <M-2> 2gt
-map <M-3> 3gt
-map <M-4> 4gt
-map <M-5> 5gt
-map <M-6> 6gt
-map <M-7> 7gt
-map <M-8> 8gt
-map <M-9> 9gt
-map <M-n> :tabnew<CR>
-map <M-c> :tabclose<CR>
+"tabpage mappings commented {{{
+"map <M-1> 1gt
+"map <M-2> 2gt
+"map <M-3> 3gt
+"map <M-4> 4gt
+"map <M-5> 5gt
+"map <M-6> 6gt
+"map <M-7> 7gt
+"map <M-8> 8gt
+"map <M-9> 9gt
+"map <M-n> :tabnew<CR>
+"map <M-c> :tabclose<CR>
 " }}}
 
 " 定义了“<leader>e”快捷键，当输入“,e”时，会打开_vimrc进行编辑
@@ -21,8 +21,7 @@ map <M-c> :tabclose<CR>
 " via http://pseudo.hoop.blog.163.com/blog/static/132509117201151811727993/
 nmap <Leader>/ :exec 'lvimgrep /' . input('/', expand('<cword>')) . '/j % <bar> lopen'<CR>
 
-" <F3>改变折叠模式 
-"{{{
+" <F3>改变折叠模式 {{{
 map <F3> :call ToggleFoldMethod()<CR>
 func! ToggleFoldMethod()
 	if g:foldIsMarker==1
@@ -36,10 +35,9 @@ func! ToggleFoldMethod()
 	endif
 endfunc
 "}}}
-" <F4>进行版权声明 authorinfo
-nmap <F4> :AuthorInfoDetect<CR> 
-" <F5>单个文件编译
-"{{{
+" <F4>进行版权声明 authorinfo {{{
+nmap <F4> :AuthorInfoDetect<CR> "}}}
+" <F5>单个文件编译 {{{
 map <F5> :call Do_OneFileMake()<CR>
 function! Do_OneFileMake()
   if expand("%:p:h")!=getcwd()
@@ -117,10 +115,10 @@ function! Do_make()
   execute "copen"
 endfunction
 "}}}
-" <F6>打开Mru
-map <silent> <F6> :Mru<CR>
-" <F7>检查 PHP 代码语法 
-function! CheckSyntax() "{{{
+" <F6>打开Mru {{{
+map <silent> <F6> :Mru<CR> "}}}
+" <F7>检查 PHP 代码语法 "{{{
+function! CheckSyntax() 
  if &filetype!="php"
   echohl WarningMsg | echo "Fail to check syntax! Please select the right file!" | echohl None
   return
@@ -140,14 +138,13 @@ function! CheckSyntax() "{{{
 endfunction
 map <F5> :call CheckSyntax()<CR>
 "}}}
-" <F8>打开Taglist或者Tagbar
-nmap <silent> <F8> :TagbarToggle<CR>
-" <F9>判定/打开NERDtree
-map <silent> <F9> :NERDTree<CR>
+" <F8>打开Taglist或者Tagbar {{{
+nmap <silent> <F8> :TagbarToggle<CR> "}}}
+" <F9>判定/打开NERDtree "{{{
+map <silent> <F9> :NERDTree<CR> "}}}
 " <F10> 调出 File 菜单
 " <F11> 在很多 DWM 里是作为软件全屏的快捷键的
-" <F12> 呼出/隐藏 工具栏
-"{{{
+" <F12> 呼出/隐藏 工具栏 "{{{
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
 	if &guioptions =~# 'm'
@@ -158,7 +155,7 @@ function! CallManu()
 endfunction
 "}}}
 
-" ,nf create new func; ,pf paste func for Python
+" ,nf create new func; ,pf paste func for Python {{{
 map <leader>nf :call Py_NewFunc()<CR>
 map <leader>pf :call Py_PasteFunc()<CR>
 func! Py_NewFunc() range "{{{
@@ -185,39 +182,40 @@ func! Py_PasteFunc() "{{{
     endif
 endfunc
 "}}}
+"}}}
 " 在可视模式下，<TAB> 等于 >，<S-TAB> 等于 <
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 im jj <ESC>
-im oj <ESC>o
-im ok <ESC>O
+"im oj <ESC>o
+"im ok <ESC>O
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 no!<M-k> <Up>
 no!<M-j> <Down>
 no!<M-h> <Left>
 no!<M-l> <Right>
 au BufRead,BufNewFile *.html setf html
-au FileType python,ruby,sh :call Py()
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
-au FileType c,cc,cpp,h,html,python :call AutoSpace()
+au FileType c,cc,cpp,h,html,python,javascript :call AutoSpace()
 func! AutoSpace() "{{{
     ino , ,<SPACE>
-	ino ; ;<SPACE>
-	ino <= <SPACE><=<SPACE>
-	ino *= <SPACE>*=<SPACE>
-	ino /= <SPACE>/=<SPACE>
-	ino >> <SPACE>>><SPACE>
-	ino << <SPACE><<<SPACE>
-	ino >= <SPACE>>=<SPACE>
-	ino == <SPACE>==<SPACE>
-	ino += <SPACE>+=<SPACE>
-	ino && <SPACE>&&<SPACE>
-	ino != <SPACE>!=<SPACE>
+    ino : :<SPACE>
+    "ino { <SPACE>{
+    "ino ( <SPACE>(
+    "ino ; ;<SPACE>
+    ino <= <SPACE><=<SPACE>
+    ino *= <SPACE>*=<SPACE>
+    ino /= <SPACE>/=<SPACE>
+    ino >> <SPACE>>><SPACE>
+    ino << <SPACE><<<SPACE>
+    ino >= <SPACE>>=<SPACE>
+    ino == <SPACE>==<SPACE>
+    ino += <SPACE>+=<SPACE>
+    ino -= <SPACE>-=<SPACE>
+    ino && <SPACE>&&<SPACE>
+    ino != <SPACE>!=<SPACE>
+    ino =<SPACE> <SPACE>=<SPACE>
 endf "}}}
-func! Py() "{{{
-    im ;; <ESC>
-    im ,, <ESC>
-endfunc "}}}
 func! Cc() "{{{
     "im mm <ESC>A;<ESC>
 	"im nn <ESC>A;<ESC>o

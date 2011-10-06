@@ -1,14 +1,11 @@
 "----------- base setting -----------
-" ÆôÓÃ Pathhogen
-call pathogen#runtime_append_all_bundles()
-
 colorscheme lilypink                   " ÉèÖÃÖ÷Ìâ
 let mapleader = ','                    " Set mapleader
 set linebreak                          " ²»ÔÚµ¥´ÊÖĞ¼ä¶ÏĞĞ
 set formatoptions+=mB                  " ´ò¿ª¶ÏĞĞÄ£¿é¶ÔÑÇÖŞÓïÑÔÖ§³Ö
 set autochdir                          " ×Ô¶¯ÔØÈëµ±Ç°±à¼­ÎÄ¼şµÄÄ¿Â¼
 set guioptions=                        " ¼ò½à½çÃæ
-set ignorecase                         " ºöÂÔ´óĞ¡Ğ´Æ¥Åä
+"set ignorecase                         " ºöÂÔ´óĞ¡Ğ´Æ¥Åä
 set scrolloff=10                       " ÉèÖÃ¹â±ê¾àÀëÉÏÏÂ±ß½çµÄ¾àÀë
 set showcmd                            " ÔÚ´°¿ÚÓÒÏÂ½ÇÏÔÊ¾ÍêÕûÃüÁîÒÑÊäÈë²¿·Ö
 set cursorline                         " ¸ßÁÁ¹â±êËùÔÚĞĞ
@@ -28,9 +25,9 @@ set magic                              " ¸Ä±äËÑË÷Ä£Ê½Ê¹ÓÃµÄÌØÊâ×Ö·û£¬´ò¿ª¾ÍºÃ£¬Ö
 
 " ÈÃÒ»¸ötabµÈÓÚ4¸ö¿Õ¸ñ
 set expandtab
-set tabstop=4 "<TAB> ´ú±íµÄ¿Õ¸ñÊı
-set shiftwidth=4 "£¨×Ô¶¯£©Ëõ½øÊ¹ÓÃµÄ¿Õ°×ÊıÄ¿
-set softtabstop=4 "±à¼­Ê±°Ñ <TAB> µ±×÷µÄ¿Õ¸ñÊıÄ¿
+set tabstop=4     " <TAB> ´ú±íµÄ¿Õ¸ñÊı
+set shiftwidth=4  " £¨×Ô¶¯£©Ëõ½øÊ¹ÓÃµÄ¿Õ°×ÊıÄ¿
+set softtabstop=4 " ±à¼­Ê±°Ñ <TAB> µ±×÷µÄ¿Õ¸ñÊıÄ¿
 
 " ¸ßÁÁÓï·¨
 syntax on

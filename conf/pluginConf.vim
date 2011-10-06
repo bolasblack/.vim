@@ -16,16 +16,15 @@ let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必要
 " 设置tags文件的寻找路径
 "set tags += tags;
 " }}}
-
-" AuthorInfo 配置
+" AuthorInfo 配置 {{{
 let g:vimrc_author='yicuan' 
 let g:vimrc_email='bolasblack@gmail.com' 
 let g:vimrc_homepage='http://plafer.tk' 
-
-" Tagbar 配置
+"}}}
+" Tagbar 配置 {{{
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
-
+"}}}
 " Doxygen 配置 {{{
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 let g:Doxygen_enhanced_color = 1
@@ -37,12 +36,10 @@ let g:DoxygenToolkit_paramTag_pre = "@Param:"
 let g:DoxygenToolkit_returnTag_pre = "@Return:"
 let g:DoxygenToolkit_blockFooter = "======================================="
 " }}}
-
 " TxtBrowser 设置 {{{
 au BufEnter *.txt setlocal ft=txt
 " let g:default_web_browser=chrome
 " }}}
-
 " Zen Coding 配置 {{{
 let g:user_zen_settings = { 
   \  'indentation' : '  ', 
@@ -59,13 +56,6 @@ let g:user_zen_settings = {
   let g:user_zen_expandabbr_key = '<c-y>'    "设置为ctrl+y展开
   let g:use_zen_complete_tag = 1
 " }}}
-
-" Netrw 设置 {{{
-let g:netrw_winsize = 30
-"输入',fe'时，就会打开一个垂直分隔的窗口浏览当前文件所在的目录，窗口的宽度为30
-nmap <silent> <leader>ntf :Sexplore!<cr> 
-"}}}
-
 " NeoComplcache 设置 "{{{
 " Use neocomplcache. 
 let g:neocomplcache_enable_at_startup = 1
@@ -136,4 +126,9 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::' 
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete 
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"}}}
+" Netrw 设置 {{{
+let g:netrw_winsize = 30
+"输入',fe'时，就会打开一个垂直分隔的窗口浏览当前文件所在的目录，窗口的宽度为30
+"nmap <silent> <leader>ntf :Sexplore!<cr> 
 "}}}
