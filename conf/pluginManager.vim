@@ -25,13 +25,11 @@ Bundle 'neocomplcache'
 "Python 纠错
 Bundle 'pyflakes.vim'
 "代码浏览工具，似乎更适合 C ，TxtBrowser 依赖
-Bundle 'taglist.vim'
-"文本浏览工具
-Bundle 'TxtBrowser'
+"Bundle 'taglist.vim'
+"文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
+"Bundle 'TxtBrowser'
 "给vim增加url的识别功能，当然功能远远不止这些
 Bundle 'utl.vim'
-"在 Vim 中使用 Shell
-Bundle 'Conque-Shell'
 "可以添加目录和文件到收藏夹
 Bundle 'FavEx'
 "自动添加作者信息
@@ -96,6 +94,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdtree'
 "代码注释工具
 Bundle 'scrooloose/nerdcommenter'
+"在 Vim 中运行 Shell，vim-script 备份的那个没有Python的文件
+Bundle 'rson/vim-conque'
 "
 
 " non github repos

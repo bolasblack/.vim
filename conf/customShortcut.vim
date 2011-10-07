@@ -203,22 +203,26 @@ func! AutoSpace() "{{{
     "ino { <SPACE>{
     "ino ( <SPACE>(
     "ino ; ;<SPACE>
-    ino <= <SPACE><=<SPACE>
-    ino *= <SPACE>*=<SPACE>
-    ino /= <SPACE>/=<SPACE>
-    ino >> <SPACE>>><SPACE>
-    ino << <SPACE><<<SPACE>
-    ino >= <SPACE>>=<SPACE>
-    ino == <SPACE>==<SPACE>
-    ino += <SPACE>+=<SPACE>
-    ino -= <SPACE>-=<SPACE>
-    ino && <SPACE>&&<SPACE>
-    ino != <SPACE>!=<SPACE>
     ino =<SPACE> <SPACE>=<SPACE>
+    ino <<SPACE> <SPACE><<SPACE>
+    ino ><SPACE> <SPACE>><SPACE>
+    ino +<SPACE> <SPACE>+<SPACE>
+    ino -<SPACE> <SPACE>-<SPACE>
+    ino *<SPACE> <SPACE>*<SPACE>
+    ino /<SPACE> <SPACE>/<SPACE>
+    ino !=<SPACE> <SPACE>!=<SPACE>
+    ino <=<SPACE> <SPACE><=<SPACE>
+    ino *=<SPACE> <SPACE>*=<SPACE>
+    ino /=<SPACE> <SPACE>/=<SPACE>
+    ino >><SPACE> <SPACE>>><SPACE>
+    ino <<<SPACE> <SPACE><<<SPACE>
+    ino >=<SPACE> <SPACE>>=<SPACE>
+    ino ==<SPACE> <SPACE>==<SPACE>
+    ino +=<SPACE> <SPACE>+=<SPACE>
+    ino -=<SPACE> <SPACE>-=<SPACE>
+    ino &&<SPACE> <SPACE>&&<SPACE>
 endf "}}}
 func! Cc() "{{{
-    "im mm <ESC>A;<ESC>
-	"im nn <ESC>A;<ESC>o
 	if exists("$DISPLAY")
         nm mm :call DebugInGui()<CR>
         im mm <ESC> :call DebugInGui()<CR>

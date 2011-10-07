@@ -132,3 +132,6 @@ let g:netrw_winsize = 30
 "输入',fe'时，就会打开一个垂直分隔的窗口浏览当前文件所在的目录，窗口的宽度为30
 "nmap <silent> <leader>ntf :Sexplore!<cr> 
 "}}}
+" ConqueTerm 设置 {{{
+let g:ConqueTerm_Color = 2
+" }}}
