@@ -11,6 +11,8 @@ endif
 let $CONF = $VIMFILES.'/conf/'
 let $PLUGIN = $VIMFILES.'/Plugin/'
 
+"
+source $CONF\pluginManager.vim
 " 载入 base 设置
 source $CONF\base.vim
 " 载入自定义功能
