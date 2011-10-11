@@ -51,6 +51,9 @@ endif
 if !exists('g:gtrans_LangDict')
     let g:gtrans_LangDict = {}
 endif
+if !exists('g:gtrans_Engine')
+    let g:gtrans_Engine = 'google'
+endif
 
 func! GetTransHelp() "{{{
     let dictInfo = "'AFRIKAANS' : 'af'\n'ALBANIAN' : 'sq'\n'AMHARIC' : 'am'\n'ARABIC' : 'ar'\n'ARMENIAN' : 'hy'\n'AZERBAIJANI' : 'az'\n'BASQUE' : 'eu'\n'BELARUSIAN' : 'be'\n'BENGALI' : 'bn'\n'BIHARI' : 'bh'\n'BRETON' : 'br'\n'BULGARIAN' : 'bg'\n'BURMESE' : 'my'\n'CATALAN' : 'ca'\n'CHEROKEE' : 'chr'\n'CHINESE' : 'zh'\n'CHINESE_SIMPLIFIED' : 'zh-CN'\n'CHINESE_TRADITIONAL' : 'zh-TW'\n'CORSICAN' : 'co'\n'CROATIAN' : 'hr'\n'CZECH' : 'cs'\n'DANISH' : 'da'\n'DHIVEHI' : 'dv'\n'DUTCH' : 'nl'  \n'ENGLISH' : 'en'\n'ESPERANTO' : 'eo'\n'ESTONIAN' : 'et'\n'FAROESE' : 'fo'\n'FILIPINO' : 'tl'\n'FINNISH' : 'fi'\n'FRENCH' : 'fr'\n'FRISIAN' : 'fy'\n'GALICIAN' : 'gl'\n'GEORGIAN' : 'ka'\n'GERMAN' : 'de'\n'GREEK' : 'el'\n'GUJARATI' : 'gu'\n'HAITIAN_CREOLE' : 'ht'\n'HEBREW' : 'iw'\n'HINDI' : 'hi'\n'HUNGARIAN' : 'hu'\n'ICELANDIC' : 'is'\n'INDONESIAN' : 'id'\n'INUKTITUT' : 'iu'\n'IRISH' : 'ga'\n'ITALIAN' : 'it'\n'JAPANESE' : 'ja'\n'JAVANESE' : 'jw'\n'KANNADA' : 'kn'\n'KAZAKH' : 'kk'\n'KHMER' : 'km'\n'KOREAN' : 'ko'\n'KURDISH' : 'ku'\n'KYRGYZ' : 'ky'\n'LAO' : 'lo'\n'LATIN' : 'la'\n'LATVIAN' : 'lv'\n'LITHUANIAN' : 'lt'\n'LUXEMBOURGISH' : 'lb'\n'MACEDONIAN' : 'mk'\n'MALAY' : 'ms'\n'MALAYALAM' : 'ml'\n'MALTESE' : 'mt'\n'MAORI' : 'mi'\n'MARATHI' : 'mr'\n'MONGOLIAN' : 'mn'\n'NEPALI' : 'ne'\n'NORWEGIAN' : 'no'\n'OCCITAN' : 'oc'\n'ORIYA' : 'or'\n'PASHTO' : 'ps'\n'PERSIAN' : 'fa'\n'POLISH' : 'pl'\n'PORTUGUESE' : 'pt'\n'PORTUGUESE_PORTUGAL' : 'pt-PT'\n'PUNJABI' : 'pa'\n'QUECHUA' : 'qu'\n'ROMANIAN' : 'ro'\n'RUSSIAN' : 'ru'\n'SANSKRIT' : 'sa'\n'SCOTS_GAELIC' : 'gd'\n'SERBIAN' : 'sr'\n'SINDHI' : 'sd'\n'SINHALESE' : 'si'\n'SLOVAK' : 'sk'\n'SLOVENIAN' : 'sl'\n'SPANISH' : 'es'\n'SUNDANESE' : 'su'\n'SWAHILI' : 'sw'\n'SWEDISH' : 'sv'\n'SYRIAC' : 'syr'\n'TAJIK' : 'tg'\n'TAMIL' : 'ta'\n'TATAR' : 'tt'\n'TELUGU' : 'te'\n'THAI' : 'th'\n'TIBETAN' : 'bo'\n'TONGA' : 'to'\n'TURKISH' : 'tr'\n'UKRAINIAN' : 'uk'\n'URDU' : 'ur'\n'UZBEK' : 'uz'\n'UIGHUR' : 'ug'\n'VIETNAMESE' : 'vi'\n'WELSH' : 'cy'\n'YIDDISH' : 'yi'\n'YORUBA' : 'yo'\n'UNKNOWN' : ''\n"
@@ -74,22 +77,6 @@ func! GetTransVis()
     call s:Translate(visText, targetLang)
 endfunc
 
-"func! GetTrans(...) "{{{
-	"let visText = s:GetVisual()
-	""let currMode = mode()
-	""echo currMode.' '.msg
-	"let targetLang = g:gtrans_DefaultLang
-    "if a:0 == 1
-        "let targetLang = a:1
-    "endif
-    "if visText == '' || g:gtrans_PrevText == visText
-        "call s:Translate(eval("expand('<cword>')"), targetLang)
-    "else
-        "call s:Translate(visText, targetLang)
-        "let g:gtrans_PrevText = visText
-    "endif
-"endfunc
-"}}}
 "}}}
 
 func! s:GetVisual() "{{{
@@ -143,11 +130,13 @@ def getTargetLang(tl): #{{{
 #}}}
 
 def getJSON(sourceText, targetLang): #{{{
+    #-d query=linux%20daemon%20network -d token=fd0fee69b7373a0b455c5bc33b02ddc9 http://fanyi.baidu.com/transcontent
     url = 'http://translate.google.cn/translate_a/t'
     params = urllib.urlencode({'client':'json',
                                #'hl':'zh-CN', #这个参数实在是不知道有什么用
                                'tl':targetLang,
                                'text':sourceText})
+
     req    = url + '?' + params
     opener = urllib2.build_opener()
     opener.addheaders = [('User-agent','Mozilla/5.0')]
@@ -182,7 +171,6 @@ def formatJSON(sourceText, jsonData): #{{{
 try:
     sourceText = vim.eval('a:text')
     targetLang = vim.eval('a:tl')
-    #text = text.strip()
     sourceText.replace(' ','%20')
     sourceText.replace('\n','%0A')
     targetLang = getTargetLang(targetLang)

@@ -135,3 +135,6 @@ let g:netrw_winsize = 30
 " ConqueTerm …Ë÷√ {{{
 let g:ConqueTerm_Color = 2
 " }}}
+" Sparkup …Ë÷√ {{{
+let g:sparkupExecuteMapping = '<C-y>'
+" }}}
