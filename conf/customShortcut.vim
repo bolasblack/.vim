@@ -13,9 +13,6 @@
 "map <M-c> :tabclose<CR>
 " }}}
 
-" 定义了“<leader>e”快捷键，当输入“,e”时，会打开_vimrc进行编辑
-" map <silent> <leader>e :e $V<CR>
-
 " 定义快捷键 ,/ ，查找光标所在单词（可编辑），将查找出来的所有结果显示在
 " quickfix 中，双击一行就能定位到文件中的相应行上
 " via http://pseudo.hoop.blog.163.com/blog/static/132509117201151811727993/
@@ -37,84 +34,7 @@ endfunc
 "}}}
 " <F4>进行版权声明 authorinfo {{{
 nmap <F4> :AuthorInfoDetect<CR> "}}}
-" <F5>单个文件编译 {{{
-map <F5> :call Do_OneFileMake()<CR>
-function! Do_OneFileMake()
-  if expand("%:p:h")!=getcwd()
-    echohl WarningMsg | echo "Fail to make! This file is not in the current dir! Press <F7> to redirect to the dir of this file." | echohl None
-    return
-  endif
-  let sourcefileename=expand("%:t")
-  if (sourcefileename=="" || (&filetype!="cpp" && &filetype!="c"))
-    echohl WarningMsg | echo "Fail to make! Please select the right file!" | echohl None
-    return
-  endif
-  let deletedspacefilename=substitute(sourcefileename,' ','','g')
-  if strlen(deletedspacefilename)!=strlen(sourcefileename)
-    echohl WarningMsg | echo "Fail to make! Please delete the spaces in the filename!" | echohl None
-    return
-  endif
-  if &filetype=="c"
-    if g:iswindows==1
-      set makeprg=gcc\ -o\ %<.exe\ %
-    else
-      set makeprg=gcc\ -o\ %<\ %
-    endif
-  elseif &filetype=="cpp"
-    if g:iswindows==1
-      set makeprg=g++\ -o\ %<.exe\ %
-    else
-      set makeprg=g++\ -o\ %<\ %
-    endif
-    "elseif &filetype=="cs"
-    "set makeprg=csc\ \/nologo\ \/out:%<.exe\ %
-  endif
-  if(g:iswindows==1)
-    let outfilename=substitute(sourcefileename,'\(\.[^.]*\)$','.exe','g')
-    let toexename=outfilename
-  else
-    let outfilename=substitute(sourcefileename,'\(\.[^.]*\)$','','g')
-    let toexename=outfilename
-  endif
-
-  if filereadable(outfilename)
-    if(g:iswindows==1)
-      let outdeletedsuccess=delete(getcwd()."\\".outfilename)
-    else
-      let outdeletedsuccess=delete("./".outfilename)
-    endif
-    if(outdeletedsuccess!=0)
-      set makeprg=make
-      echohl WarningMsg | echo "Fail to make! I cannot delete the ".outfilename | echohl None
-      return
-    endif
-  endif
-
-  execute "silent make"
-  set makeprg=make
-  execute "normal :"
-
-  if filereadable(outfilename)
-    if(g:iswindows==1)
-      execute "!".toexename
-    else
-      execute "!./".toexename
-    endif
-  endif
-
-  execute "copen"
-
-endfunction
-
-"进行make的设置
-map <F6> :call Do_make()<CR>
-map <c-F6> :silent make clean<CR>
-function! Do_make()
-  set makeprg=make
-  execute "silent make"
-  execute "copen"
-endfunction
-"}}}
+" <F5> PEP8 语法检查
 " <F6>打开Mru {{{
 map <silent> <F6> :Mru<CR> "}}}
 " <F7>检查 PHP 代码语法 "{{{
@@ -187,8 +107,6 @@ endfunc
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 im jj <ESC>
-"im oj <ESC>o
-"im ok <ESC>O
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 no!<M-k> <Up>
 no!<M-j> <Down>

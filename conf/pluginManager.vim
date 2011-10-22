@@ -22,8 +22,11 @@ Bundle 'FuzzyFinder'
 Bundle 'bufexplorer.zip'
 "强大的自动补全
 Bundle 'neocomplcache'
+" 基于 PEP8 的 Python 代码风格检查插件
+"Bundle 'pep8'
+"Bundle 'pep8--Yusuke'
 "Python 纠错
-Bundle 'pyflakes.vim'
+"Bundle 'pyflakes.vim'
 "代码浏览工具，似乎更适合 C ，TxtBrowser 依赖
 "Bundle 'taglist.vim'
 "文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
@@ -96,6 +99,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 "在 Vim 中运行 Shell，vim-script 备份的那个没有Python的文件
 Bundle 'rson/vim-conque'
+" 基于 PEP8 的 Python 代码风格检查插件
+Bundle 'jbking/vim-pep8'
 "
 
 " non github repos

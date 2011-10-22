@@ -138,3 +138,6 @@ let g:ConqueTerm_Color = 2
 " Sparkup 设置 {{{
 let g:sparkupExecuteMapping = '<C-y>'
 " }}}
+" PEP8.vim 设置 {{{
+let g:pep8_ignore = 'E401,E501' "代码过长与一行import多个模块不报错
+"}}}
