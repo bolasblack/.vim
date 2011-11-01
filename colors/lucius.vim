@@ -282,8 +282,8 @@ hi DiffText         ctermfg=203             ctermbg=52             cterm=bold
 " line used for closed folds
 "hi Folded           guifg=#91d6f8           guibg=#363946           gui=none
 "hi Folded           ctermfg=117             ctermbg=238             cterm=none
-hi Folded           guifg=#d0e0f0           guibg=#202020           gui=none
-hi Folded           ctermfg=117             ctermbg=235             cterm=none
+hi Folded           guifg=#d0e0f0           guibg=#363946           gui=none
+hi Folded           ctermfg=117             ctermbg=237             cterm=none
 " column on side used to indicated open and closed folds
 hi FoldColumn       guifg=#91d6f8           guibg=#363946           gui=none
 hi FoldColumn       guifg=#c0c0d0           guibg=#363946           gui=none

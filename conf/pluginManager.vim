@@ -105,5 +105,3 @@ Bundle 'jbking/vim-pep8'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
-
-
