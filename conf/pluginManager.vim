@@ -22,15 +22,6 @@ Bundle 'FuzzyFinder'
 Bundle 'bufexplorer.zip'
 "强大的自动补全
 Bundle 'neocomplcache'
-" 基于 PEP8 的 Python 代码风格检查插件
-"Bundle 'pep8'
-"Bundle 'pep8--Yusuke'
-"Python 纠错
-"Bundle 'pyflakes.vim'
-"代码浏览工具，似乎更适合 C ，TxtBrowser 依赖
-"Bundle 'taglist.vim'
-"文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
-"Bundle 'TxtBrowser'
 "给vim增加url的识别功能，当然功能远远不止这些
 Bundle 'utl.vim'
 "可以添加目录和文件到收藏夹
@@ -74,6 +65,12 @@ Bundle 'JSON.vim'
 Bundle 'css_color.vim'
 "也是用于管理插件
 "Bundle 'pathogen.vim'
+"Python 纠错
+"Bundle 'pyflakes.vim'
+"代码浏览工具，似乎更适合 C ，TxtBrowser 依赖
+"Bundle 'taglist.vim'
+"文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
+"Bundle 'TxtBrowser'
 "
 
 " original repos on github
@@ -83,8 +80,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 "提供markdown着色功能，顺便也提供了snippet
 Bundle 'hallison/vim-markdown'
-"zencoding 增强
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"zencoding
+Bundle 'ZenCoding.vim'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "代码片段引擎
 Bundle 'drmingdrmer/xptemplate'
 "LESS 文件语法高亮
@@ -101,7 +99,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'rson/vim-conque'
 " 基于 PEP8 的 Python 代码风格检查插件
 Bundle 'jbking/vim-pep8'
-"
+" 高亮对应的 HTML 标签
+Bundle 'gregsexton/MatchTag'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'

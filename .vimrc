@@ -2,15 +2,15 @@
 
 " 设置 $ 变量
 if has("win32")
-  let $VIMFILES = $VIM.'/vimfiles/'
-  let $V = $VIM.'/_vimrc'
+  let $vimfiles = $VIM.'/vimfiles/'
+  let $v = $VIM.'/_vimrc'
 else
-  let $VIMFILES = $HOME.'/.vim/'
-  let $V = $HOME.'/.vimrc'
+  let $vimfiles = $HOME.'/.vim/'
+  let $v = $HOME.'/.vimrc'
 endif
-let $conf = $VIMFILES.'/conf/'
+let $conf = $vimfiles.'/conf/'
 let $base = $conf.'/base.vim'
-let $PLUGIN = $VIMFILES.'/Plugin/'
+let $plugin = $vimfiles.'/plugins/'
 
 " 载入插件
 source $conf\pluginManager.vim

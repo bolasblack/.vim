@@ -16,11 +16,11 @@ set foldmarker=[[[,]]]                 " 用 [[[ ]]] 替代 {{{ }}}
 if &term =~ "screen"
     set t_Co=256
 endif
-if &term ==? "linux"                   " 设置主题
-    colorscheme slate
-else
+"if &term == "linux"                   " 设置主题
+    "colorscheme slate
+"else
     colorscheme lucius "lilypink
-endif
+"endif
 
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
@@ -109,57 +109,6 @@ au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
 au BufRead,BufNewFile *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
-
-func! s:exeCmd(echoColor, tI1, tI2) "[[[
-    let color_normal = 'White'
-    let color_insert = 'RoaylBlue1'
-    let color_exit = 'Green'
-
-    let echoStr = "echo -ne '" . a:echoColor . "]12;'"
-    let tI1Str = a:tI1 . ']12;'
-    let tI2Str = a:tI2
-
-    exe 'silent !' . echoStr . shellescape(color_normal, 1) . tI2Str
-    let &t_SI = tI1Str . color_insert . tI2Str
-    let &t_EI = tI1Str . color_normal . tI2Str
-    exe 'autocmd VimLeave * :!' . echoStr . shellescape(color_exit, 1) . tI2Str
-endfunc
-func! CurserColorInTmux()
-    if &term =~ 'xterm\|rxvt'
-        call <SID>exeCmd('\e', '\e', '\007')
-    elseif &term =~ "screen"
-        if exists('$TMUX')
-            call <SID>exeCmd('\033Ptmux;\033\e', '\033Ptmux', '\007\033\\')
-        elseif !exists('$SUDO_UID')
-            call <SID>exeCmd('\033P\e', '\033P', '\007\033\\')
-        endif
-    endif
-endfunc
-"func! CurserColorInTmux() "[[[
-    "let color_normal = 'White'
-    "let color_insert = 'RoaylBlue1'
-    "let color_exit = 'Green'
-    "if &term =~ 'xterm\|rxvt'
-        "execute "silent !echo -ne '\e]12;'" . shellescape(color_normal, 1) . "\007"
-        "let &t_SI = '\e]12;' . color_insert . '\007'
-        "let &t_EI = '\e]12;' . color_normal . '\007'
-        "execute "autocmd VimLeave * :!echo -ne '\e]12;'" . shellescape(color_exit, 1) . "\007"
-    "elseif &term =~ "screen"
-        "if exists('$TMUX')
-            "execute "silent !echo -ne '\033Ptmux;\033\e]12;'" . shellescape(color_normal, 1) . "\007\033\\"
-            "let &t_SI = '\033Ptmux]12;' . color_insert . '\007\033\\'
-            "let &t_EI = '\033Ptmux]12;' . color_normal . '\007\033\\'
-            "execute "autocmd VimLeave * :!echo -ne '\033Ptmux;\033\e]12;'" . shellescape(color_exit, 1) . "\007\033\\"
-        "elseif !exists('$SUDO_UID')
-            ""call <SID>exeCmd('\033P\e', '\033P', '\007\033\\')
-            "execute "silent !echo -ne '\033\e]12;'" . shellescape(color_normal, 1) . "\007\033\\"
-            "let &t_SI = '\033P]12;' . color_insert . '\007\033\\'
-            "let &t_EI = '\033P]12;' . color_normal . '\007\033\\'
-            "execute "autocmd VimLeave * :!echo -ne '\033\e]12;'" . shellescape(color_exit, 1) . "\007\033\\"
-        "endif
-    "endif
-"endfunc "]]]
-"call CurserColorInTmux() "]]]
 
 " 控制 fcitx 在离开插入模式时改变输入模式 已注释 [[[
 "let g:input_toggle = 1
@@ -541,10 +490,10 @@ let g:netrw_winsize = 30
 " ConqueTerm 设置 [[[
 let g:ConqueTerm_Color = 2
 " ]]]
-" Sparkup 设置 [[[
-let g:sparkupExecuteMapping = '<C-y>'
-" ]]]
 " PEP8.vim 设置 [[[
 let g:pep8_ignore = 'E401,E501' "代码过长与一行import多个模块不报错
 " ]]]
+" gtrans.vim 设置 [[[
+let g:gtrans_Engine = 'google'
+"]]]
 "]]]
