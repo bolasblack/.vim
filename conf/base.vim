@@ -448,7 +448,7 @@ imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>
 
 " Recommended key-mappings. 
 " <CR>: close popup and save indent. 
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>" 
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>" 
 " <TAB>: completion. 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
 " <C-h>, <BS>: close popup and delete backword char. 
@@ -491,7 +491,7 @@ let g:netrw_winsize = 30
 let g:ConqueTerm_Color = 2
 " ]]]
 " PEP8.vim 设置 [[[
-let g:pep8_ignore = 'E401,E501' "代码过长与一行import多个模块不报错
+let g:pep8_ignore = 'E401,E501,E261' "代码过长与一行import多个模块不报错
 " ]]]
 " gtrans.vim 设置 [[[
 let g:gtrans_Engine = 'google'

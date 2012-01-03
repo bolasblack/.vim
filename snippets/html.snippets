@@ -1,0 +1,14 @@
+snippet html5
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="${1:UTF-8}" />
+		<title>${2:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${3}
+	</head>
+	<body>
+		${4}
+	</body>
+	</html>
+
+snippet jq
+	<script type="text/javascript" src="${1:jquery.js}"></script>${2}
