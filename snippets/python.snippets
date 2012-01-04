@@ -1,0 +1,12 @@
+# env and encoding
+snippet py
+	#!/usr/bin/env python
+	# coding: ${1:utf-8}
+	${2}
+# with open() as f:
+snippet withopen
+	with open('${1:target file}') as ${2:f}:
+		${3:# some thing to do}
+# from xxx import xxx
+snippet from
+	from ${1} import ${2:*}

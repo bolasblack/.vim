@@ -482,6 +482,9 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete 
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " ]]]
+" SuperTab 设置 [[[
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+" ]]]
 " Netrw 设置 [[[
 let g:netrw_winsize = 30
 "输入',fe'时，就会打开一个垂直分隔的窗口浏览当前文件所在的目录，窗口的宽度为30

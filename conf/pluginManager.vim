@@ -81,8 +81,8 @@ Bundle 'Shougo/neocomplcache'
 " supertab
 Bundle 'ervandew/supertab'
 "代码片段引擎
-"Bundle 'drmingdrmer/xptemplate'
-Bundle 'msanders/snipmate.vim'
+Bundle 'drmingdrmer/xptemplate'
+"Bundle 'msanders/snipmate.vim'
 "在 Vim 里快捷的使用 Git
 Bundle 'tpope/vim-fugitive'
 "快速移动光标到指定位置
