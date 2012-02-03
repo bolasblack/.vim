@@ -1,7 +1,7 @@
 .netrwhist
 .VimballRecord
+*.swp
 TEMP.txt
 todo.txt
 conf/pluginConfSc.vim
-.git/
-*.swp
+bundle/

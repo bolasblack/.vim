@@ -73,6 +73,8 @@ Bundle 'python.vim--Vasiliev'
 Bundle 'JSON.vim'
 "在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
 Bundle 'css_color.vim'
+"Undo tree
+Bundle 'Gundo'
 "
 
 " original repos on github
