@@ -5,7 +5,7 @@ call pathogen#infect('plugins')
 "call pathogen#helptags()
 
 " let Vundle manage Vundle
-call vundle#rc()
+call vundle#rc('~/.vimVundle')
 
 " required! 
 Bundle 'gmarik/vundle'
