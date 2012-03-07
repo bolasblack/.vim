@@ -22,6 +22,12 @@ endif
     colorscheme lucius "lilypink
 "endif
 
+let g:defaultGuiOptions = ''
+if(has("mac"))
+    let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
+endif
+let &guioptions = g:defaultGuiOptions
+
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
 set autoindent                         " 自动缩进
@@ -67,7 +73,7 @@ set nowritebackup
 if has("gui_running")
   " GUI is running or is about to start.
    "set gvim window size
-   set lines=140 columns=82
+   set columns=82
 else
   " This is console Vim.
   if exists("+lines")
@@ -88,7 +94,7 @@ endif
 " 判定当前操作系统类型 [[[
 if(has("win32") || has("win95") || has("win64") || has("win16")) 
     "set fileencoding=chinese
-    let g:iswindows=1
+    let g:isWindows=1
 	language messages zh_CN.utf-8
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
@@ -98,7 +104,7 @@ if(has("win32") || has("win95") || has("win64") || has("win16"))
 	source $VIMRUNTIME/menu.vim
 else
     set fileencoding=utf-8
-    let g:iswindows=0
+    let g:isWindows=0
 endif
 set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -196,27 +202,6 @@ nmap <F4> :AuthorInfoDetect<CR>
 " <F6>打开 Mru [[[
 map <silent> <F6> :Mru<CR>
 " ]]]
-" <F7>检查 PHP 代码语法 [[[
-function! CheckSyntax() 
- if &filetype!="php"
-  echohl WarningMsg | echo "Fail to check syntax! Please select the right file!" | echohl None
-  return
- endif
- if &filetype=="php"
-  " Check php syntax
-  setlocal makeprg=\"php\"\ -l\ -n\ -d\ html_errors=off
-  " Set shellpipe
-  setlocal shellpipe=>
-  " Use error format for parsing PHP error output
-  setlocal errorformat=%m\ in\ %f\ on\ line\ %l
- endif
- execute "silent make %"
- set makeprg=make
- execute "normal :"
- execute "copen"
-endfunction
-map <F5> :call CheckSyntax()<CR>
-" ]]]
 " <F8>打开 Taglist 或者 Tagbar [[[
 nmap <silent> <F8> :TagbarToggle<CR>
 " ]]]
@@ -229,10 +214,11 @@ map <silent> <F9> :NERDTree<CR>
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
 	if &guioptions =~# 'm'
-		set go=
+		let newGuiOptions = g:defaultGuiOptions
 	else
-		set go=m
+		let newGuiOptions = g:defaultGuiOptions + 'm'
 	endif
+    let &guioptions = newGuiOptions
 endfunction
 " ]]]
 

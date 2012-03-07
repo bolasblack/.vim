@@ -1,6 +1,7 @@
 "----------- Plugin Manager Config -----------
 " 启用 Pathhogen
-call pathogen#infect('plugins')
+"call pathogen#infect('plugins')
+call pathogen#runtime_append_all_bundles()
 " 刷新 bundle/ 里的插件的 helptags
 "call pathogen#helptags()
 
