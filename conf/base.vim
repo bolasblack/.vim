@@ -1,22 +1,22 @@
 " ----------- base setting ----------- [[[
 let mapleader = ','                    " Set mapleader
-set linebreak                          " ²»ÔÚµ¥´ÊÖĞ¼ä¶ÏĞĞ
-set formatoptions+=mB                  " ´ò¿ª¶ÏĞĞÄ£¿é¶ÔÑÇÖŞÓïÑÔÖ§³Ö
-set autochdir                          " ×Ô¶¯ÔØÈëµ±Ç°±à¼­ÎÄ¼şµÄÄ¿Â¼
-set guioptions=                        " ¼ò½à½çÃæ
-"set ignorecase                        " ºöÂÔ´óĞ¡Ğ´Æ¥Åä
-set scrolloff=10                       " ÉèÖÃ¹â±ê¾àÀëÉÏÏÂ±ß½çµÄ¾àÀë
-set showcmd                            " ÔÚ´°¿ÚÓÒÏÂ½ÇÏÔÊ¾ÍêÕûÃüÁîÒÑÊäÈë²¿·Ö
-set cursorline                         " ¸ßÁÁ¹â±êËùÔÚĞĞ
-set nocompatible                       " ²»ÒªvimÄ£·ÂviÄ£Ê½
-set number                             " ÏÔÊ¾ĞĞºÅ
-set guifont=YaHei\ Consolas\ Hybrid\ 9 " ÉèÖÃÑÅºÚ×ÖÌå
-set visualbell                         " ²»Òª beep Ò²²»ÒªÉÁÆÁ
-set foldmarker=[[[,]]]                 " ÓÃ [[[ ]]] Ìæ´ú {{{ }}}
+set linebreak                          " ä¸åœ¨å•è¯ä¸­é—´æ–­è¡Œ
+set formatoptions+=mB                  " æ‰“å¼€æ–­è¡Œæ¨¡å—å¯¹äºšæ´²è¯­è¨€æ”¯æŒ
+set autochdir                          " è‡ªåŠ¨è½½å…¥å½“å‰ç¼–è¾‘æ–‡ä»¶çš„ç›®å½•
+set guioptions=                        " ç®€æ´ç•Œé¢
+"set ignorecase                        " å¿½ç•¥å¤§å°å†™åŒ¹é…
+set scrolloff=10                       " è®¾ç½®å…‰æ ‡è·ç¦»ä¸Šä¸‹è¾¹ç•Œçš„è·ç¦»
+set showcmd                            " åœ¨çª—å£å³ä¸‹è§’æ˜¾ç¤ºå®Œæ•´å‘½ä»¤å·²è¾“å…¥éƒ¨åˆ†
+set cursorline                         " é«˜äº®å…‰æ ‡æ‰€åœ¨è¡Œ
+set nocompatible                       " ä¸è¦vimæ¨¡ä»¿viæ¨¡å¼
+set number                             " æ˜¾ç¤ºè¡Œå·
+set guifont=YaHei\ Consolas\ Hybrid\ 9 " è®¾ç½®é›…é»‘å­—ä½“
+set visualbell                         " ä¸è¦ beep ä¹Ÿä¸è¦é—ªå±
+set foldmarker=[[[,]]]                 " ç”¨ [[[ ]]] æ›¿ä»£ {{{ }}}
 if &term =~ "screen"
     set t_Co=256
 endif
-"if &term == "linux"                   " ÉèÖÃÖ÷Ìâ
+"if &term == "linux"                   " è®¾ç½®ä¸»é¢˜
     "colorscheme slate
 "else
     colorscheme lucius "lilypink
@@ -29,28 +29,28 @@ endif
 let &guioptions = g:defaultGuiOptions
 
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
-set backspace=2                        " ÔÊĞíÔÚ²åÈë¿ªÊ¼µÄÎ»ÖÃÉÏÍË¸ñ£»CTRL-W ºÍ CTRL-U µ½´ï²åÈë¿ªÊ¼µÄÎ»ÖÃÊ±Í£ÁôÒ»´Î
-set autoindent                         " ×Ô¶¯Ëõ½ø
-set smartindent                        " ÖÇÄÜËõ½ø
-"set incsearch                          " ËÑË÷Ê±ÏÔÊ¾Ä¿Ç°ÊäÈëÄ£Ê½µÄÆ¥ÅäÎ»ÖÃ
-"set cindent                            " ×Ô¶¯ C ³ÌĞòËõ½ø
-set showmode                           " ÏÔÊ¾µ±Ç°Ä£Ê½
-set wildmenu                           " ÔöÇ¿Ä£Ê½ÃüÁîĞĞ²¹È«
-set magic                              " ¸Ä±äËÑË÷Ä£Ê½Ê¹ÓÃµÄÌØÊâ×Ö·û£¬´ò¿ª¾ÍºÃ£¬Ö»ÓĞÔÚ Vi Àï²ÅĞèÒª¹Øµô
-"set exrc                              " ÔÊĞí¶ÁÈëµ±Ç°Ä¿Â¼µÄ .vimrc .exrc .gvimrc
+set backspace=2                        " å…è®¸åœ¨æ’å…¥å¼€å§‹çš„ä½ç½®ä¸Šé€€æ ¼ï¼›CTRL-W å’Œ CTRL-U åˆ°è¾¾æ’å…¥å¼€å§‹çš„ä½ç½®æ—¶åœç•™ä¸€æ¬¡
+set autoindent                         " è‡ªåŠ¨ç¼©è¿›
+set smartindent                        " æ™ºèƒ½ç¼©è¿›
+"set incsearch                          " æœç´¢æ—¶æ˜¾ç¤ºç›®å‰è¾“å…¥æ¨¡å¼çš„åŒ¹é…ä½ç½®
+"set cindent                            " è‡ªåŠ¨ C ç¨‹åºç¼©è¿›
+set showmode                           " æ˜¾ç¤ºå½“å‰æ¨¡å¼
+set wildmenu                           " å¢å¼ºæ¨¡å¼å‘½ä»¤è¡Œè¡¥å…¨
+set magic                              " æ”¹å˜æœç´¢æ¨¡å¼ä½¿ç”¨çš„ç‰¹æ®Šå­—ç¬¦ï¼Œæ‰“å¼€å°±å¥½ï¼Œåªæœ‰åœ¨ Vi é‡Œæ‰éœ€è¦å…³æ‰
+"set exrc                              " å…è®¸è¯»å…¥å½“å‰ç›®å½•çš„ .vimrc .exrc .gvimrc
 
-" ÈÃÒ»¸ötabµÈÓÚ4¸ö¿Õ¸ñ
+" è®©ä¸€ä¸ªtabç­‰äº4ä¸ªç©ºæ ¼
 set expandtab
-set tabstop=4     " <TAB> ´ú±íµÄ¿Õ¸ñÊı
-set shiftwidth=4  " £¨×Ô¶¯£©Ëõ½øÊ¹ÓÃµÄ¿Õ°×ÊıÄ¿
-set softtabstop=4 " ±à¼­Ê±°Ñ <TAB> µ±×÷µÄ¿Õ¸ñÊıÄ¿
+set tabstop=4     " <TAB> ä»£è¡¨çš„ç©ºæ ¼æ•°
+set shiftwidth=4  " ï¼ˆè‡ªåŠ¨ï¼‰ç¼©è¿›ä½¿ç”¨çš„ç©ºç™½æ•°ç›®
+set softtabstop=4 " ç¼–è¾‘æ—¶æŠŠ <TAB> å½“ä½œçš„ç©ºæ ¼æ•°ç›®
 
-" ¸ßÁÁÓï·¨
+" é«˜äº®è¯­æ³•
 syntax on
 behave mswin
 filetype plugin on
 
-" ÒÔÌØ¶¨±ê¼Ç×÷ÎªÕÛµş¹æÔò
+" ä»¥ç‰¹å®šæ ‡è®°ä½œä¸ºæŠ˜å è§„åˆ™
 let g:foldIsMarker=1
 set foldmethod=marker
 
@@ -58,18 +58,18 @@ set foldmethod=marker
 set encoding=utf-8
 set termencoding=utf-8
 
-" È¡Ïû×Ô¶¯±¸·İ¹¦ÄÜ
+" å–æ¶ˆè‡ªåŠ¨å¤‡ä»½åŠŸèƒ½
 set nobackup
 set nowritebackup
 
-" Æô¶¯Ê±Ä¬ÈÏ´óĞ¡ [[[
-" ²»ÂÛÊ²Ã´·½·¨Æô¶¯¶¼ÊÇÕâ¸ö³ß´ç
+" å¯åŠ¨æ—¶é»˜è®¤å¤§å° [[[
+" ä¸è®ºä»€ä¹ˆæ–¹æ³•å¯åŠ¨éƒ½æ˜¯è¿™ä¸ªå°ºå¯¸
 "set lines=44 columns=84
 
-" GUI Æô¶¯·½Ê½³ß´ç
+" GUI å¯åŠ¨æ–¹å¼å°ºå¯¸
 "au GUIEnter * set lines=44 columns=84
 
-" ·ÖÆô¶¯·½Ê½Éè¶¨³ß´ç
+" åˆ†å¯åŠ¨æ–¹å¼è®¾å®šå°ºå¯¸
 if has("gui_running")
   " GUI is running or is about to start.
    "set gvim window size
@@ -84,14 +84,14 @@ else
   endif
 endif
 
-" Æô¶¯ºó×î´ó»¯ 7.3 ÖĞ²»¿ÉÊ¹ÓÃ
+" å¯åŠ¨åæœ€å¤§åŒ– 7.3 ä¸­ä¸å¯ä½¿ç”¨
 " Maximize gvim on startup. Note we Dutch must use ~m, English/American people use ~x
 "au GUIEnter * simalt ~x
 "au GUIEnter * simalt ~m
 "au GUIEnter * simalt ~v
 " ]]]
 
-" ÅĞ¶¨µ±Ç°²Ù×÷ÏµÍ³ÀàĞÍ [[[
+" åˆ¤å®šå½“å‰æ“ä½œç³»ç»Ÿç±»å‹ [[[
 if(has("win32") || has("win95") || has("win64") || has("win16")) 
     "set fileencoding=chinese
     let g:isWindows=1
@@ -99,7 +99,7 @@ if(has("win32") || has("win95") || has("win64") || has("win16"))
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
 	behave mswin
-	" ½â¾ö²Ëµ¥ÂÒÂë
+	" è§£å†³èœå•ä¹±ç 
 	source $VIMRUNTIME/delmenu.vim
 	source $VIMRUNTIME/menu.vim
 else
@@ -111,31 +111,11 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 " ]]]
 " ]]]
 " ----------- Custom Feture ---------- [[[
-au BufNewFile,BufRead *.todo set syntax=Todo        " todo ºó×ºÃûÖ§³Ö
-au BufRead,BufNewFile *.json set filetype=json      " JSON ºó×ºÃûÖ§³Ö
-au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t ºó×ºÃûÖ§³Ö
-au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache Ä£°æÓïÑÔ¶Ô HTML ÎÄ¼şµÄÖ§³Ö
-
-" ¿ØÖÆ fcitx ÔÚÀë¿ª²åÈëÄ£Ê½Ê±¸Ä±äÊäÈëÄ£Ê½ ÒÑ×¢ÊÍ [[[
-"let g:input_toggle = 1
-"function! Fcitx2en()
-   "let s:input_status = system("fcitx-remote")
-   "if s:input_status == 2
-      "let g:input_toggle = 1
-      "let l:a = system("fcitx-remote -c")
-   "endif
-"endfunction
-"function! Fcitx2zh()
-   "let s:input_status = system("fcitx-remote")
-   "if s:input_status != 2 && g:input_toggle == 1
-      "let l:a = system("fcitx-remote -o")
-      "let g:input_toggle = 0
-   "endif
-"endfunction
-"set timeoutlen=150
-"autocmd InsertLeave * call Fcitx2en()
-"autocmd InsertEnter * call Fcitx2zh()
-" ]]]
+au BufNewFile,BufRead *.todo set syntax=Todo        " todo åç¼€åæ”¯æŒ
+au BufRead,BufNewFile *.json set filetype=json      " JSON åç¼€åæ”¯æŒ
+au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t åç¼€åæ”¯æŒ
+au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache æ¨¡ç‰ˆè¯­è¨€å¯¹ HTML æ–‡ä»¶çš„æ”¯æŒ
+au BufNewFile,BufRead *.styl set foldmethod=indent  " stylus æ–‡ä»¶é»˜è®¤æ ¹æ®ä»£ç ç¼©è¿›è¿›è¡ŒæŠ˜å 
 
 " markdown syntax settings
 "augroup mkd
@@ -144,18 +124,11 @@ au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache Ä£°æÓïÑÔ¶Ô HTML Î
 "augroup END
 
 " gjsLint
-" ÎÄ¼şÔÚ ~/.vim/ftplugin/javascript/
-" ÓÉ jsLint http://www.vim.org/scripts/script.php?script_id=2729 ĞŞ¸Ä¶øÀ´
-" ĞŞ¸ÄÎÄ¼şÔÚ https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
-" ×÷ÕßÎÄÕÂ£ºhttp://wiki.ktmud.com/tips/Vim.html
+" æ–‡ä»¶åœ¨ ~/.vim/ftplugin/javascript/
+" ç”± jsLint http://www.vim.org/scripts/script.php?script_id=2729 ä¿®æ”¹è€Œæ¥
+" ä¿®æ”¹æ–‡ä»¶åœ¨ https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
+" ä½œè€…æ–‡ç« ï¼šhttp://wiki.ktmud.com/tips/Vim.html
 
-" ¶Ôphpºó×ºÃûÎÄ¼şÊµÏÖÍ¨¹ı×Öµä²¹È« ÒÑ×¢ÊÍ [[[
-"au FileType php call AddPHPFuncList()
-"function! AddPHPFuncList()
-    "set dictionary-=$VIM/vimfiles/ExtraVim/php_funclist.txt dictionary+=$VIM/vimfiles/ExtraVim/php_funclist.txt
-    "set complete-=k complete+=k
-"endfunction
-" ]]]
 " ]]]
 "----------- Custom Shortcut -------- [[[
 " tabpage mappings commented [[[
@@ -172,16 +145,16 @@ au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache Ä£°æÓïÑÔ¶Ô HTML Î
 "map <M-c> :tabclose<CR>
 " ]]]
 
-" ¶¨Òå¿ì½İ¼ü ,/ £¬²éÕÒ¹â±êËùÔÚµ¥´Ê£¨¿É±à¼­£©£¬½«²éÕÒ³öÀ´µÄËùÓĞ½á¹ûÏÔÊ¾ÔÚ
-" quickfix ÖĞ£¬Ë«»÷Ò»ĞĞ¾ÍÄÜ¶¨Î»µ½ÎÄ¼şÖĞµÄÏàÓ¦ĞĞÉÏ
+" å®šä¹‰å¿«æ·é”® ,/ ï¼ŒæŸ¥æ‰¾å…‰æ ‡æ‰€åœ¨å•è¯ï¼ˆå¯ç¼–è¾‘ï¼‰ï¼Œå°†æŸ¥æ‰¾å‡ºæ¥çš„æ‰€æœ‰ç»“æœæ˜¾ç¤ºåœ¨
+" quickfix ä¸­ï¼ŒåŒå‡»ä¸€è¡Œå°±èƒ½å®šä½åˆ°æ–‡ä»¶ä¸­çš„ç›¸åº”è¡Œä¸Š
 " via http://pseudo.hoop.blog.163.com/blog/static/132509117201151811727993/
 nmap <Leader>/ :exec 'lvimgrep /' . input('/', expand('<cword>')) . '/j % <bar> lopen'<CR>
 
-" %s È«¾ÖÌæ»»µ±Ç°¹â±êËùÔÚµÄµ¥´Ê [[[
+" %s å…¨å±€æ›¿æ¢å½“å‰å…‰æ ‡æ‰€åœ¨çš„å•è¯ [[[
 nmap %s :exec '%s/'.expand('<cword>').'/'.input(':%s/'.expand('<cword>').'/?/g  ', expand('<cword>')) <CR>
 " ]]]
 
-" <F3>¸Ä±äÕÛµşÄ£Ê½ [[[
+" <F3>æ”¹å˜æŠ˜å æ¨¡å¼ [[[
 map <F3> :call ToggleFoldMethod()<CR>
 func! ToggleFoldMethod()
 	if g:foldIsMarker==1
@@ -195,22 +168,22 @@ func! ToggleFoldMethod()
 	endif
 endfunc
 " ]]]
-" <F4>½øĞĞ°æÈ¨ÉùÃ÷ authorinfo [[[
+" <F4>è¿›è¡Œç‰ˆæƒå£°æ˜ authorinfo [[[
 nmap <F4> :AuthorInfoDetect<CR>
 " ]]]
-" <F5> PEP8 Óï·¨¼ì²é
-" <F6>´ò¿ª Mru [[[
+" <F5> PEP8 è¯­æ³•æ£€æŸ¥
+" <F6>æ‰“å¼€ Mru [[[
 map <silent> <F6> :Mru<CR>
 " ]]]
-" <F8>´ò¿ª Taglist »òÕß Tagbar [[[
+" <F8>æ‰“å¼€ Taglist æˆ–è€… Tagbar [[[
 nmap <silent> <F8> :TagbarToggle<CR>
 " ]]]
-" <F9>ÅĞ¶¨/´ò¿ª NERDtree [[[
+" <F9>åˆ¤å®š/æ‰“å¼€ NERDtree [[[
 map <silent> <F9> :NERDTree<CR>
 " ]]]
-" <F10> µ÷³ö File ²Ëµ¥
-" <F11> ÔÚºÜ¶à DWM ÀïÊÇ×÷ÎªÈí¼şÈ«ÆÁµÄ¿ì½İ¼üµÄ
-" <F12> ºô³ö/Òş²Ø ¹¤¾ßÀ¸ [[[
+" <F10> è°ƒå‡º File èœå•
+" <F11> åœ¨å¾ˆå¤š DWM é‡Œæ˜¯ä½œä¸ºè½¯ä»¶å…¨å±çš„å¿«æ·é”®çš„
+" <F12> å‘¼å‡º/éšè— å·¥å…·æ  [[[
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
 	if &guioptions =~# 'm'
@@ -250,7 +223,7 @@ func! Py_PasteFunc() "[[[
 endfunc
 "]]]
 " ]]]
-" ÔÚ¿ÉÊÓÄ£Ê½ÏÂ£¬<TAB> µÈÓÚ >£¬<S-TAB> µÈÓÚ <
+" åœ¨å¯è§†æ¨¡å¼ä¸‹ï¼Œ<TAB> ç­‰äº >ï¼Œ<S-TAB> ç­‰äº <
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 im jj <ESC>
@@ -340,33 +313,33 @@ endf
 "]]]
 "]]]
 "----------- Normal Plugins Configure [[[
-" Taglist ÅäÖÃ [[[
-"TlistUpdate¿ÉÒÔ¸üĞÂtags
-"map <F3> :silent! Tlist<CR> "°´ÏÂF3¾Í¿ÉÒÔºô³öÁË
-let Tlist_Ctags_Cmd='ctags' "ÒòÎªÎÒÃÇ·ÅÔÚ»·¾³±äÁ¿Àï£¬ËùÒÔ¿ÉÒÔÖ±½ÓÖ´ĞĞ
-let Tlist_Use_Right_Window=0 "ÈÃ´°¿ÚÏÔÊ¾ÔÚÓÒ±ß£¬0µÄ»°¾ÍÊÇÏÔÊ¾ÔÚ×ó±ß
-"let Tlist_Show_One_File=0 "ÈÃtaglist¿ÉÒÔÍ¬Ê±Õ¹Ê¾¶à¸öÎÄ¼şµÄº¯ÊıÁĞ±í£¬Èç¹ûÏëÖ»ÓĞ1¸ö£¬ÉèÖÃÎª1
-let Tlist_File_Fold_Auto_Close=1 "·Çµ±Ç°ÎÄ¼ş£¬º¯ÊıÁĞ±íÕÛµşÒş²Ø
-let Tlist_Exit_OnlyWindow=1 "µ±taglistÊÇ×îºóÒ»¸ö·Ö¸î´°¿ÚÊ±£¬×Ô¶¯ÍÆ³övim
-"ÊÇ·ñÒ»Ö±´¦Àítags.1:´¦Àí;0:²»´¦Àí
-let Tlist_Process_File_Always=0 "²»ÊÇÒ»Ö±ÊµÊ±¸üĞÂtags£¬ÒòÎªÃ»ÓĞ±ØÒª
+" Taglist é…ç½® [[[
+"TlistUpdateå¯ä»¥æ›´æ–°tags
+"map <F3> :silent! Tlist<CR> "æŒ‰ä¸‹F3å°±å¯ä»¥å‘¼å‡ºäº†
+let Tlist_Ctags_Cmd='ctags' "å› ä¸ºæˆ‘ä»¬æ”¾åœ¨ç¯å¢ƒå˜é‡é‡Œï¼Œæ‰€ä»¥å¯ä»¥ç›´æ¥æ‰§è¡Œ
+let Tlist_Use_Right_Window=0 "è®©çª—å£æ˜¾ç¤ºåœ¨å³è¾¹ï¼Œ0çš„è¯å°±æ˜¯æ˜¾ç¤ºåœ¨å·¦è¾¹
+"let Tlist_Show_One_File=0 "è®©taglistå¯ä»¥åŒæ—¶å±•ç¤ºå¤šä¸ªæ–‡ä»¶çš„å‡½æ•°åˆ—è¡¨ï¼Œå¦‚æœæƒ³åªæœ‰1ä¸ªï¼Œè®¾ç½®ä¸º1
+let Tlist_File_Fold_Auto_Close=1 "éå½“å‰æ–‡ä»¶ï¼Œå‡½æ•°åˆ—è¡¨æŠ˜å éšè—
+let Tlist_Exit_OnlyWindow=1 "å½“taglistæ˜¯æœ€åä¸€ä¸ªåˆ†å‰²çª—å£æ—¶ï¼Œè‡ªåŠ¨æ¨å‡ºvim
+"æ˜¯å¦ä¸€ç›´å¤„ç†tags.1:å¤„ç†;0:ä¸å¤„ç†
+let Tlist_Process_File_Always=0 "ä¸æ˜¯ä¸€ç›´å®æ—¶æ›´æ–°tagsï¼Œå› ä¸ºæ²¡æœ‰å¿…è¦
 "let Tlist_Inc_Winwidth=30
-" ÕâÏî±ØĞëÉè¶¨£¬·ñÔò³ö´í,ÅäÖÃtaglistµÄctagsÂ·¾¶£¬²»¹ıÒ²¿ÉÒÔ°ÑctagsÂ·¾¶Ìí
-" ¼Ó½øÏµÍ³±äÁ¿ path Àï£¬¾Í²»ÓÃÉèÖÃÁË
+" è¿™é¡¹å¿…é¡»è®¾å®šï¼Œå¦åˆ™å‡ºé”™,é…ç½®taglistçš„ctagsè·¯å¾„ï¼Œä¸è¿‡ä¹Ÿå¯ä»¥æŠŠctagsè·¯å¾„æ·»
+" åŠ è¿›ç³»ç»Ÿå˜é‡ path é‡Œï¼Œå°±ä¸ç”¨è®¾ç½®äº†
 "let Tlist_Ctags_Cmd = '~/ctags.exe'
-" ÉèÖÃtagsÎÄ¼şµÄÑ°ÕÒÂ·¾¶
+" è®¾ç½®tagsæ–‡ä»¶çš„å¯»æ‰¾è·¯å¾„
 "set tags += tags;
 " ]]]
-" AuthorInfo ÅäÖÃ [[[
+" AuthorInfo é…ç½® [[[
 let g:vimrc_author='yicuan' 
 let g:vimrc_email='bolasblack@gmail.com' 
 let g:vimrc_homepage='http://plafer.tk' 
 " ]]]
-" Tagbar ÅäÖÃ [[[
+" Tagbar é…ç½® [[[
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
 " ]]]
-" Doxygen ÅäÖÃ [[[
+" Doxygen é…ç½® [[[
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 let g:Doxygen_enhanced_color = 1
 let g:DoxygenToolkit_authorName = "yicuan bolasblack[at]gmail.com"
@@ -377,11 +350,11 @@ let g:DoxygenToolkit_paramTag_pre = "@Param:"
 let g:DoxygenToolkit_returnTag_pre = "@Return:"
 let g:DoxygenToolkit_blockFooter = "======================================="
 " ]]]
-" TxtBrowser ÉèÖÃ [[[
+" TxtBrowser è®¾ç½® [[[
 au BufEnter *.txt setlocal ft=txt
 " let g:default_web_browser=chrome
 " ]]]
-" Zen Coding ÅäÖÃ [[[
+" Zen Coding é…ç½® [[[
 let g:user_zen_settings = { 
   \  'indentation' : '  ', 
   \  'perl' : { 
@@ -394,10 +367,10 @@ let g:user_zen_settings = {
   \    } 
   \  } 
   \} 
-  let g:user_zen_expandabbr_key = '<c-y>'    "ÉèÖÃÎªctrl+yÕ¹¿ª
+  let g:user_zen_expandabbr_key = '<c-y>'    "è®¾ç½®ä¸ºctrl+yå±•å¼€
   let g:use_zen_complete_tag = 1
 " ]]]
-" NeoComplcache ÉèÖÃ [[[
+" NeoComplcache è®¾ç½® [[[
 " Use neocomplcache. 
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase. 
@@ -409,7 +382,7 @@ let g:neocomplcache_enable_underbar_completion = 0
 " Set minimum syntax keyword length. 
 let g:neocomplcache_min_syntax_length = 3 
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*' 
-" ²»×Ô¶¯µ¯³ö²¹È«ÁĞ±í
+" ä¸è‡ªåŠ¨å¼¹å‡ºè¡¥å…¨åˆ—è¡¨
 let g:NeoComplCache_DisableAutoComplete = 1
 
 "Define dictionary. 
@@ -470,21 +443,21 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete 
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " ]]]
-" SuperTab ÉèÖÃ [[[
+" SuperTab è®¾ç½® [[[
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 " ]]]
-" Netrw ÉèÖÃ [[[
+" Netrw è®¾ç½® [[[
 let g:netrw_winsize = 30
-"ÊäÈë',fe'Ê±£¬¾Í»á´ò¿ªÒ»¸ö´¹Ö±·Ö¸ôµÄ´°¿Úä¯ÀÀµ±Ç°ÎÄ¼şËùÔÚµÄÄ¿Â¼£¬´°¿ÚµÄ¿í¶ÈÎª30
+"è¾“å…¥',fe'æ—¶ï¼Œå°±ä¼šæ‰“å¼€ä¸€ä¸ªå‚ç›´åˆ†éš”çš„çª—å£æµè§ˆå½“å‰æ–‡ä»¶æ‰€åœ¨çš„ç›®å½•ï¼Œçª—å£çš„å®½åº¦ä¸º30
 "nmap <silent> <leader>ntf :Sexplore!<cr> 
 " ]]]
-" ConqueTerm ÉèÖÃ [[[
+" ConqueTerm è®¾ç½® [[[
 let g:ConqueTerm_Color = 2
 " ]]]
-" PEP8.vim ÉèÖÃ [[[
-let g:pep8_ignore = 'E401,E501,E261' "´úÂë¹ı³¤ÓëÒ»ĞĞimport¶à¸öÄ£¿é²»±¨´í
+" PEP8.vim è®¾ç½® [[[
+let g:pep8_ignore = 'E401,E501,E261' "ä»£ç è¿‡é•¿ä¸ä¸€è¡Œimportå¤šä¸ªæ¨¡å—ä¸æŠ¥é”™
 " ]]]
-" gtrans.vim ÉèÖÃ [[[
+" gtrans.vim è®¾ç½® [[[
 let g:gtrans_Engine = 'google'
 "]]]
 "]]]
