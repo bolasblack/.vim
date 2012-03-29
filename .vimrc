@@ -1,6 +1,6 @@
-" 这里没有什么配置，配置代码在下列文件中
+" 杩欓噷娌℃湁浠�涔堥厤缃紝閰嶇疆浠ｇ爜鍦ㄤ笅鍒楁枃浠朵腑
 
-" 设置 $ 变量
+" 璁剧疆 $ 鍙橀噺
 if has("win32")
   let $vimfiles = $VIM.'/vimfiles/'
   let $v = $VIM.'/_vimrc'
@@ -12,9 +12,11 @@ let $conf = $vimfiles.'/conf/'
 let $base = $conf.'/base.vim'
 let $plugin = $vimfiles.'/plugins/'
 
-" 载入插件
+" 杞藉叆鎻掍欢
 source $conf\pluginManager.vim
-" 载入 base 设置
+" 杞藉叆 base 璁剧疆
 source $conf\base.vim
-" 载入带帐号密码的插件配置
-source $conf\pluginConfSc.vim
+" 杞藉叆甯﹀笎鍙峰瘑鐮佺殑鎻掍欢閰嶇疆
+"source $conf\pluginConfSc.vim
+
+":vim set fileencodeing=UTF-8
