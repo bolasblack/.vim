@@ -19,4 +19,4 @@ source $conf\base.vim
 " 载入带帐号密码的插件配置
 "source $conf\pluginConfSc.vim
 
-":vim set fileencodeing=UTF-8
+":vim set fileencoding=UTF-8
