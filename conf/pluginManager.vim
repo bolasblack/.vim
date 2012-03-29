@@ -58,6 +58,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'rson/vim-conque'
 " 多国语翻译为指定语言的插件
 Bundle 'bolasblack/gtrans.vim'
+" 自动识别文件编码
+Bundle 'FencView.vim'
 
 
 

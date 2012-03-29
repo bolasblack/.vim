@@ -32,12 +32,13 @@ let &guioptions = g:defaultGuiOptions
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
 set autoindent                         " 自动缩进
 set smartindent                        " 智能缩进
-"set incsearch                          " 搜索时显示目前输入模式的匹配位置
-"set cindent                            " 自动 C 程序缩进
+set incsearch                          " 增量搜索, 搜索时显示目前输入模式的匹配位置
+set hlsearch                           " 高亮搜索结果
 set showmode                           " 显示当前模式
 set wildmenu                           " 增强模式命令行补全
 set magic                              " 改变搜索模式使用的特殊字符，打开就好，只有在 Vi 里才需要关掉
 "set exrc                              " 允许读入当前目录的 .vimrc .exrc .gvimrc
+"set cindent                            " 自动 C 程序缩进
 
 " 让一个tab等于4个空格
 set expandtab
@@ -56,7 +57,10 @@ set foldmethod=marker
 
 " encoding
 set encoding=utf-8
+set langmenu=zh_CN.UTF-8
 set termencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+language message zh_CN.UTF-8
 
 " 取消自动备份功能
 set nobackup
@@ -115,7 +119,6 @@ au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
 au BufRead,BufNewFile *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
-au BufNewFile,BufRead *.styl set foldmethod=indent  " stylus 文件默认根据代码缩进进行折叠
 
 " markdown syntax settings
 "augroup mkd
