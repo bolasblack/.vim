@@ -463,4 +463,13 @@ let g:pep8_ignore = 'E401,E501,E261' "代码过长与一行import多个模块不
 " gtrans.vim 设置 [[[
 let g:gtrans_Engine = 'google'
 "]]]
+"[[[ CtrlP 设置
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 2
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.exe$\|\.so$\|\.dll$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+"]]]
 "]]]
