@@ -60,6 +60,8 @@ Bundle 'rson/vim-conque'
 Bundle 'bolasblack/gtrans.vim'
 " 自动识别文件编码
 Bundle 'FencView.vim'
+" 用于快速的打开文件和跳转 Buffer
+Bundle 'kien/ctrlp.vim'
 
 
 
@@ -132,4 +134,5 @@ Bundle 'matchit.zip'
 Bundle 'bolasblack/csslint.vim'
 
 " non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
+" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
+Bundle 'git://git.wincent.com/command-t.git'
