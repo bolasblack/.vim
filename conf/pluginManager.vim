@@ -95,6 +95,10 @@ Bundle 'python.vim--Vasiliev'
 Bundle 'jbking/vim-pep8'
 
 
+" Ruby
+Bundle 'rails.vim'
+
+
 " Lanaguage
 " mustache 支持
 Bundle 'juvenn/mustache.vim'
