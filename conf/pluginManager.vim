@@ -9,8 +9,8 @@ call pathogen#runtime_append_all_bundles()
 call vundle#rc('~/.vimVundle')
 
 " base 
-" required! 
-Bundle 'gmarik/vundle'
+" required! 但是我作为 submodule 放在 .vim 里了，所以就注释掉
+"Bundle 'gmarik/vundle'
 " 也是用于管理插件
 Bundle 'pathogen.vim'
 " FuzzyFinder 必须的库
@@ -135,4 +135,5 @@ Bundle 'bolasblack/csslint.vim'
 
 " non github repos
 " 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
-Bundle 'git://git.wincent.com/command-t.git'
+" 但是和 CtrlP.vim 重复了，所以干掉
+" Bundle 'git://git.wincent.com/command-t.git'

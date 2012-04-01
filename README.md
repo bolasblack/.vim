@@ -11,7 +11,7 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 
 这样 git 就会自动的 clone vundle 插件到 bundle 文件夹啦。
 
-之后运行 Vim ，然后执行 `:BundleInstall` 命令，等待所有插件安装完成就好啦～
+之后先去 conf/pluginManager.vim 看一下我列出的所有插件，有不想用的就直接注释掉，然后再执行 `:BundleInstall` 命令等待插件安装完毕。
 
 呃， `:BundleInstall` 命令的执行需要 Git 。
 
