@@ -13,16 +13,8 @@ call vundle#rc('~/.vimVundle')
 "Bundle 'gmarik/vundle'
 " 也是用于管理插件
 Bundle 'pathogen.vim'
-" FuzzyFinder 必须的库
-Bundle 'L9'
-" 快速的找到、打开文件
-Bundle 'FuzzyFinder' 
-" 列出当前打开的 buffer
-"Bundle 'bufexplorer.zip'
 " 给vim增加url的识别功能，当然功能远远不止这些
 Bundle 'utl.vim'
-" 可以添加目录和文件到收藏夹
-"Bundle 'FavEx'
 " 自动添加作者信息
 Bundle 'AuthorInfo'
 " 快速给单词/句子两边增加符号（包括html标签），缺点是不用用"."来重复命令，repeat.vim可以解决这个问题
@@ -40,8 +32,6 @@ Bundle 'Gundo'
 Bundle 'matrix.vim--Yang'
 " 打开文件时自动检测文件编码
 Bundle 'FencView.vim'
-"列出最近打开的文件
-"Bundle 'MRU'
 " 高亮对应的标点，如 [] {}
 Bundle 'matchparenpp'
 "强大的自动补全
@@ -60,8 +50,15 @@ Bundle 'rson/vim-conque'
 Bundle 'bolasblack/gtrans.vim'
 " 自动识别文件编码
 Bundle 'FencView.vim'
+" 一个更好用的 grep ，需要安装 ack
+Bundle "mileszs/ack.vim"
+" FuzzyFinder 必须的库
+Bundle 'L9'
+" 快速找到、打开文件
+Bundle 'FuzzyFinder'
 " 用于快速的打开文件和跳转 Buffer
 Bundle 'kien/ctrlp.vim'
+" CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
 
 
 
@@ -87,8 +84,6 @@ Bundle 'TaskList.vim'
 " Python
 " 提供 python 的语法缩进，比默认的要好很多(vimer.cn修改)
 Bundle 'indentpython.vim--nianyang'
-" Python 纠错
-"Bundle 'pyflakes.vim'
 " 为编写 Python 代码作的一些快捷键，比如选择一个代码块等
 Bundle 'python.vim'
 " 更好的 Python 语法高亮
@@ -112,8 +107,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 " Stylus 支持
 Bundle 'wavded/vim-stylus'
-" LESS 文件语法高亮
-"Bundle 'groenewege/vim-less'
 " 提供 markdown 着色功能，顺便也提供了 snippet
 Bundle 'hallison/vim-markdown'
 
@@ -136,4 +129,4 @@ Bundle 'bolasblack/csslint.vim'
 " non github repos
 " 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
 " 但是和 CtrlP.vim 重复了，所以干掉
-" Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
