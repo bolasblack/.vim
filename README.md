@@ -1,12 +1,17 @@
-Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复制到家目录下即可。其实我个人推荐硬链接，这样如果我更新了的话，只要在 .vim 目录下
+Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复制到家目录下即可。其实我个人推荐硬链接，这样如果我更新了的话，只要在 .vim 目录下 `git pull` 就能同步到最新啦。
 
-    git pull
-    
-就能同步到最新啦。硬链接的命令内容：
+硬链接的命令内容：
 
     ln ~/.vim/.vimrc ~/.vimrc
     
-复制完毕后运行 Vim ，然后执行 `:BundleInstall` 命令，等待所有插件安装完成就好啦～
+复制完毕后，需要更新 vundle 插件，我是把 vundle 作为了子模块，所以需要输入两条命令：
+
+    git submodule init
+    git submodule update
+
+这样 git 就会自动的 clone vundle 插件到 bundle 文件夹啦。
+
+之后运行 Vim ，然后执行 `:BundleInstall` 命令，等待所有插件安装完成就好啦～
 
 呃， `:BundleInstall` 命令的执行需要 Git 。
 
