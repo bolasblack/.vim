@@ -38,8 +38,6 @@ Bundle 'matchparenpp'
 Bundle 'Shougo/neocomplcache'
 " supertab
 Bundle 'ervandew/supertab'
-" 快速移动光标到指定位置
-Bundle 'Lokaltog/vim-easymotion'
 " 标点对齐
 Bundle 'godlygeek/tabular'
 " 目录树
@@ -48,8 +46,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'rson/vim-conque'
 " 多国语翻译为指定语言的插件
 Bundle 'bolasblack/gtrans.vim'
-" 自动识别文件编码
-Bundle 'FencView.vim'
+
+
+" quick edit
+" 快速移动光标到指定位置
+Bundle 'Lokaltog/vim-easymotion'
 " 一个更好用的 grep ，需要安装 ack
 Bundle "mileszs/ack.vim"
 " FuzzyFinder 必须的库
@@ -59,7 +60,6 @@ Bundle 'FuzzyFinder'
 " 用于快速的打开文件和跳转 Buffer
 Bundle 'kien/ctrlp.vim'
 " CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
-
 
 
 " coding
