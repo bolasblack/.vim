@@ -10,25 +10,62 @@ set showcmd                            " 在窗口右下角显示完整命令已
 set cursorline                         " 高亮光标所在行
 set nocompatible                       " 不要vim模仿vi模式
 set number                             " 显示行号
-set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
 set visualbell                         " 不要 beep 也不要闪屏
 set foldmarker=[[[,]]]                 " 用 [[[ ]]] 替代 {{{ }}}
+
+" 简陋的运行环境判断 [[[
+let g:isMac=0
+let g:isTerminal=0
+let g:isWindows=0
+let g:isLinux=0
+if !has("unix")
+    let g:isWindows=1
+else
+    if !has("gui_running")
+        let g:isTerminal=1
+    else
+        if !has("mac")
+            let g:isLinux=1
+        else
+            let g:isMac=1
+        endif
+    endif
+endif
+function Env()
+    echo "g:isMac: "      . g:isMac
+    echo "g:isTerminal: " . g:isTerminal
+    echo "g:isWndows: "   . g:isWindows
+    echo "g:isLinux: "    . g:isLinux
+endfunction
+" ]]]
+
 if &term =~ "screen"
     set t_Co=256
 endif
-"if &term == "linux"                   " 设置主题
-    "colorscheme slate
-"else
-    colorscheme lucius "lilypink
-"endif
 
-let g:defaultGuiOptions = ''
-if(has("mac"))
-    let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
+" 设置主题
+colorscheme lucius "lilypink
+
+" 编码设置 
+if has("gui_running") || has("unix") 
+    set encoding=utf-8 " 设置vim内部使用的字符编码 
+    lang messages zh_CN.UTF-8 " 解决consle输出乱码 
+else 
+    set encoding=chinese " 设置命令提示符下vim不乱码 
+    set termencoding=chinese     "终端下的编码，对gvim来说没有必要设置 
 endif
-let &guioptions = g:defaultGuiOptions
 
-" edit from http://www.vim.org/scripts/script.php?script_id=3341
+if g:isWindows
+    set guifont=Courier:h12:cANSI 
+    set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效 
+elseif g:isMac
+    set guifont=Monaco:h11
+    set guifontwide=YaHei\ Consolas\ Hybrid:h9
+else
+    set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
+endif
+
+" modified from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
 set autoindent                         " 自动缩进
 set smartindent                        " 智能缩进
@@ -46,6 +83,13 @@ set tabstop=4     " <TAB> 代表的空格数
 set shiftwidth=4  " （自动）缩进使用的空白数目
 set softtabstop=4 " 编辑时把 <TAB> 当作的空格数目
 
+" encoding
+set encoding=utf-8
+set termencoding=utf-8
+set langmenu=zh_CN.utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+language message zh_CN.UTF-8
+
 " 高亮语法
 syntax on
 behave mswin
@@ -54,13 +98,6 @@ filetype plugin on
 " 以特定标记作为折叠规则
 let g:foldIsMarker=1
 set foldmethod=marker
-
-" encoding
-set encoding=utf-8
-set langmenu=zh_CN.UTF-8
-set termencoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-language message zh_CN.UTF-8
 
 " 取消自动备份功能
 set nobackup
@@ -95,23 +132,24 @@ endif
 "au GUIEnter * simalt ~v
 " ]]]
 
-" 判定当前操作系统类型 [[[
-if(has("win32") || has("win95") || has("win64") || has("win16")) 
+" [[[ Mac 的一些配置
+let g:defaultGuiOptions = ''
+if g:isMac
+    let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
+endif
+let &guioptions = g:defaultGuiOptions
+" ]]]
+
+" windows 的一些配置 [[[
+if g:isWindows
     "set fileencoding=chinese
-    let g:isWindows=1
-	language messages zh_CN.utf-8
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
 	behave mswin
 	" 解决菜单乱码
 	source $VIMRUNTIME/delmenu.vim
 	source $VIMRUNTIME/menu.vim
-else
-    set fileencoding=utf-8
-    let g:isWindows=0
 endif
-set langmenu=zh_CN.utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 " ]]]
 " ]]]
 " ----------- Custom Feture ---------- [[[
@@ -146,6 +184,11 @@ au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 H
 "map <M-9> 9gt
 "map <M-n> :tabnew<CR>
 "map <M-c> :tabclose<CR>
+" ]]]
+
+" [[[ FuzzyFinder and CtrlP
+nmap <C-b> :FufBuffer<CR>
+nmap <C-f> :FufFile<CR>
 " ]]]
 
 " 定义快捷键 ,/ ，查找光标所在单词（可编辑），将查找出来的所有结果显示在
