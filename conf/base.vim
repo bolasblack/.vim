@@ -60,7 +60,7 @@ if g:isWindows
     set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效 
 elseif g:isMac
     set guifont=Monaco:h11
-    set guifontwide=YaHei\ Consolas\ Hybrid:h9
+    set guifontwide=YaHei\ Consolas\ Hybrid:h11
 else
     set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
 endif
