@@ -46,15 +46,7 @@ endif
 " 设置主题
 colorscheme lucius "lilypink
 
-" 编码设置 
-if has("gui_running") || has("unix") 
-    set encoding=utf-8 " 设置vim内部使用的字符编码 
-    lang messages zh_CN.UTF-8 " 解决consle输出乱码 
-else 
-    set encoding=chinese " 设置命令提示符下vim不乱码 
-    set termencoding=chinese     "终端下的编码，对gvim来说没有必要设置 
-endif
-
+" 字体设置 [[[
 if g:isWindows
     set guifont=Courier:h12:cANSI 
     set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效 
@@ -64,6 +56,7 @@ elseif g:isMac
 else
     set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
 endif
+" ]]]
 
 " modified from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
@@ -89,6 +82,10 @@ set termencoding=utf-8
 set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 language message zh_CN.UTF-8
+if !has("gui_running") && !has("unix") 
+    set encoding=chinese " 设置命令提示符下vim不乱码 
+    set termencoding=chinese     "终端下的编码，对gvim来说没有必要设置 
+endif
 
 " 高亮语法
 syntax on
