@@ -79,6 +79,8 @@ Bundle 'drmingdrmer/xptemplate'
 Bundle 'tpope/vim-fugitive'
 " 一个 quicklist 来显示标注有 TODO: 的行
 Bundle 'TaskList.vim'
+" 显示缩进线
+Bundle 'nathanaelkane/vim-indent-guides'
 
 
 " Python
