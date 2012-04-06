@@ -75,6 +75,9 @@ set magic                              " 改变搜索模式使用的特殊字符
 "set exrc                              " 允许读入当前目录的 .vimrc .exrc .gvimrc
 "set cindent                            " 自动 C 程序缩进
 
+" 自定义光标形态，不闪烁
+set gcr=n-v-c-sm:block-blinkon0,ve:ver35-blinkon0,o:hor50-blinkon0,i-ci:ver25-blinkon0,r-cr:hor20-blinkon0
+
 " [[[ 缩进设置
 set expandtab     " 缩进用空格还是制表符表示
 set tabstop=4     " <TAB> 代表的空格数
@@ -223,54 +226,28 @@ map <silent> <F9> :NERDTree<CR>
 " <F12> 呼出/隐藏 工具栏 [[[
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
-	if &guioptions =~# 'm'
-		let newGuiOptions = g:defaultGuiOptions
-	else
+	let newGuiOptions = g:defaultGuiOptions
+	if !&guioptions =~# 'm'
 		let newGuiOptions = g:defaultGuiOptions + 'm'
 	endif
     let &guioptions = newGuiOptions
 endfunction
 " ]]]
 
-" ,nf create new func; ,pf paste func for Python [[[
-map <leader>nf :call Py_NewFunc()<CR>
-map <leader>pf :call Py_PasteFunc()<CR>
-func! Py_NewFunc() range "[[[
-    try
-        >
-        execute a:firstline.",".a:lastline." delete z"
-        let visText = @z
-        let funcName = input("Function name:")
-        let s:py_newFuncText = "def ".funcName."():\n".visText
-    catch
-        redraw
-        echo "Sorry, Some Error Happend"
-    endtry
-endfunc
-"]]]
-func! Py_PasteFunc() "[[[
-    if exists('s:py_newFuncText')
-        let @z = s:py_newFuncText
-        normal "zP
-        normal f)
-        unlet s:py_newFuncText
-    else
-        echo "Need Create Function First."
-    endif
-endfunc
-"]]]
-" ]]]
+" 模拟 Emacs 按键绑定
+nm <C-x><C-m> :
+im <C-x><C-m> <ESC>:
+cmap <C-g> <ESC>
+
 " 在可视模式下，<TAB> 等于 >，<S-TAB> 等于 <
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
+
 im jj <ESC>
+im JJ <ESC>:w<CR>
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
-no!<M-k> <Up>
-no!<M-j> <Down>
-no!<M-h> <Left>
-no!<M-l> <Right>
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
-au FileType c,cc,cpp,h,html,python,javascript :call AutoSpace()
+au FileType c,cc,cpp,h,html,python,javascript,coffee :call AutoSpace()
 func! AutoSpace() "[[[
     ino , ,<SPACE>
     ino : :<SPACE>
@@ -295,6 +272,8 @@ func! AutoSpace() "[[[
     ino +=<SPACE> <SPACE>+=<SPACE>
     ino -=<SPACE> <SPACE>-=<SPACE>
     ino &&<SPACE> <SPACE>&&<SPACE>
+    ino ===<SPACE> <SPACE>===<SPACE>
+    ino !==<SPACE> <SPACE>!==<SPACE>
 endf
 "]]]
 func! Cc() "[[[
