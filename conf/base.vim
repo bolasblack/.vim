@@ -76,13 +76,11 @@ set magic                              " 改变搜索模式使用的特殊字符
 "set cindent                            " 自动 C 程序缩进
 
 " [[[ 缩进设置
-" 让一个tab等于4个空格
 set expandtab     " 缩进用空格还是制表符表示
 set tabstop=4     " <TAB> 代表的空格数
 set shiftwidth=4  " （自动）缩进使用的空白数目
 set softtabstop=4 " 编辑时按退格键的时候退回缩进的长度
-au FileType {html,css,stylus,coffee,javascript} setlocal ts=2 sts=2 sw=2
-au FileType {ruby} setlocal ts=2 sts=2 sw=2
+au! FileType {html,css,stylus,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
 " 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
@@ -508,13 +506,12 @@ let g:ctrlp_custom_ignore = {
   \ }
 "]]]
 "[[[ Indent Guides 设置
-let g:indent_guides_guide_size = 0
+let g:indent_guides_guide_size = 2
 let g:indent_guides_start_level = 1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_space_guides = 1
 let g:indent_guides_color_change_percent = 10
 let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 "]]]
