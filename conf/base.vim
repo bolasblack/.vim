@@ -15,11 +15,15 @@ set foldmarker=[[[,]]]                 " 用 [[[ ]]] 替代 {{{ }}}
 
 " 简陋的运行环境判断 [[[
 let g:isMac=0
-let g:isTerminal=0
-let g:isWindows=0
+let g:isCmd=0
 let g:isLinux=0
+let g:isWindows=0
+let g:isTerminal=0
 if !has("unix")
     let g:isWindows=1
+    if !has("gui_running")
+        let g:isCmd=1
+    endif
 else
     if !has("gui_running")
         let g:isTerminal=1
@@ -32,10 +36,11 @@ else
     endif
 endif
 function Env()
-    echo "g:isMac: "      . g:isMac
-    echo "g:isTerminal: " . g:isTerminal
-    echo "g:isWndows: "   . g:isWindows
-    echo "g:isLinux: "    . g:isLinux
+    echo "isMac: "      . g:isMac
+    echo "isCmd: "      . g:isCmd
+    echo "isLinux: "    . g:isLinux
+    echo "isWndows: "   . g:isWindows
+    echo "isTerminal: " . g:isTerminal
 endfunction
 " ]]]
 
@@ -70,11 +75,16 @@ set magic                              " 改变搜索模式使用的特殊字符
 "set exrc                              " 允许读入当前目录的 .vimrc .exrc .gvimrc
 "set cindent                            " 自动 C 程序缩进
 
+" [[[ 缩进设置
 " 让一个tab等于4个空格
-set expandtab
+set expandtab     " 缩进用空格还是制表符表示
 set tabstop=4     " <TAB> 代表的空格数
 set shiftwidth=4  " （自动）缩进使用的空白数目
-set softtabstop=4 " 编辑时把 <TAB> 当作的空格数目
+set softtabstop=4 " 编辑时按退格键的时候退回缩进的长度
+au FileType {html,css,stylus,coffee,javascript} setlocal ts=2 sts=2 sw=2
+au FileType {ruby} setlocal ts=2 sts=2 sw=2
+" 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
+" ]]]
 
 " encoding
 set encoding=utf-8
@@ -82,7 +92,7 @@ set termencoding=utf-8
 set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 language message zh_CN.UTF-8
-if !has("gui_running") && !has("unix") 
+if g:isCmd
     set encoding=chinese " 设置命令提示符下vim不乱码 
     set termencoding=chinese     "终端下的编码，对gvim来说没有必要设置 
 endif
@@ -100,6 +110,11 @@ set foldmethod=marker
 set nobackup
 set nowritebackup
 
+" 缩进提示
+set list
+set listchars=tab:▸\ ,eol:¬
+" 演示可以看 [Show invisibles](http://vimcasts.org/episodes/show-invisibles/)
+
 " 启动时默认大小 [[[
 " 不论什么方法启动都是这个尺寸
 "set lines=44 columns=84
@@ -109,8 +124,6 @@ set nowritebackup
 
 " 分启动方式设定尺寸
 if has("gui_running")
-  " GUI is running or is about to start.
-   "set gvim window size
    set columns=82
 else
   " This is console Vim.
@@ -121,12 +134,6 @@ else
 "    set columns=82
   endif
 endif
-
-" 启动后最大化 7.3 中不可使用
-" Maximize gvim on startup. Note we Dutch must use ~m, English/American people use ~x
-"au GUIEnter * simalt ~x
-"au GUIEnter * simalt ~m
-"au GUIEnter * simalt ~v
 " ]]]
 
 " [[[ Mac 的一些配置
@@ -148,10 +155,9 @@ if g:isWindows
 	source $VIMRUNTIME/menu.vim
 endif
 " ]]]
-" ]]]
-" ----------- Custom Feture ---------- [[[
+
 au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
-au BufRead,BufNewFile *.json set filetype=json      " JSON 后缀名支持
+au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
 
@@ -160,12 +166,6 @@ au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 H
     "autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set ai formatoptions=tcroqn2 comments=n:>
     "autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set wrap nonumber
 "augroup END
-
-" gjsLint
-" 文件在 ~/.vim/ftplugin/javascript/
-" 由 jsLint http://www.vim.org/scripts/script.php?script_id=2729 修改而来
-" 修改文件在 https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
-" 作者文章：http://wiki.ktmud.com/tips/Vim.html
 
 " ]]]
 "----------- Custom Shortcut -------- [[[
@@ -192,10 +192,6 @@ nmap <C-f> :FufFile<CR>
 " quickfix 中，双击一行就能定位到文件中的相应行上
 " via http://pseudo.hoop.blog.163.com/blog/static/132509117201151811727993/
 nmap <Leader>/ :exec 'lvimgrep /' . input('/', expand('<cword>')) . '/j % <bar> lopen'<CR>
-
-" %s 全局替换当前光标所在的单词 [[[
-nmap %s :exec '%s/'.expand('<cword>').'/'.input(':%s/'.expand('<cword>').'/?/g  ', expand('<cword>')) <CR>
-" ]]]
 
 " <F3>改变折叠模式 [[[
 map <F3> :call ToggleFoldMethod()<CR>
@@ -275,7 +271,6 @@ no!<M-k> <Up>
 no!<M-j> <Down>
 no!<M-h> <Left>
 no!<M-l> <Right>
-au BufRead,BufNewFile *.html setf html
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python,javascript :call AutoSpace()
 func! AutoSpace() "[[[
@@ -522,5 +517,12 @@ let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+"]]]
+"[[[ gjsLint
+" gjsLint
+" 由 jsLint http://www.vim.org/scripts/script.php?script_id=2729 修改而来
+" 修改文件在 https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
+" 作者文章：http://wiki.ktmud.com/tips/Vim.html
+
 "]]]
 "]]]
