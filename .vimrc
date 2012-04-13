@@ -12,10 +12,10 @@ let $conf = $vimfiles.'/conf/'
 let $base = $conf.'/base.vim'
 let $plugin = $vimfiles.'/plugins/'
 
-" 载入插件
-source $conf\pluginManager.vim
 " 载入 base 设置
 source $conf\base.vim
+" 载入插件
+source $conf\pluginManager.vim
 " 载入带帐号密码的插件配置
 "source $conf\pluginConfSc.vim
 

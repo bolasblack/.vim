@@ -30,8 +30,11 @@ Bundle 'auto_mkdir'
 Bundle 'Gundo'
 " Matrix 风格的 Vim 屏保
 Bundle 'matrix.vim--Yang'
-" 打开文件时自动检测文件编码
-Bundle 'FencView.vim'
+" FencView 似乎在 Mac 下会出现问题，检测编码出错
+if !g:isMac
+    " 打开文件时自动检测文件编码
+    Bundle 'FencView.vim'
+endif
 " 高亮对应的标点，如 [] {}
 Bundle 'matchparenpp'
 "强大的自动补全
@@ -96,6 +99,7 @@ Bundle 'jbking/vim-pep8'
 
 " Ruby
 Bundle 'rails.vim'
+Bundle 'vim-ruby/vim-ruby'
 
 
 " Lanaguage
