@@ -5,12 +5,12 @@ call pathogen#runtime_append_all_bundles()
 " 刷新 bundle/ 里的插件的 helptags
 ""call pathogen#helptags()
 
-" let Vundle manage Vundle
+set rtp+=~/.vimVundle/vundle/
 call vundle#rc('~/.vimVundle')
 
 " base 
-" required! 但是我作为 submodule 放在 .vim 里了，所以就注释掉
-"Bundle 'gmarik/vundle'
+" required! 用 vundle 管理 vundle
+Bundle 'gmarik/vundle'
 " 也是用于管理插件
 Bundle 'pathogen.vim'
 " 给vim增加url的识别功能，当然功能远远不止这些
@@ -24,17 +24,8 @@ Bundle 'repeat.vim'
 Bundle 'CmdlineComplete'
 " 自动闭合标点
 Bundle 'AutoClose'
-" 保存文件时自动创建文件夹
-Bundle 'auto_mkdir'
 " Undo tree
 Bundle 'Gundo'
-" Matrix 风格的 Vim 屏保
-Bundle 'matrix.vim--Yang'
-" FencView 似乎在 Mac 下会出现问题，检测编码出错
-if !g:isMac
-    " 打开文件时自动检测文件编码
-    Bundle 'FencView.vim'
-endif
 " 高亮对应的标点，如 [] {}
 Bundle 'matchparenpp'
 "强大的自动补全
@@ -49,6 +40,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'rson/vim-conque'
 " 多国语翻译为指定语言的插件
 Bundle 'bolasblack/gtrans.vim'
+if !g:isMac
+    " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
+    Bundle 'FencView.vim'
+endif
 
 
 " quick edit
@@ -98,8 +93,9 @@ Bundle 'jbking/vim-pep8'
 
 
 " Ruby
-Bundle 'rails.vim'
+Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'm2ym/rsense', {'rtp': 'etc/'}
 
 
 " Lanaguage

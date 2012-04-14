@@ -162,6 +162,24 @@ au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
 
+" auto mkdir [[[
+" Copy from https://github.com/DataWraith/auto_mkdir
+augroup auto_mkdir
+    au!
+    au BufWritePre,FileWritePre * call <SID>auto_mkdir()
+augroup END
+
+function <SID>auto_mkdir()
+    " Get directory the file is supposed to be saved in
+    let s:dir = expand("<afile>:p:h")
+
+    " Create that directory (and its parents) if it doesn't exist yet
+    if !isdirectory(s:dir)
+        call mkdir(s:dir, "p")
+    endif
+endfunction
+" ]]]
+
 " markdown syntax settings
 "augroup mkd
     "autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set ai formatoptions=tcroqn2 comments=n:>
