@@ -1,10 +1,4 @@
 "----------- Plugin Manager Config -----------
-" 启用 Pathhogen
-"call pathogen#infect('plugins')
-call pathogen#runtime_append_all_bundles()
-" 刷新 bundle/ 里的插件的 helptags
-""call pathogen#helptags()
-
 set rtp+=~/.vimVundle/vundle/
 call vundle#rc('~/.vimVundle')
 
@@ -40,6 +34,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'rson/vim-conque'
 " 多国语翻译为指定语言的插件
 Bundle 'bolasblack/gtrans.vim'
+" vim 中文文档
+Bundle "bolasblack/vimcdoc"
 if !g:isMac
     " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
     Bundle 'FencView.vim'
