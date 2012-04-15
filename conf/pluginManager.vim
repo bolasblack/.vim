@@ -89,9 +89,12 @@ Bundle 'jbking/vim-pep8'
 
 
 " Ruby
+" rails 支持
 Bundle 'tpope/vim-rails'
+" 自动输入 end
+Bundle 'tpope/vim-endwise'
+" ruby 支持
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'm2ym/rsense', {'rtp': 'etc/'}
 
 
 " Lanaguage
