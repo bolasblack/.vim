@@ -31,7 +31,7 @@ Bundle 'Gundo'
 " Matrix 风格的 Vim 屏保
 Bundle 'matrix.vim--Yang'
 " 打开文件时自动检测文件编码
-Bundle 'FencView.vim'
+"Bundle 'FencView.vim'
 " 高亮对应的标点，如 [] {}
 Bundle 'matchparenpp'
 "强大的自动补全
@@ -117,7 +117,7 @@ Bundle 'hallison/vim-markdown'
 " zencoding
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'ZenCoding.vim'
-" 优化js代码，并不是简单的缩进，而是整个优化
+" 美化js代码，并不是简单的缩进，而是整个优化
 Bundle 'jsbeautify'
 " 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
 Bundle 'css_color.vim'
