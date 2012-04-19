@@ -76,14 +76,14 @@ set magic                              " 改变搜索模式使用的特殊字符
 "set cindent                            " 自动 C 程序缩进
 
 " 自定义光标形态，不闪烁
-set gcr=n-v-c-sm:block-blinkon0,ve:ver35-blinkon0,o:hor50-blinkon0,i-ci:ver25-blinkon0,r-cr:hor20-blinkon0
+set gcr=n-v-c:block-Cursor/lCursor-blinkon0,ve:ver35-Cursor-blinkon0,o:hor50-Cursor-blinkon0,i-ci:ver25-Cursor/lCursor-blinkon0,r-cr:hor20-Cursor/lCursor-blinkon0,sm:block-Cursor-blinkon0
 
 " [[[ 缩进设置
 set expandtab     " 缩进用空格还是制表符表示
 set tabstop=4     " <TAB> 代表的空格数
 set shiftwidth=4  " （自动）缩进使用的空白数目
 set softtabstop=4 " 编辑时按退格键的时候退回缩进的长度
-au! FileType {html,css,stylus,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
+au! FileType {json,html,css,stylus,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
 " 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
@@ -91,7 +91,8 @@ au! FileType {html,css,stylus,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
 set encoding=utf-8
 set termencoding=utf-8
 set langmenu=zh_CN.utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencoding=utf-8
 language message zh_CN.UTF-8
 if g:isCmd
     set encoding=chinese " 设置命令提示符下vim不乱码 
