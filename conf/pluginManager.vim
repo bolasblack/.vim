@@ -36,10 +36,10 @@ Bundle 'rson/vim-conque'
 Bundle 'bolasblack/gtrans.vim'
 " vim 中文文档
 Bundle "bolasblack/vimcdoc"
-if !g:isMac
-    " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
-    Bundle 'FencView.vim'
-endif
+" 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
+"if !g:isMac
+  "Bundle 'FencView.vim' 
+"endif
 
 
 " quick edit
