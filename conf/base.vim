@@ -262,7 +262,6 @@ vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 
 im jj <ESC>
-im JJ <ESC>:w<CR>
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python,javascript,coffee :call AutoSpace()
@@ -296,11 +295,11 @@ endf
 "]]]
 func! Cc() "[[[
 	if exists("$DISPLAY")
-        nm mm :call DebugInGui()<CR>
-        im mm <ESC> :call DebugInGui()<CR>
+        nm JJ :call DebugInGui()<CR>
+        im JJ <ESC> :call DebugInGui()<CR>
 	el
-		im mm <ESC> :call DebugInTerminal()<CR>
-		nm mm :call DebugInTerminal()<CR>
+		im JJ <ESC> :call DebugInTerminal()<CR>
+		nm JJ :call DebugInTerminal()<CR>
 	en
 endf
 "]]]
