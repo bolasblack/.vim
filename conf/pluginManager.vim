@@ -57,7 +57,8 @@ Bundle 'kien/ctrlp.vim'
 
 
 " coding
-" 代码浏览工具，似乎更适合 C ，TxtBrowser 依赖
+" 代码浏览工具，似乎更适合 C 
+" *依赖 Vim 插件 TxtBrowser *
 "Bundle 'taglist.vim'
 " 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
 "Bundle 'TxtBrowser'
@@ -85,6 +86,7 @@ Bundle 'python.vim'
 " 更好的 Python 语法高亮
 Bundle 'python.vim--Vasiliev'
 " 基于 PEP8 的 Python 代码风格检查插件
+" *依赖 Python 的第三方包 PEP8 *
 Bundle 'jbking/vim-pep8'
 
 
