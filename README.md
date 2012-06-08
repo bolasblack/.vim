@@ -13,7 +13,7 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 
 这样 git 就会自动的 clone vundle 插件到家目录下的 .vimVundle 文件夹啦。
 
-*之后先去 conf/pluginManager.vim 看一下我列出的所有插件*
+**之后先去 conf/pluginManager.vim 看一下我列出的所有插件**
 
 有不想用的就直接注释掉（推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释）
 
