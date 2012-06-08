@@ -97,7 +97,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'vim-ruby/vim-ruby'
 
 
-" Lanaguage
+" Language
 " mustache 支持
 Bundle 'juvenn/mustache.vim'
 " 提供 JSON 的语法高亮
