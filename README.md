@@ -1,10 +1,10 @@
 首先，你需要安装有 Git 。Linux 怎么装 Git 我就不说了，Windows 用户可以看一下 https://github.com/gmarik/vundle/wiki/Vundle-for-Windows 。
 
-Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复制到家目录下即可。其实我个人推荐硬链接，这样如果我更新了的话，只要在 .vim 目录下 `git pull` 就能同步到最新啦。
+Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复制到家目录下即可。其实我个人推荐软链接，这样如果我更新了的话，只要在 .vim 目录下 `git pull` 就能同步到最新啦。
 
-硬链接的命令内容：
+软链接的命令：
 
-    ln ~/.vim/vimrc ~/.vimrc
+    ln -s $HOME/.vim/vimrc $HOME/.vimrc
     
 复制完毕后，需要先安装必须的 vundle 插件：
 
