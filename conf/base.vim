@@ -1,18 +1,4 @@
 " ----------- base setting ----------- [[[
-let mapleader = ','                    " Set mapleader
-set linebreak                          " 不在单词中间断行
-set formatoptions+=mB                  " 打开断行模块对亚洲语言支持
-set autochdir                          " 自动载入当前编辑文件的目录
-set guioptions=                        " 简洁界面
-"set ignorecase                        " 忽略大小写匹配
-set scrolloff=10                       " 设置光标距离上下边界的距离
-set showcmd                            " 在窗口右下角显示完整命令已输入部分
-set cursorline                         " 高亮光标所在行
-set nocompatible                       " 不要vim模仿vi模式
-set number                             " 显示行号
-set visualbell                         " 不要 beep 也不要闪屏
-set foldmarker=[[[,]]]                 " 用 [[[ ]]] 替代 {{{ }}}
-
 " 简陋的运行环境判断 [[[
 let g:isMac=0
 let g:isCmd=0
@@ -44,24 +30,38 @@ function Env()
 endfunction
 " ]]]
 
-if &term =~ "screen"
-    set t_Co=256
-endif
-
+" 高亮语法
+syntax on
+behave mswin
+filetype plugin on
 " 设置主题
 colorscheme lucius "lilypink
 
-" 字体设置 [[[
-if g:isWindows
-    set guifont=Courier:h12:cANSI 
-    set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效 
-elseif g:isMac
-    set guifont=Monaco:h11
-    set guifontwide=YaHei\ Consolas\ Hybrid:h11
-else
-    set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
-endif
-" ]]]
+let mapleader = ','                    " Set mapleader
+set linebreak                          " 不在单词中间断行
+set formatoptions+=mB                  " 打开断行模块对亚洲语言支持
+set autochdir                          " 自动载入当前编辑文件的目录
+set guioptions=                        " 简洁界面
+"set ignorecase                        " 忽略大小写匹配
+set scrolloff=10                       " 设置光标距离上下边界的距离
+set showcmd                            " 在窗口右下角显示完整命令已输入部分
+set cursorline                         " 高亮光标所在行
+set nocompatible                       " 不要vim模仿vi模式
+set number                             " 显示行号
+set visualbell                         " 不要 beep 也不要闪屏
+
+" 以特定标记作为折叠规则
+let g:foldIsMarker=1
+set foldmethod=marker
+set foldmarker=[[[,]]]                 " 用 [[[ ]]] 替代 {{{ }}}
+
+" 取消自动备份功能
+set nobackup
+set nowritebackup
+
+" 缩进提示 See Also [Show invisibles](http://vimcasts.org/episodes/show-invisibles/)
+set list
+set listchars=tab:▸\ ,eol:¬
 
 " modified from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
@@ -90,23 +90,21 @@ if g:isCmd
     set termencoding=chinese     "终端下的编码，对gvim来说没有必要设置 
 endif
 
-" 高亮语法
-syntax on
-behave mswin
-filetype plugin on
+if &term =~ "screen"
+    set t_Co=256
+endif
 
-" 以特定标记作为折叠规则
-let g:foldIsMarker=1
-set foldmethod=marker
-
-" 取消自动备份功能
-set nobackup
-set nowritebackup
-
-" 缩进提示
-set list
-set listchars=tab:▸\ ,eol:¬
-" 演示可以看 [Show invisibles](http://vimcasts.org/episodes/show-invisibles/)
+" 字体设置 [[[
+if g:isWindows
+    set guifont=Courier:h12:cANSI 
+    set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效 
+elseif g:isMac
+    set guifont=Monaco:h11
+    set guifontwide=YaHei\ Consolas\ Hybrid:h11
+else
+    set guifont=YaHei\ Consolas\ Hybrid\ 9 " 设置雅黑字体
+endif
+" ]]]
 
 " 启动时默认大小 [[[
 " 不论什么方法启动都是这个尺寸
@@ -129,31 +127,13 @@ else
 endif
 " ]]]
 
-" [[[ Mac 的一些配置
-let g:defaultGuiOptions = ''
-if g:isMac
-    let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
-endif
-let &guioptions = g:defaultGuiOptions
-" ]]]
-
-" windows 的一些配置 [[[
-if g:isWindows
-    "set fileencoding=chinese
-	source $VIMRUNTIME/vimrc_example.vim
-	source $VIMRUNTIME/mswin.vim
-	behave mswin
-	" 解决菜单乱码
-	source $VIMRUNTIME/delmenu.vim
-	source $VIMRUNTIME/menu.vim
-endif
-" ]]]
-
 au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
 au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
 au BufNewFile,BufRead *.coffee set filetype=coffee  " CoffeeScript 支持
+au BufNewFile,BufRead *.styl set filetype=stylus    " Stylus 支持
+au BufNewFile,BufRead *.less set filetype=less      " Less 支持
 
 " [[[ 缩进设置
 set expandtab     " 缩进用空格还是制表符表示
@@ -170,6 +150,24 @@ au! FileType {json,html,css,stylus,less,coffee,javascript,ruby} setlocal ts=2 st
     "autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set wrap nonumber
 "augroup END
 
+" [[[ Mac 的一些配置
+let g:defaultGuiOptions = ''
+if g:isMac
+    let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
+endif
+let &guioptions = g:defaultGuiOptions
+" ]]]
+" windows 的一些配置 [[[
+if g:isWindows
+  "set fileencoding=chinese
+  source $VIMRUNTIME/vimrc_example.vim
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
+  " 解决菜单乱码
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+endif
+" ]]]
 " ]]]
 "----------- Custom Shortcut -------- [[[
 " tabpage mappings commented [[[
