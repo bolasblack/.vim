@@ -78,15 +78,6 @@ set magic                              " 改变搜索模式使用的特殊字符
 " 自定义光标形态，不闪烁
 set gcr=n-v-c:block-Cursor/lCursor-blinkon0,ve:ver35-Cursor-blinkon0,o:hor50-Cursor-blinkon0,i-ci:ver25-Cursor/lCursor-blinkon0,r-cr:hor20-Cursor/lCursor-blinkon0,sm:block-Cursor-blinkon0
 
-" [[[ 缩进设置
-set expandtab     " 缩进用空格还是制表符表示
-set tabstop=4     " <TAB> 代表的空格数
-set shiftwidth=4  " （自动）缩进使用的空白数目
-set softtabstop=4 " 编辑时按退格键的时候退回缩进的长度
-au! FileType {json,html,css,stylus,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
-" 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
-" ]]]
-
 " encoding
 set encoding=utf-8
 set termencoding=utf-8
@@ -162,23 +153,15 @@ au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
 au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
+au BufNewFile,BufRead *.coffee set filetype=coffee  " CoffeeScript 支持
 
-" auto mkdir [[[
-" Copy from https://github.com/DataWraith/auto_mkdir
-augroup auto_mkdir
-    au!
-    au BufWritePre,FileWritePre * call <SID>auto_mkdir()
-augroup END
-
-function <SID>auto_mkdir()
-    " Get directory the file is supposed to be saved in
-    let s:dir = expand("<afile>:p:h")
-
-    " Create that directory (and its parents) if it doesn't exist yet
-    if !isdirectory(s:dir)
-        call mkdir(s:dir, "p")
-    endif
-endfunction
+" [[[ 缩进设置
+set expandtab     " 缩进用空格还是制表符表示
+set tabstop=4     " <TAB> 代表的空格数
+set shiftwidth=4  " （自动）缩进使用的空白数目
+set softtabstop=4 " 编辑时按退格键的时候退回缩进的长度
+au! FileType {json,html,css,stylus,less,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
+" 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
 " markdown syntax settings
