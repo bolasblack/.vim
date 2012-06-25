@@ -112,6 +112,8 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
 " 提供 markdown 着色功能，顺便也提供了 snippet
 Bundle 'hallison/vim-markdown'
+"LESS 文件语法高亮
+Bundle 'groenewege/vim-less'
 
 
 " Front
