@@ -130,10 +130,10 @@ endif
 au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
 au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
-au BufNewFile,BufRead *.mhtml set filetype=mustache " mustache 模版语言对 HTML 文件的支持
 au BufNewFile,BufRead *.coffee set filetype=coffee  " CoffeeScript 支持
 au BufNewFile,BufRead *.styl set filetype=stylus    " Stylus 支持
 au BufNewFile,BufRead *.less set filetype=less      " Less 支持
+au BufNewFile,BufRead *.{mustache,handlebars,hbs,hogan,hulk} set filetype=mustache " mustache 模版语言对 HTML 文件的支持
 
 " [[[ 缩进设置
 set expandtab     " 缩进用空格还是制表符表示
