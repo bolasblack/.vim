@@ -5,8 +5,6 @@ call vundle#rc('~/.vimVundle')
 " base 
 " required! 用 vundle 管理 vundle
 Bundle 'gmarik/vundle'
-" 也是用于管理插件
-Bundle 'pathogen.vim'
 " 给vim增加url的识别功能，当然功能远远不止这些
 Bundle 'utl.vim'
 " 自动添加作者信息
@@ -36,6 +34,8 @@ Bundle 'rson/vim-conque'
 Bundle 'bolasblack/gtrans.vim'
 " vim 中文文档
 Bundle "bolasblack/vimcdoc"
+" 漂亮的 mode line
+Bundle "Lokaltog/vim-powerline"
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
   "Bundle 'FencView.vim' 
@@ -66,8 +66,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'DoxygenToolkit.vim'
 " 代码注释工具
 Bundle 'scrooloose/nerdcommenter'
-" 代码浏览工具，更适合 OO 语言
-Bundle 'majutsushi/tagbar'
+" 代码浏览工具，更适合 OO 语言，由于不明原因，会与 powerline 冲突
+"Bundle 'majutsushi/tagbar'
 " 代码片段引擎
 Bundle 'drmingdrmer/xptemplate'
 " 在 Vim 里快捷的使用 Git

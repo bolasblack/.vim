@@ -37,18 +37,19 @@ filetype plugin on
 " 设置主题
 colorscheme lucius "lilypink
 
-let mapleader = ','                    " Set mapleader
-set linebreak                          " 不在单词中间断行
-set formatoptions+=mB                  " 打开断行模块对亚洲语言支持
-set autochdir                          " 自动载入当前编辑文件的目录
-set guioptions=                        " 简洁界面
-"set ignorecase                        " 忽略大小写匹配
-set scrolloff=10                       " 设置光标距离上下边界的距离
-set showcmd                            " 在窗口右下角显示完整命令已输入部分
-set cursorline                         " 高亮光标所在行
-set nocompatible                       " 不要vim模仿vi模式
-set number                             " 显示行号
-set visualbell                         " 不要 beep 也不要闪屏
+let mapleader = ','   " Set mapleader
+set linebreak         " 不在单词中间断行
+set formatoptions+=mB " 打开断行模块对亚洲语言支持
+set autochdir         " 自动载入当前编辑文件的目录
+set guioptions=       " 简洁界面
+"set ignorecase        " 忽略大小写匹配
+set scrolloff=10      " 设置光标距离上下边界的距离
+set showcmd           " 在窗口右下角显示完整命令已输入部分
+set cursorline        " 高亮光标所在行
+set nocompatible      " 不要vim模仿vi模式
+set number            " 显示行号
+set visualbell        " 不要 beep 也不要闪屏
+set laststatus=2      " Always show the statusline
 
 " 以特定标记作为折叠规则
 let g:foldIsMarker=1
