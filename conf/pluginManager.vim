@@ -130,6 +130,8 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'matchit.zip'
 " csslint 的 Vim 插件
 Bundle 'bolasblack/csslint.vim'
+" brunch 约定的文件组织方式的支持
+Bundle 'drichard/vim-brunch'
 
 " non github repos
 " 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看

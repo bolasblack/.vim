@@ -21,7 +21,7 @@ else
         endif
     endif
 endif
-function Env()
+function! Env()
     echo "isMac: "      . g:isMac
     echo "isCmd: "      . g:isCmd
     echo "isLinux: "    . g:isLinux
