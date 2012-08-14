@@ -62,12 +62,12 @@ Bundle 'kien/ctrlp.vim'
 "Bundle 'taglist.vim'
 " 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
 "Bundle 'TxtBrowser'
+" 代码浏览工具，更适合 OO 语言，由于不明原因，会与 powerline 冲突
+"Bundle 'majutsushi/tagbar'
 " 写 Doxygen 风格注释
 Bundle 'DoxygenToolkit.vim'
 " 代码注释工具
 Bundle 'scrooloose/nerdcommenter'
-" 代码浏览工具，更适合 OO 语言，由于不明原因，会与 powerline 冲突
-"Bundle 'majutsushi/tagbar'
 " 代码片段引擎
 Bundle 'drmingdrmer/xptemplate'
 " 在 Vim 里快捷的使用 Git
@@ -124,7 +124,9 @@ Bundle 'ZenCoding.vim'
 " 美化js代码，并不是简单的缩进，而是整个优化
 Bundle 'jsbeautify'
 " 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
-Bundle 'css_color.vim'
+if !g:isTerminal
+  Bundle 'css_color.vim'
+endi
 " 高亮对应的 HTML 标签
 Bundle 'gregsexton/MatchTag'
 " 按 % 可以跳转到对应的标点或标签
@@ -134,7 +136,7 @@ Bundle 'bolasblack/csslint.vim'
 " brunch 约定的文件组织方式的支持
 Bundle 'drichard/vim-brunch'
 
-" non github repos
-" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
-" 但是和 CtrlP.vim 重复了，所以干掉
-"Bundle 'git://git.wincent.com/command-t.git'
+"" non github repos
+"" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
+"" 但是和 CtrlP.vim 重复了，所以干掉
+""Bundle 'git://git.wincent.com/command-t.git'
