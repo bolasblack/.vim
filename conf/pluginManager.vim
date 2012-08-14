@@ -80,23 +80,23 @@ Bundle 'nathanaelkane/vim-indent-guides'
 
 " Python
 " 提供 python 的语法缩进，比默认的要好很多(vimer.cn修改)
-Bundle 'indentpython.vim--nianyang'
+"Bundle 'indentpython.vim--nianyang'
 " 为编写 Python 代码作的一些快捷键，比如选择一个代码块等
-Bundle 'python.vim'
+"Bundle 'python.vim'
 " 更好的 Python 语法高亮
-Bundle 'python.vim--Vasiliev'
+"Bundle 'python.vim--Vasiliev'
 " 基于 PEP8 的 Python 代码风格检查插件
 " *依赖 Python 的第三方包 PEP8 *
-Bundle 'jbking/vim-pep8'
+"Bundle 'jbking/vim-pep8'
 
 
 " Ruby
 " rails 支持
-Bundle 'tpope/vim-rails'
+"Bundle 'tpope/vim-rails'
 " 自动输入 end
-Bundle 'tpope/vim-endwise'
+"Bundle 'tpope/vim-endwise'
 " ruby 支持
-Bundle 'vim-ruby/vim-ruby'
+"Bundle 'vim-ruby/vim-ruby'
 
 
 " Language
@@ -112,13 +112,14 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'wavded/vim-stylus'
 " 提供 markdown 着色功能，顺便也提供了 snippet
 Bundle 'hallison/vim-markdown'
-"LESS 文件语法高亮
+" LESS 文件语法高亮
 Bundle 'groenewege/vim-less'
+" Haml 高亮
+Bundle 'tpope/vim-haml'
 
 
 " Front
 " zencoding
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'ZenCoding.vim'
 " 美化js代码，并不是简单的缩进，而是整个优化
 Bundle 'jsbeautify'

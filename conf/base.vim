@@ -128,9 +128,7 @@ else
 endif
 " ]]]
 
-au BufNewFile,BufRead *.todo set syntax=Todo        " todo 后缀名支持
 au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
-au BufNewFile,BufRead *.t2t set filetype=txt2tags   " t2t 后缀名支持
 au BufNewFile,BufRead *.coffee set filetype=coffee  " CoffeeScript 支持
 au BufNewFile,BufRead *.styl set filetype=stylus    " Stylus 支持
 au BufNewFile,BufRead *.less set filetype=less      " Less 支持
@@ -138,10 +136,10 @@ au BufNewFile,BufRead *.{mustache,handlebars,hbs,hogan,hulk} set filetype=mustac
 
 " [[[ 缩进设置
 set expandtab     " 缩进用空格还是制表符表示
-set tabstop=4     " <TAB> 代表的空格数
-set shiftwidth=4  " （自动）缩进使用的空白数目
-set softtabstop=4 " 编辑时按退格键的时候退回缩进的长度
-au! FileType {json,html,mustache,css,stylus,less,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
+set tabstop=2     " <TAB> 代表的空格数
+set shiftwidth=2  " （自动）缩进使用的空白数目
+set softtabstop=2 " 编辑时按退格键的时候退回缩进的长度
+" au! FileType {json,html,mustache,css,stylus,less,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
 " 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
