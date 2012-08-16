@@ -115,6 +115,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'wavded/vim-stylus'
 " Slim 高亮
 Bundle 'bbommarito/vim-slim'
+" Jade 高亮
+Bundle 'digitaltoad/vim-jade'
 
 
 " Front
