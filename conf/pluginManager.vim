@@ -15,7 +15,7 @@ Bundle 'repeat.vim'
 " 提供命令模式下的补全，可以补全缓冲区中出现过的单词，很好用
 Bundle 'CmdlineComplete'
 " 自动闭合标点
-Bundle 'AutoClose'
+"Bundle 'AutoClose'
 " Undo tree
 Bundle 'Gundo'
 " 高亮对应的标点，如 [] {}
@@ -36,11 +36,12 @@ Bundle 'bolasblack/gtrans.vim'
 Bundle "bolasblack/vimcdoc"
 " 漂亮的 mode line
 Bundle "Lokaltog/vim-powerline"
+" 
+Bundle "Raimondi/delimitMate"
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
   "Bundle 'FencView.vim' 
 "endif
-
 
 " quick edit
 " 快速移动光标到指定位置
@@ -102,22 +103,18 @@ Bundle 'nathanaelkane/vim-indent-guides'
 
 
 " Language
+" 提供 markdown 着色功能，顺便也提供了 snippet
+Bundle 'hallison/vim-markdown'
 " mustache 支持
 Bundle 'juvenn/mustache.vim'
 " 提供 JSON 的语法高亮
 Bundle 'JSON.vim'
 " coffeeScript 支持
 Bundle 'kchmck/vim-coffee-script'
-" Jade 支持
-Bundle 'digitaltoad/vim-jade'
 " Stylus 支持
 Bundle 'wavded/vim-stylus'
-" 提供 markdown 着色功能，顺便也提供了 snippet
-Bundle 'hallison/vim-markdown'
-" LESS 文件语法高亮
-Bundle 'groenewege/vim-less'
-" Haml 高亮
-Bundle 'tpope/vim-haml'
+" Slim 高亮
+Bundle 'bbommarito/vim-slim'
 
 
 " Front
