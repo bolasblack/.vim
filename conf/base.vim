@@ -143,6 +143,8 @@ set softtabstop=2 " 编辑时按退格键的时候退回缩进的长度
 " 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
+au! FileType {html} setlocal foldmethod=indent
+
 " markdown syntax settings
 "augroup mkd
     "autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set ai formatoptions=tcroqn2 comments=n:>

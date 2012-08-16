@@ -47,6 +47,8 @@ Bundle "Lokaltog/vim-powerline"
 Bundle 'Lokaltog/vim-easymotion'
 " 一个更好用的 grep ，需要安装 ack
 Bundle "mileszs/ack.vim"
+" 搜索补全工具
+Bundle 'SearchComplete'
 " FuzzyFinder 必须的库
 Bundle 'L9'
 " 快速找到、打开文件
