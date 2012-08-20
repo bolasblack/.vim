@@ -117,6 +117,8 @@ Bundle 'wavded/vim-stylus'
 Bundle 'bbommarito/vim-slim'
 " Jade 高亮
 Bundle 'digitaltoad/vim-jade'
+" nginx 语法高亮
+Bundle 'nginx.vim'
 
 
 " Front
