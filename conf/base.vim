@@ -128,6 +128,7 @@ else
 endif
 " ]]]
 
+au BufNewFile,BufRead nginx.conf set filetype=nginx " Nginx 配置文件支持
 au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
 au BufNewFile,BufRead *.coffee set filetype=coffee  " CoffeeScript 支持
 au BufNewFile,BufRead *.styl set filetype=stylus    " Stylus 支持

@@ -119,6 +119,12 @@ Bundle 'bbommarito/vim-slim'
 Bundle 'digitaltoad/vim-jade'
 " nginx 语法高亮
 Bundle 'nginx.vim'
+" Jinja 语法
+Bundle 'Jinja'
+" Mako 语法
+Bundle 'mako.vim'
+Bundle 'mako.vim'
+
 
 
 " Front
