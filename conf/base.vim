@@ -140,7 +140,7 @@ set expandtab     " 缩进用空格还是制表符表示
 set tabstop=2     " <TAB> 代表的空格数
 set shiftwidth=2  " （自动）缩进使用的空白数目
 set softtabstop=2 " 编辑时按退格键的时候退回缩进的长度
-" au! FileType {json,html,mustache,css,stylus,less,coffee,javascript,ruby} setlocal ts=2 sts=2 sw=2
+ au! FileType {python} setlocal ts=4 sts=4 sw=4
 " 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
