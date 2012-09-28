@@ -126,7 +126,6 @@ Bundle 'mako.vim'
 Bundle 'mako.vim'
 
 
-
 " Front
 " zencoding
 Bundle 'ZenCoding.vim'
