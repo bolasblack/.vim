@@ -14,8 +14,6 @@ Bundle 'AuthorInfo'
 Bundle 'repeat.vim'
 " 提供命令模式下的补全，可以补全缓冲区中出现过的单词，很好用
 Bundle 'CmdlineComplete'
-" 自动闭合标点
-"Bundle 'AutoClose'
 " Undo tree
 Bundle 'Gundo'
 " 高亮对应的标点，如 [] {}
@@ -36,7 +34,7 @@ Bundle 'bolasblack/gtrans.vim'
 Bundle "bolasblack/vimcdoc"
 " 漂亮的 mode line
 Bundle "Lokaltog/vim-powerline"
-" 
+" 自动闭合标点
 Bundle "Raimondi/delimitMate"
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
@@ -50,6 +48,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle "mileszs/ack.vim"
 " 搜索补全工具
 Bundle 'SearchComplete'
+" Vim 的平铺窗口管理
+Bundle "spolu/dwm.vim"
 " FuzzyFinder 必须的库
 Bundle 'L9'
 " 快速找到、打开文件
@@ -122,7 +122,6 @@ Bundle 'nginx.vim'
 " Jinja 语法
 Bundle 'Jinja'
 " Mako 语法
-Bundle 'mako.vim'
 Bundle 'mako.vim'
 
 
