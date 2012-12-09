@@ -40,7 +40,6 @@ colorscheme lucius "lilypink
 let mapleader = ','   " Set mapleader
 set linebreak         " 不在单词中间断行
 set formatoptions+=mB " 打开断行模块对亚洲语言支持
-set autochdir         " 自动载入当前编辑文件的目录
 set guioptions=       " 简洁界面
 "set ignorecase        " 忽略大小写匹配
 set scrolloff=10      " 设置光标距离上下边界的距离
@@ -50,6 +49,9 @@ set nocompatible      " 不要vim模仿vi模式
 set number            " 显示行号
 set visualbell        " 不要 beep 也不要闪屏
 set laststatus=2      " Always show the statusline
+set autoread          " 正在编辑的文件在外部被修改后自动读取
+set helplang=cn       " 帮助文件语言为中文
+set autochdir         " 自动载入当前编辑文件的目录
 
 " 以特定标记作为折叠规则
 let g:foldIsMarker=1
@@ -254,7 +256,7 @@ au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python,javascript,coffee :call AutoSpace()
 func! AutoSpace() "[[[
     ino , ,<SPACE>
-    ino : :<SPACE>
+    "ino : :<SPACE>
     "ino { <SPACE>{
     "ino ( <SPACE>(
     "ino ; ;<SPACE>
@@ -264,7 +266,7 @@ func! AutoSpace() "[[[
     ino +<SPACE> <SPACE>+<SPACE>
     ino -<SPACE> <SPACE>-<SPACE>
     ino *<SPACE> <SPACE>*<SPACE>
-    ino /<SPACE> <SPACE>/<SPACE>
+    "ino /<SPACE> <SPACE>/<SPACE>
     ino !=<SPACE> <SPACE>!=<SPACE>
     ino <=<SPACE> <SPACE><=<SPACE>
     ino *=<SPACE> <SPACE>*=<SPACE>
@@ -504,5 +506,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 " 修改文件在 https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
 " 作者文章：http://wiki.ktmud.com/tips/Vim.html
 
+"]]]
+"[[[ PowerLine
+let g:Powerline_symbols = 'fancy'
 "]]]
 "]]]
