@@ -485,9 +485,9 @@ let g:gtrans_Engine = 'google'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 2
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-  \ 'file': '\.exe$\|\.so$\|\.dll$',
-  \ 'link': 'some_bad_symbolic_links',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$|node_modules',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
 "]]]
 "[[[ Indent Guides 设置
