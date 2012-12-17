@@ -505,4 +505,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 " 作者文章：http://wiki.ktmud.com/tips/Vim.html
 
 "]]]
+" [[[ syntastic
+let g:syntastic_check_on_open=1
+" ]]]
 "]]]

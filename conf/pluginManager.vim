@@ -79,6 +79,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'TaskList.vim'
 " 显示缩进线
 Bundle 'nathanaelkane/vim-indent-guides'
+" 多语言语法检查
+Bundle 'scrooloose/syntastic'
 
 
 " Python
