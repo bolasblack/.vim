@@ -255,17 +255,17 @@ im JJ <ESC>:w<CR>
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python,javascript,coffee :call AutoSpace()
 func! AutoSpace() "[[[
-    ino , ,<SPACE>
+    "ino , ,<SPACE>
     "ino : :<SPACE>
     "ino { <SPACE>{
     "ino ( <SPACE>(
     "ino ; ;<SPACE>
-    ino =<SPACE> <SPACE>=<SPACE>
-    ino <<SPACE> <SPACE><<SPACE>
-    ino ><SPACE> <SPACE>><SPACE>
-    ino +<SPACE> <SPACE>+<SPACE>
-    ino -<SPACE> <SPACE>-<SPACE>
-    ino *<SPACE> <SPACE>*<SPACE>
+    "ino =<SPACE> <SPACE>=<SPACE>
+    "ino <<SPACE> <SPACE><<SPACE>
+    "ino ><SPACE> <SPACE>><SPACE>
+    "ino +<SPACE> <SPACE>+<SPACE>
+    "ino -<SPACE> <SPACE>-<SPACE>
+    "ino *<SPACE> <SPACE>*<SPACE>
     "ino /<SPACE> <SPACE>/<SPACE>
     ino !=<SPACE> <SPACE>!=<SPACE>
     ino <=<SPACE> <SPACE><=<SPACE>
