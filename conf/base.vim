@@ -513,4 +513,8 @@ let g:syntastic_check_on_open=1
 "[[[ PowerLine
 let g:Powerline_symbols = 'fancy'
 "]]]
+"[[[syntastic
+let s:syntastic_conf_folder = "~/.vim/syntastic.conf/"
+let g:syntastic_coffee_lint_options = "-f ".s:syntastic_conf_folder."coffee.json"
+"]]]
 "]]]
