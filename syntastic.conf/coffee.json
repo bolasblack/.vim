@@ -1,4 +1,4 @@
 {
-  "max_line_length": "ignore"
-, "indentation": "ignore"
+  "max_line_length": {"level": "ignore"}
+, "indentation": {"level": "ignore"}
 }

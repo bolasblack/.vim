@@ -184,6 +184,7 @@ endif
 " [[[ FuzzyFinder and CtrlP
 nmap <C-b> :FufBuffer<CR>
 nmap <C-f> :FufFile<CR>
+nmap <C-c><C-p> :CtrlPClearAllCaches<CR>:CtrlP<CR>
 " ]]]
 
 " 定义快捷键 ,/ ，查找光标所在单词（可编辑），将查找出来的所有结果显示在
