@@ -4,8 +4,7 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 
 软链接的命令：
 
-    cd ~
-    ln -s .vim/.vimrc
+    (cd ~ && ln -s .vim/.vimrc)
     
 复制完毕后，需要先安装必须的 vundle 插件：
 
