@@ -9,8 +9,7 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
     
 复制完毕后，需要先安装必须的 vundle 插件：
 
-    mkdir ~/.vimVundle && cd ~/.vimVundle
-    git clone https://github.com/gmarik/vundle.git
+    mkdir ~/.vimVundle && git clone https://github.com/gmarik/vundle.git ~/.vimVundle/vundle
 
 这样 git 就会自动的 clone vundle 插件到家目录下的 .vimVundle 文件夹啦。
 
