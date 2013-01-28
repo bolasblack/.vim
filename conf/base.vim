@@ -51,7 +51,7 @@ set visualbell        " 不要 beep 也不要闪屏
 set laststatus=2      " Always show the statusline
 set autoread          " 正在编辑的文件在外部被修改后自动读取
 set helplang=cn       " 帮助文件语言为中文
-set autochdir         " 自动载入当前编辑文件的目录
+"set autochdir         " 自动载入当前编辑文件的目录
 
 " 以特定标记作为折叠规则
 let g:foldIsMarker=1

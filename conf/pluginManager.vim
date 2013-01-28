@@ -115,8 +115,6 @@ Bundle 'JSON.vim'
 Bundle 'kchmck/vim-coffee-script'
 " Stylus 支持
 Bundle 'wavded/vim-stylus'
-" Slim 高亮
-Bundle 'bbommarito/vim-slim'
 " Jade 高亮
 Bundle 'digitaltoad/vim-jade'
 " nginx 语法高亮
