@@ -6,27 +6,27 @@ let g:isLinux=0
 let g:isWindows=0
 let g:isTerminal=0
 if !has("unix")
-    let g:isWindows=1
-    if !has("gui_running")
-        let g:isCmd=1
-    endif
+  let g:isWindows=1
+  if !has("gui_running")
+    let g:isCmd=1
+  endif
 else
-    if !has("gui_running")
-        let g:isTerminal=1
+  if !has("gui_running")
+    let g:isTerminal=1
+  else
+    if !has("mac")
+      let g:isLinux=1
     else
-        if !has("mac")
-            let g:isLinux=1
-        else
-            let g:isMac=1
-        endif
+      let g:isMac=1
     endif
+  endif
 endif
 function! Env()
-    echo "isMac: "      . g:isMac
-    echo "isCmd: "      . g:isCmd
-    echo "isLinux: "    . g:isLinux
-    echo "isWndows: "   . g:isWindows
-    echo "isTerminal: " . g:isTerminal
+  echo "isMac: "      . g:isMac
+  echo "isCmd: "      . g:isCmd
+  echo "isLinux: "    . g:isLinux
+  echo "isWndows: "   . g:isWindows
+  echo "isTerminal: " . g:isTerminal
 endfunction
 " ]]]
 
@@ -51,7 +51,7 @@ set visualbell        " 不要 beep 也不要闪屏
 set laststatus=2      " Always show the statusline
 set autoread          " 正在编辑的文件在外部被修改后自动读取
 set helplang=cn       " 帮助文件语言为中文
-"set autochdir         " 自动载入当前编辑文件的目录
+set noautochdir       " 不自动载入当前编辑文件的目录
 
 " 以特定标记作为折叠规则
 let g:foldIsMarker=1
@@ -69,7 +69,7 @@ set listchars=tab:▸\ ,eol:¬
 " modified from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
 set autoindent                         " 自动缩进
-set smartindent                        " 智能缩进
+set nosmartindent                      " 智能缩进，对 C 系的还行，其他的语言还是建议关闭
 set incsearch                          " 增量搜索, 搜索时显示目前输入模式的匹配位置
 set hlsearch                           " 高亮搜索结果
 set showmode                           " 显示当前模式
@@ -89,12 +89,12 @@ set langmenu=zh_CN.utf-8
 set fileencoding=utf-8
 language message zh_CN.UTF-8
 if g:isCmd
-    set encoding=chinese " 设置命令提示符下vim不乱码 
-    set termencoding=chinese " 终端下的编码，对gvim来说没有必要设置 
+  set encoding=chinese " 设置命令提示符下vim不乱码 
+  set termencoding=chinese " 终端下的编码，对gvim来说没有必要设置 
 endif
 
 if &term =~ "screen"
-    set t_Co=256
+  set t_Co=256
 endif
 
 " 字体设置 [[[
@@ -150,7 +150,7 @@ au! FileType {html} setlocal foldmethod=indent
 " [[[ Mac 的一些配置
 let g:defaultGuiOptions = ''
 if g:isMac
-    let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
+  let g:defaultGuiOptions = g:defaultGuiOptions . 'e'
 endif
 let &guioptions = g:defaultGuiOptions
 " ]]]
@@ -195,15 +195,15 @@ nmap <Leader>/ :exec 'lvimgrep /' . input('/', expand('<cword>')) . '/j % <bar> 
 " <F3>改变折叠模式 [[[
 map <F3> :call ToggleFoldMethod()<CR>
 func! ToggleFoldMethod()
-	if g:foldIsMarker==1
-		set foldmethod=indent
-		let g:foldIsMarker=0
-		echo 'Indent foldmethod'
-	else
-		set foldmethod=marker
-		let g:foldIsMarker=1
-		echo 'Marker foldmethod'
-	endif
+  if g:foldIsMarker==1
+    set foldmethod=indent
+    let g:foldIsMarker=0
+    echo 'Indent foldmethod'
+  else
+    set foldmethod=marker
+    let g:foldIsMarker=1
+    echo 'Marker foldmethod'
+  endif
 endfunc
 " ]]]
 " <F4>进行版权声明 authorinfo [[[
@@ -224,10 +224,10 @@ map <silent> <F9> :NERDTree<CR>
 " <F12> 呼出/隐藏 工具栏 [[[
 map <silent> <F12> :call CallManu()<CR>
 function! CallManu()
-	let newGuiOptions = g:defaultGuiOptions
-	if !&guioptions =~# 'm'
-		let newGuiOptions = g:defaultGuiOptions + 'm'
-	endif
+  let newGuiOptions = g:defaultGuiOptions
+  if !&guioptions =~# 'm'
+    let newGuiOptions = g:defaultGuiOptions + 'm'
+  endif
     let &guioptions = newGuiOptions
 endfunction
 " ]]]
@@ -247,81 +247,81 @@ im JJ <ESC>:w<CR>
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python,javascript,coffee :call AutoSpace()
 func! AutoSpace() "[[[
-    "ino , ,<SPACE>
-    "ino : :<SPACE>
-    "ino { <SPACE>{
-    "ino ( <SPACE>(
-    "ino ; ;<SPACE>
-    "ino =<SPACE> <SPACE>=<SPACE>
-    "ino <<SPACE> <SPACE><<SPACE>
-    "ino ><SPACE> <SPACE>><SPACE>
-    "ino +<SPACE> <SPACE>+<SPACE>
-    "ino -<SPACE> <SPACE>-<SPACE>
-    "ino *<SPACE> <SPACE>*<SPACE>
-    "ino /<SPACE> <SPACE>/<SPACE>
-    ino !=<SPACE> <SPACE>!=<SPACE>
-    ino <=<SPACE> <SPACE><=<SPACE>
-    ino *=<SPACE> <SPACE>*=<SPACE>
-    ino /=<SPACE> <SPACE>/=<SPACE>
-    ino >><SPACE> <SPACE>>><SPACE>
-    ino <<<SPACE> <SPACE><<<SPACE>
-    ino >=<SPACE> <SPACE>>=<SPACE>
-    ino ==<SPACE> <SPACE>==<SPACE>
-    ino +=<SPACE> <SPACE>+=<SPACE>
-    ino -=<SPACE> <SPACE>-=<SPACE>
-    ino &&<SPACE> <SPACE>&&<SPACE>
-    ino ===<SPACE> <SPACE>===<SPACE>
-    ino !==<SPACE> <SPACE>!==<SPACE>
+  "ino , ,<SPACE>
+  "ino : :<SPACE>
+  "ino { <SPACE>{
+  "ino ( <SPACE>(
+  "ino ; ;<SPACE>
+  "ino =<SPACE> <SPACE>=<SPACE>
+  "ino <<SPACE> <SPACE><<SPACE>
+  "ino ><SPACE> <SPACE>><SPACE>
+  "ino +<SPACE> <SPACE>+<SPACE>
+  "ino -<SPACE> <SPACE>-<SPACE>
+  "ino *<SPACE> <SPACE>*<SPACE>
+  "ino /<SPACE> <SPACE>/<SPACE>
+  ino !=<SPACE> <SPACE>!=<SPACE>
+  ino <=<SPACE> <SPACE><=<SPACE>
+  ino *=<SPACE> <SPACE>*=<SPACE>
+  ino /=<SPACE> <SPACE>/=<SPACE>
+  ino >><SPACE> <SPACE>>><SPACE>
+  ino <<<SPACE> <SPACE><<<SPACE>
+  ino >=<SPACE> <SPACE>>=<SPACE>
+  ino ==<SPACE> <SPACE>==<SPACE>
+  ino +=<SPACE> <SPACE>+=<SPACE>
+  ino -=<SPACE> <SPACE>-=<SPACE>
+  ino &&<SPACE> <SPACE>&&<SPACE>
+  ino ===<SPACE> <SPACE>===<SPACE>
+  ino !==<SPACE> <SPACE>!==<SPACE>
 endf
 "]]]
 func! Cc() "[[[
-	if exists("$DISPLAY")
-        nm JJ :call DebugInGui()<CR>
-        im JJ <ESC> :call DebugInGui()<CR>
-	el
-		im JJ <ESC> :call DebugInTerminal()<CR>
-		nm JJ :call DebugInTerminal()<CR>
-	en
+  if exists("$DISPLAY")
+    nm JJ :call DebugInGui()<CR>
+    im JJ <ESC> :call DebugInGui()<CR>
+  el
+    im JJ <ESC> :call DebugInTerminal()<CR>
+    nm JJ :call DebugInTerminal()<CR>
+  en
 endf
 "]]]
 func! DebugInGui() "[[[
-	exe "w"
-	if &filetype == 'c'
-		exe "!gcc -Wall % -o %<"
-		exe "!clear;./%< 2>/dev/null && rm -f %<"
-	elsei &filetype == 'cpp'
-		exe "!g++ -Wall % -o %<"
-		exe "!clear;./%< 2>/dev/null && rm -f %<"
-	elsei &filetype == 'python'
-		exe "!clear;python %"
-	elsei &filetype == 'ruby'
-		exe "!clear;ruby  %"
-	elsei &filetype == 'sh'
-		exe "!clear;bash %"
-	elsei &filetype == 'perl'
-		exe "!clear;perl %"
-	en
+  exe "w"
+  if &filetype == 'c'
+    exe "!gcc -Wall % -o %<"
+    exe "!clear;./%< 2>/dev/null && rm -f %<"
+  elsei &filetype == 'cpp'
+    exe "!g++ -Wall % -o %<"
+    exe "!clear;./%< 2>/dev/null && rm -f %<"
+  elsei &filetype == 'python'
+    exe "!clear;python %"
+  elsei &filetype == 'ruby'
+    exe "!clear;ruby  %"
+  elsei &filetype == 'sh'
+    exe "!clear;bash %"
+  elsei &filetype == 'perl'
+    exe "!clear;perl %"
+  en
 endf
 "]]]
 func! DebugInTerminal() "[[[
-	exe "w"
-	if &filetype == 'c'
-		exe "!gcc -Wall % -o %<"
-		exe "!./%< 2>/dev/null && rm -f %<"
-	elsei &filetype == 'cpp'
-		exe "!g++ -Wall % -o %<"
-		exe "!./%< 2>/dev/null && rm -f %<"
-	elsei &filetype == 'python'
-		exe "!python %"
-	elsei &filetype == 'ruby'
-		exe "!ruby  %"
-	elsei &filetype == 'sh'
-		exe "!bash %"
-	elsei &filetype == 'perl'
-		exe "!perl %"
-	elsei &filetype =='html'
-		exe "!firefox %"
-	en
+  exe "w"
+  if &filetype == 'c'
+    exe "!gcc -Wall % -o %<"
+    exe "!./%< 2>/dev/null && rm -f %<"
+  elsei &filetype == 'cpp'
+    exe "!g++ -Wall % -o %<"
+    exe "!./%< 2>/dev/null && rm -f %<"
+  elsei &filetype == 'python'
+    exe "!python %"
+  elsei &filetype == 'ruby'
+    exe "!ruby  %"
+  elsei &filetype == 'sh'
+    exe "!bash %"
+  elsei &filetype == 'perl'
+    exe "!perl %"
+  elsei &filetype =='html'
+    exe "!firefox %"
+  en
 endf
 "]]]
 "]]]
@@ -380,7 +380,7 @@ let g:user_zen_settings = {
   \    } 
   \  } 
   \} 
-  let g:user_zen_expandabbr_key = '<c-y>'    "设置为ctrl+y展开
+  let g:user_zen_expandabbr_key = '<c-y>' " 设置为ctrl+y展开
   let g:use_zen_complete_tag = 1
 " ]]]
 " NeoComplcache 设置 [[[
@@ -400,14 +400,14 @@ let g:NeoComplCache_DisableAutoComplete = 1
 
 "Define dictionary. 
 let g:neocomplcache_dictionary_filetype_lists = { 
-	\ 'default' : '', 
-	\ 'vimshell' : $HOME.'/.vimshell_hist', 
-	\ 'scheme' : $HOME.'/.gosh_completions' 
-	\ } 
+  \ 'default' : '', 
+  \ 'vimshell' : $HOME.'/.vimshell_hist', 
+  \ 'scheme' : $HOME.'/.gosh_completions' 
+  \ } 
 
 " Define keyword. 
 if !exists('g:neocomplcache_keyword_patterns') 
-	let g:neocomplcache_keyword_patterns = {} 
+  let g:neocomplcache_keyword_patterns = {} 
 endif 
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*' 
 
@@ -490,8 +490,8 @@ let g:indent_guides_color_change_percent = 10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 1
 "if g:isTerminal
-    "hi IndentGuidesOdd  ctermbg=236
-    "hi IndentGuidesEven ctermbg=237
+  "hi IndentGuidesOdd  ctermbg=236
+  "hi IndentGuidesEven ctermbg=237
 "else
 "endif
 "]]]
