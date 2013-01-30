@@ -2,20 +2,19 @@
 
 " 设置 $ 变量
 if has("win32")
-  let $vimfiles = $VIM.'/vimfiles/'
-  let $v = $VIM.'/_vimrc'
+  let $vim = $VIM.'/vimfiles/'
 else
-  let $vimfiles = $HOME.'/.vim/'
-  let $v = $HOME.'/.vimrc'
+  let $vim = $HOME.'/.vim/'
 endif
-let $conf = $vimfiles.'/conf/'
+let $v = $vim.'/.vimrc'
+let $conf = $vim.'/conf/'
 let $base = $conf.'/base.vim'
-let $plugin = $vimfiles.'/plugins/'
+let $plugin = $conf.'/pluginManager.vim'
 
 " 载入 base 设置
-source $conf\base.vim
+source $base
 " 载入插件
-source $conf\pluginManager.vim
+source $plugin
 " 载入带帐号密码的插件配置
 "source $conf\pluginConfSc.vim
 
