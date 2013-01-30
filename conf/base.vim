@@ -145,8 +145,6 @@ set softtabstop=2 " 编辑时按退格键的时候退回缩进的长度
 " 演示可以看一下 [Tabs and Spaces](http://vimcasts.org/episodes/tabs-and-spaces/)
 " ]]]
 
-au! FileType {html} setlocal foldmethod=indent
-
 " [[[ Mac 的一些配置
 let g:defaultGuiOptions = ''
 if g:isMac
@@ -154,6 +152,7 @@ if g:isMac
 endif
 let &guioptions = g:defaultGuiOptions
 " ]]]
+
 " windows 的一些配置 [[[
 if g:isWindows
   "set fileencoding=chinese
