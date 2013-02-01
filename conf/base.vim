@@ -165,6 +165,11 @@ if g:isWindows
 endif
 " ]]]
 " ]]]
+" ----------- syntax setting ----------- [[[
+"hi def link customTodo Todo
+"syn keyword cuctomTodo FIX TODO 
+"syn keyword Todo FIX TODO 
+" ]]]
 "----------- Custom Shortcut -------- [[[
 " tabpage mappings commented [[[
 "map <M-1> 1gt
@@ -509,6 +514,15 @@ let g:Powerline_symbols = 'fancy'
 "]]]
 "[[[syntastic
 let s:syntastic_conf_folder = "~/.vim/syntastic.conf/"
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['html'] }
+
 let g:syntastic_coffee_lint_options = "-f ".s:syntastic_conf_folder."coffee.json"
+"]]]
+"[[[Tasklist
+let g:tlTokenList = ["TODO", "FIX", "WARMING"]
 "]]]
 "]]]
