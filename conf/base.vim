@@ -62,9 +62,11 @@ set foldmarker=[[[,]]]                 " 用 [[[ ]]] 替代 {{{ }}}
 set nobackup
 set nowritebackup
 
-" 缩进提示 See Also [Show invisibles](http://vimcasts.org/episodes/show-invisibles/)
+" 缩进提示
+" [Show invisibles](http://vimcasts.org/episodes/show-invisibles/)
+" [语虚](http://yyq123.blogspot.tw/2011/11/vim-listchars.html)
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:>>,trail:-,eol:¬
 
 " modified from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
@@ -247,6 +249,9 @@ vmap <silent> <S-TAB> <
 
 im jj <ESC>
 im JJ <ESC>:w<CR>
+
+au BufWrite nginx.conf exe "!sudo nginx -s reload"
+
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
 au FileType c,cc,cpp,h,html,python,javascript,coffee :call AutoSpace()
@@ -485,19 +490,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
-"]]]
-"[[[ Indent Guides
-let g:indent_guides_guide_size = 2
-let g:indent_guides_start_level = 1
-let g:indent_guides_space_guides = 1
-let g:indent_guides_color_change_percent = 10
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 1
-"if g:isTerminal
-  "hi IndentGuidesOdd  ctermbg=236
-  "hi IndentGuidesEven ctermbg=237
-"else
-"endif
 "]]]
 "[[[ gjsLint
 " gjsLint
