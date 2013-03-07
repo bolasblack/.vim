@@ -168,9 +168,8 @@ endif
 " ]]]
 " ]]]
 " ----------- syntax setting ----------- [[[
-"hi def link customTodo Todo
-"syn keyword cuctomTodo FIX TODO 
-"syn keyword Todo FIX TODO 
+let g:todo_keyword = ["TODO", "FIX"]
+let g:warning_keyword = ["WARNING"]
 " ]]]
 "----------- Custom Shortcut -------- [[[
 " tabpage mappings commented [[[
@@ -516,6 +515,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_coffee_lint_options = "-f ".s:syntastic_conf_folder."coffee.json"
 "]]]
 "[[[Tasklist
-let g:tlTokenList = ["TODO", "FIX", "WARMING"]
+let g:tlTokenList = []
+call extend(g:tlTokenList, g:todo_keyword)
+call extend(g:tlTokenList, g:warning_keyword)
 "]]]
 "]]]

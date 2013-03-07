@@ -10,9 +10,9 @@ Bundle 'utl.vim'
 " 自动添加作者信息
 Bundle 'AuthorInfo'
 " 快速给单词/句子两边增加符号（包括html标签），缺点是不用用"."来重复命令，repeat.vim可以解决这个问题
-"Bundle 'surround.vim'
-Bundle 'repeat.vim'
-" 提供命令模式下的补全，可以补全缓冲区中出现过的单词，很好用
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+" 提供命令模式和高亮模式下的补全，通过 C-n | C-p 补全缓冲区中出现过的单词
 Bundle 'CmdlineComplete'
 " Undo tree
 Bundle 'Gundo'
@@ -46,8 +46,6 @@ Bundle "Raimondi/delimitMate"
 Bundle 'Lokaltog/vim-easymotion'
 " 一个更好用的 grep ，需要安装 ack
 Bundle "mileszs/ack.vim"
-" 搜索补全工具
-Bundle 'SearchComplete'
 " Vim 的平铺窗口管理
 Bundle "spolu/dwm.vim"
 " FuzzyFinder 必须的库
