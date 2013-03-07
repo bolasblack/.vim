@@ -502,6 +502,7 @@ let g:ctrlp_custom_ignore = {
 let g:syntastic_check_on_open=1
 " ]]]
 "[[[ PowerLine
+set noshowmode
 let g:Powerline_symbols = 'fancy'
 "]]]
 "[[[syntastic
