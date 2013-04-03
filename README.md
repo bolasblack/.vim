@@ -36,6 +36,6 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 
 这是由于插件 `neocomplcache` 不支持 `sudo vim` 方式编辑文件，可见文档 https://github.com/Shougo/neocomplcache/blob/master/doc/neocomplcache.txt#L1355 。
 
-解决方案是已经配置在 `pluginManager.vim` 文件中的 `sudo.vim` 插件，打开文件时使用命令 `vim sudo:/path/to/path` 或者保存文件时使用命令 `:SudoWrite %` 。
+解决方案是已经配置在 `pluginManager.vim` 文件中的 `sudo.vim` 插件，打开文件时使用命令 `vim sudo:/path/to/file` 或者保存文件时使用命令 `:SudoWrite %` 。
 
 如果不想使用 `sudo.vim` 插件，可以在用普通权限编辑完文件后使用 `:w ! sudo tee %` 命令来保存
