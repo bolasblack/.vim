@@ -36,6 +36,8 @@ Bundle "bolasblack/vimcdoc"
 Bundle "Lokaltog/vim-powerline"
 " 自动闭合标点
 Bundle "Raimondi/delimitMate"
+" 在 Vim 中使用 sudo
+Bundle "sudo.vim"
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
   "Bundle 'FencView.vim' 
