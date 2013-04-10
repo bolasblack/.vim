@@ -237,19 +237,11 @@ function! CallManu()
 endfunction
 " ]]]
 
-" 模拟 Emacs 按键绑定
-nm <C-x><C-m> :
-im <C-x><C-m> <ESC>:
-cmap <C-g> <ESC>
-
 " 在可视模式下，<TAB> 等于 >，<S-TAB> 等于 <
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 
-im jj <ESC>
-im JJ <ESC>:w<CR>
-
-au BufWrite nginx.conf exe "!sudo nginx -s reload"
+au BufWritePost nginx.conf exe "!sudo nginx -s reload"
 
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
