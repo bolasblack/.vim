@@ -42,7 +42,7 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 
 ### &lt;ESC&gt; 键实在是太麻烦了，一点都不快速
 
-使用 <kbd>Ctrl</kbd>+<kbd>c</kbd> 替代
+使用 <kbd>Ctrl</kbd>+<kbd>[</kbd> 替代
 
 ### 冒号的输入实在是太麻烦了
 
@@ -51,4 +51,14 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 替换为：
 
     使用左手小指按左侧Shift，右手小指按右侧分号键
+
+### C-c 和 C-[ 的区别
+
+`<C-c>` 不会触发 `InsertLeave` 事件，最直观的结果是，使用块编辑的时候如果按下 `C-c` ，那么编辑的结果不会作用在其他行中。
+
+而 `<C-[>` 则是 `<ESC>` 键的别名，该触发的都会触发。
+
+当插件比较多的时候，我们可以明显的感觉出来，按 `<C-c>` 返回普通模式的速度要远远快于 `<C-[>` 。
+
+参考资料：http://stackoverflow.com/questions/80677/what-is-the-difference-between-c-c-and-c-in-vim
 
