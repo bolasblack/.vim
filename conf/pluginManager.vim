@@ -26,8 +26,6 @@ Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 " 目录树
 Bundle 'scrooloose/nerdtree'
-" 在 Vim 中运行 Shell，vim-script 备份的那个没有Python的文件
-Bundle 'rson/vim-conque'
 " 多国语翻译为指定语言的插件
 Bundle 'bolasblack/gtrans.vim'
 " vim 中文文档
