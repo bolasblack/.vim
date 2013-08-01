@@ -10,9 +10,9 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 
 复制完毕后，需要先安装必须的 vundle 插件：
 
-    mkdir ~/.vimVundle && git clone https://github.com/gmarik/vundle.git ~/.vimVundle/vundle
+    mkdir -p .vim/bundle && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
-这样 git 就会自动的 clone vundle 插件到家目录下的 .vimVundle 文件夹啦。
+这样 git 就会自动的 clone vundle 插件到家目录下的 .vim/bundle/vundle 文件夹啦。
 
 **之后先去 `conf/pluginManager.vim` 看一下我列出的所有插件**
 
@@ -21,6 +21,12 @@ Linux 用户把整个文件夹复制到家目录，目录内 .vimrc 文件也复
 然后再执行 `:BundleInstall` 命令等待插件安装完毕。
 
 ## 问题集
+
+### 你这个王八蛋我之前用了你的这个插件库，我最近一次更新后现在所有插件都不能用了，而且每次打开 vim 都跳一大片错误这是怎么回事！！！
+
+安啦安啦，我只是把之前移到家目录的文件夹移回了 `.vim` 下而已。
+
+执行 `mv ~/.vimVundle ~/.vim/bundle` 就可以啦。
 
 ### 运行 vim 后报错说有 ^M 
 

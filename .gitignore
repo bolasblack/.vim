@@ -1,6 +1,8 @@
 .netrwhist
 .VimballRecord
-*.swp
+.DS_Store
 TEMP.txt
 todo.txt
 conf/pluginConfSc.vim
+bundle
+*.sw*

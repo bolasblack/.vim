@@ -1,6 +1,6 @@
 "----------- Plugin Manager Config -----------
-set rtp+=~/.vimVundle/vundle/
-call vundle#rc('~/.vimVundle')
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 " base 
 " required! 用 vundle 管理 vundle
