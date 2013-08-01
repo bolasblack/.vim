@@ -537,6 +537,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'utl.vim'
 " 自动添加作者信息
 NeoBundle 'AuthorInfo'
+" 在默认启动界面显示最近打开过的文件等
+NeoBundle 'mhinz/vim-startify'
 " 快速给单词/句子两边增加符号（包括html标签），缺点是不用用"."来重复命令，repeat.vim可以解决这个问题
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
@@ -672,4 +674,5 @@ NeoBundle 'drichard/vim-brunch'
 "" 但是和 CtrlP.vim 重复了，所以干掉
 ""NeoBundle 'git://git.wincent.com/command-t.git'
 
+NeoBundleCheck
 " ]]]
