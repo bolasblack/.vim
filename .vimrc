@@ -46,8 +46,19 @@ endif
 call neobundle#rc(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
+" neobundle asynchronous update/install
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
 " base 
+" 快速查找的工具，可以配合 Neobundle 查找插件，十分好用
+NeoBundle 'Shougo/unite.vim'
 " 给vim增加url的识别功能，当然功能远远不止这些
 NeoBundle 'utl.vim'
 " 自动添加作者信息
@@ -197,7 +208,7 @@ NeoBundleCheck
 " 高亮语法
 syntax on
 behave mswin
-filetype plugin on
+filetype plugin indent on
 " 设置主题
 colorscheme lucius "lilypink
 
