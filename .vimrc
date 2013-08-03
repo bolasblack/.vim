@@ -158,6 +158,8 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'wavded/vim-stylus'
 " Jade 高亮
 NeoBundle 'digitaltoad/vim-jade'
+" Less css 高亮
+NeoBundle 'groenewege/vim-less'
 " nginx 语法高亮
 NeoBundle 'nginx.vim'
 " Jinja 语法
