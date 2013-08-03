@@ -1,4 +1,4 @@
-" ----------- path variable setting ----------- [[[
+" ----------- path variable setting [[[
 if has("win32")
   let $vim = $VIM.'/vimfiles'
 else
@@ -7,13 +7,12 @@ endif
 let $v = $vim.'/.vimrc'
 let $rc = $vim.'/.vimrc'
 " ]]]
-" ----------- base setting ----------- [[[
-" 简陋的运行环境判断 [[[
+" ----------- environment [[[
 let g:isMac=0
-let g:isCmd=0
 let g:isLinux=0
-let g:isWindows=0
 let g:isTerminal=0
+let g:isWindows=0
+let g:isCmd=0
 if !has("unix")
   let g:isWindows=1
   if !has("gui_running")
@@ -32,13 +31,167 @@ else
 endif
 function! Env()
   echo "isMac: "      . g:isMac
-  echo "isCmd: "      . g:isCmd
   echo "isLinux: "    . g:isLinux
-  echo "isWndows: "   . g:isWindows
   echo "isTerminal: " . g:isTerminal
+  echo "isWndows: "   . g:isWindows
+  echo "isCmd: "      . g:isCmd
 endfunction
 " ]]]
+" ----------- Plugin Manager Config [[[
 
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" base 
+" 给vim增加url的识别功能，当然功能远远不止这些
+NeoBundle 'utl.vim'
+" 自动添加作者信息
+NeoBundle 'AuthorInfo'
+" 在默认启动界面显示最近打开过的文件等
+NeoBundle 'mhinz/vim-startify'
+" 快速给单词/句子两边增加符号（包括html标签），缺点是不用用"."来重复命令，repeat.vim可以解决这个问题
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+" 提供命令模式和高亮模式下的补全，通过 C-n | C-p 补全缓冲区中出现过的单词
+NeoBundle 'CmdlineComplete'
+" Undo tree
+NeoBundle 'Gundo'
+" 高亮对应的标点，如 [] {}
+NeoBundle 'matchparenpp'
+"强大的自动补全
+NeoBundle 'Shougo/neocomplcache'
+" supertab
+NeoBundle 'ervandew/supertab'
+" 标点对齐
+NeoBundle 'godlygeek/tabular'
+" 目录树
+NeoBundle 'scrooloose/nerdtree'
+" 多国语翻译为指定语言的插件
+NeoBundle 'bolasblack/gtrans.vim'
+" vim 中文文档
+NeoBundle "bolasblack/vimcdoc"
+" 漂亮的 mode line
+NeoBundle "Lokaltog/vim-powerline"
+" 自动闭合标点
+NeoBundle "Raimondi/delimitMate"
+" 在 Vim 中使用 sudo
+NeoBundle "sudo.vim"
+" 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
+"if !g:isMac
+  "NeoBundle 'FencView.vim' 
+"endif
+
+" quick edit
+" 快速移动光标到指定位置
+NeoBundle 'Lokaltog/vim-easymotion'
+" 一个更好用的 grep ，需要安装 ack
+NeoBundle "mileszs/ack.vim"
+" Vim 的平铺窗口管理
+NeoBundle "spolu/dwm.vim"
+" FuzzyFinder 必须的库
+NeoBundle 'L9'
+" 快速找到、打开文件
+NeoBundle 'FuzzyFinder'
+" 用于快速的打开文件和跳转 Buffer
+NeoBundle 'kien/ctrlp.vim'
+" CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
+
+
+" coding
+" 代码浏览工具，似乎更适合 C 
+" *依赖 Vim 插件 TxtBrowser *
+"NeoBundle 'taglist.vim'
+" 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
+"NeoBundle 'TxtBrowser'
+" 代码浏览工具，更适合 OO 语言，由于不明原因，会与 powerline 冲突
+"NeoBundle 'majutsushi/tagbar'
+" 写 Doxygen 风格注释
+NeoBundle 'DoxygenToolkit.vim'
+" 代码注释工具
+NeoBundle 'scrooloose/nerdcommenter'
+" 代码片段引擎
+NeoBundle 'drmingdrmer/xptemplate'
+" 在 Vim 里快捷的使用 Git
+NeoBundle 'tpope/vim-fugitive'
+" 一个 quicklist 来显示标注有 TODO: 的行
+NeoBundle 'TaskList.vim'
+" 多语言语法检查
+NeoBundle 'scrooloose/syntastic'
+
+
+" Python
+" 提供 python 的语法缩进，比默认的要好很多(vimer.cn修改)
+"NeoBundle 'indentpython.vim--nianyang'
+" 为编写 Python 代码作的一些快捷键，比如选择一个代码块等
+"NeoBundle 'python.vim'
+" 更好的 Python 语法高亮
+"NeoBundle 'python.vim--Vasiliev'
+" 基于 PEP8 的 Python 代码风格检查插件
+" *依赖 Python 的第三方包 PEP8 *
+"NeoBundle 'jbking/vim-pep8'
+
+
+" Ruby
+" rails 支持
+"NeoBundle 'tpope/vim-rails'
+" 自动输入 end
+"NeoBundle 'tpope/vim-endwise'
+" ruby 支持
+"NeoBundle 'vim-ruby/vim-ruby'
+
+
+" Language
+" 提供 markdown 着色功能，顺便也提供了 snippet
+NeoBundle 'hallison/vim-markdown'
+" mustache 支持
+NeoBundle 'juvenn/mustache.vim'
+" 提供 JSON 的语法高亮
+NeoBundle 'JSON.vim'
+" coffeeScript 支持
+NeoBundle 'kchmck/vim-coffee-script'
+" Stylus 支持
+NeoBundle 'wavded/vim-stylus'
+" Jade 高亮
+NeoBundle 'digitaltoad/vim-jade'
+" nginx 语法高亮
+NeoBundle 'nginx.vim'
+" Jinja 语法
+NeoBundle 'Jinja'
+" Mako 语法
+NeoBundle 'mako.vim'
+
+
+" Front
+" zencoding
+NeoBundle 'ZenCoding.vim'
+" 美化js代码，并不是简单的缩进，而是整个优化
+NeoBundle 'jsbeautify'
+" 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
+if !g:isTerminal
+  NeoBundle 'css_color.vim'
+endi
+" 高亮对应的 HTML 标签
+NeoBundle 'gregsexton/MatchTag'
+" 按 % 可以跳转到对应的标点或标签
+NeoBundle 'matchit.zip'
+" csslint 的 Vim 插件
+NeoBundle 'bolasblack/csslint.vim'
+" brunch 约定的文件组织方式的支持
+NeoBundle 'drichard/vim-brunch'
+
+"" non github repos
+"" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
+"" 但是和 CtrlP.vim 重复了，所以干掉
+""NeoBundle 'git://git.wincent.com/command-t.git'
+
+NeoBundleCheck
+" ]]]
+" ----------- base setting [[[
 " 高亮语法
 syntax on
 behave mswin
@@ -169,19 +322,14 @@ if g:isWindows
 endif
 " ]]]
 " ]]]
-" ----------- syntax setting ----------- [[[
+" ----------- syntax setting [[[
 let g:todo_keyword = ["TODO", "FIX"]
 let g:warning_keyword = ["WARNING"]
 
 au BufNewFile,BufRead nginx.conf set filetype=nginx " Nginx 配置文件支持
 au BufNewFile,BufRead *.json set filetype=json      " JSON 后缀名支持
-au BufNewFile,BufRead *.coffee set filetype=coffee  " CoffeeScript 支持
-au BufNewFile,BufRead *.styl set filetype=stylus    " Stylus 支持
-au BufNewFile,BufRead *.less set filetype=less      " Less 支持
-au BufNewFile,BufRead *.{vim,vimrc} set filetype=vim        " VimScript 文件高亮
-au BufNewFile,BufRead *.{mustache,handlebars,hbs,hogan,hulk} set filetype=mustache " mustache 模版语言对 HTML 文件的支持
 " ]]]
-"----------- Custom Shortcut -------- [[[
+" ----------- Custom Shortcut [[[
 " tabpage mappings commented [[[
 "map <M-1> 1gt
 "map <M-2> 2gt
@@ -334,8 +482,8 @@ func! DebugInTerminal() "[[[
   en
 endf
 "]]]
-"]]]
-"----------- Normal Plugins Configure [[[
+" ]]]
+" ----------- Normal Plugins Configure [[[
 " Taglist 配置 [[[
 "TlistUpdate可以更新tags
 "map <F3> :silent! Tlist<CR> "按下F3就可以呼出了
@@ -521,158 +669,4 @@ let g:tlTokenList = []
 call extend(g:tlTokenList, g:todo_keyword)
 call extend(g:tlTokenList, g:warning_keyword)
 "]]]
-"]]]
-"----------- Plugin Manager Config ----------- [[[
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#rc(expand('~/.vim/bundle'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" base 
-" 给vim增加url的识别功能，当然功能远远不止这些
-NeoBundle 'utl.vim'
-" 自动添加作者信息
-NeoBundle 'AuthorInfo'
-" 在默认启动界面显示最近打开过的文件等
-NeoBundle 'mhinz/vim-startify'
-" 快速给单词/句子两边增加符号（包括html标签），缺点是不用用"."来重复命令，repeat.vim可以解决这个问题
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-" 提供命令模式和高亮模式下的补全，通过 C-n | C-p 补全缓冲区中出现过的单词
-NeoBundle 'CmdlineComplete'
-" Undo tree
-NeoBundle 'Gundo'
-" 高亮对应的标点，如 [] {}
-NeoBundle 'matchparenpp'
-"强大的自动补全
-NeoBundle 'Shougo/neocomplcache'
-" supertab
-NeoBundle 'ervandew/supertab'
-" 标点对齐
-NeoBundle 'godlygeek/tabular'
-" 目录树
-NeoBundle 'scrooloose/nerdtree'
-" 多国语翻译为指定语言的插件
-NeoBundle 'bolasblack/gtrans.vim'
-" vim 中文文档
-NeoBundle "bolasblack/vimcdoc"
-" 漂亮的 mode line
-NeoBundle "Lokaltog/vim-powerline"
-" 自动闭合标点
-NeoBundle "Raimondi/delimitMate"
-" 在 Vim 中使用 sudo
-NeoBundle "sudo.vim"
-" 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
-"if !g:isMac
-  "NeoBundle 'FencView.vim' 
-"endif
-
-" quick edit
-" 快速移动光标到指定位置
-NeoBundle 'Lokaltog/vim-easymotion'
-" 一个更好用的 grep ，需要安装 ack
-NeoBundle "mileszs/ack.vim"
-" Vim 的平铺窗口管理
-NeoBundle "spolu/dwm.vim"
-" FuzzyFinder 必须的库
-NeoBundle 'L9'
-" 快速找到、打开文件
-NeoBundle 'FuzzyFinder'
-" 用于快速的打开文件和跳转 Buffer
-NeoBundle 'kien/ctrlp.vim'
-" CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
-
-
-" coding
-" 代码浏览工具，似乎更适合 C 
-" *依赖 Vim 插件 TxtBrowser *
-"NeoBundle 'taglist.vim'
-" 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
-"NeoBundle 'TxtBrowser'
-" 代码浏览工具，更适合 OO 语言，由于不明原因，会与 powerline 冲突
-"NeoBundle 'majutsushi/tagbar'
-" 写 Doxygen 风格注释
-NeoBundle 'DoxygenToolkit.vim'
-" 代码注释工具
-NeoBundle 'scrooloose/nerdcommenter'
-" 代码片段引擎
-NeoBundle 'drmingdrmer/xptemplate'
-" 在 Vim 里快捷的使用 Git
-NeoBundle 'tpope/vim-fugitive'
-" 一个 quicklist 来显示标注有 TODO: 的行
-NeoBundle 'TaskList.vim'
-" 多语言语法检查
-NeoBundle 'scrooloose/syntastic'
-
-
-" Python
-" 提供 python 的语法缩进，比默认的要好很多(vimer.cn修改)
-"NeoBundle 'indentpython.vim--nianyang'
-" 为编写 Python 代码作的一些快捷键，比如选择一个代码块等
-"NeoBundle 'python.vim'
-" 更好的 Python 语法高亮
-"NeoBundle 'python.vim--Vasiliev'
-" 基于 PEP8 的 Python 代码风格检查插件
-" *依赖 Python 的第三方包 PEP8 *
-"NeoBundle 'jbking/vim-pep8'
-
-
-" Ruby
-" rails 支持
-"NeoBundle 'tpope/vim-rails'
-" 自动输入 end
-"NeoBundle 'tpope/vim-endwise'
-" ruby 支持
-"NeoBundle 'vim-ruby/vim-ruby'
-
-
-" Language
-" 提供 markdown 着色功能，顺便也提供了 snippet
-NeoBundle 'hallison/vim-markdown'
-" mustache 支持
-NeoBundle 'juvenn/mustache.vim'
-" 提供 JSON 的语法高亮
-NeoBundle 'JSON.vim'
-" coffeeScript 支持
-NeoBundle 'kchmck/vim-coffee-script'
-" Stylus 支持
-NeoBundle 'wavded/vim-stylus'
-" Jade 高亮
-NeoBundle 'digitaltoad/vim-jade'
-" nginx 语法高亮
-NeoBundle 'nginx.vim'
-" Jinja 语法
-NeoBundle 'Jinja'
-" Mako 语法
-NeoBundle 'mako.vim'
-
-
-" Front
-" zencoding
-NeoBundle 'ZenCoding.vim'
-" 美化js代码，并不是简单的缩进，而是整个优化
-NeoBundle 'jsbeautify'
-" 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
-if !g:isTerminal
-  NeoBundle 'css_color.vim'
-endi
-" 高亮对应的 HTML 标签
-NeoBundle 'gregsexton/MatchTag'
-" 按 % 可以跳转到对应的标点或标签
-NeoBundle 'matchit.zip'
-" csslint 的 Vim 插件
-NeoBundle 'bolasblack/csslint.vim'
-" brunch 约定的文件组织方式的支持
-NeoBundle 'drichard/vim-brunch'
-
-"" non github repos
-"" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
-"" 但是和 CtrlP.vim 重复了，所以干掉
-""NeoBundle 'git://git.wincent.com/command-t.git'
-
-NeoBundleCheck
 " ]]]
