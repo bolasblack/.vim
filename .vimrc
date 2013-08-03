@@ -96,7 +96,7 @@ NeoBundle "spolu/dwm.vim"
 " FuzzyFinder 必须的库
 NeoBundle 'L9'
 " 快速找到、打开文件
-NeoBundle 'FuzzyFinder'
+NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 " 用于快速的打开文件和跳转 Buffer
 NeoBundle 'kien/ctrlp.vim'
 " CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
