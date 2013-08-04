@@ -102,8 +102,8 @@ NeoBundle "sudo.vim"
 NeoBundle 'Lokaltog/vim-easymotion'
 " 一个更好用的 grep ，需要安装 ack
 NeoBundle "mileszs/ack.vim"
-" Vim 的平铺窗口管理
-NeoBundle "spolu/dwm.vim"
+" 比 dwn 更可配置的的平铺窗口管理
+NeoBundle "zhaocai/GoldenView.Vim"
 " FuzzyFinder 必须的库
 NeoBundle 'L9'
 " 快速找到、打开文件
@@ -681,5 +681,18 @@ let g:syntastic_coffee_lint_options = "-f ".s:syntastic_conf_folder."coffee.json
 let g:tlTokenList = []
 call extend(g:tlTokenList, g:todo_keyword)
 call extend(g:tlTokenList, g:warning_keyword)
+"]]]
+"[[[GoldenView
+" split to tiled windows
+nmap <silent> <C-w>n  <Plug>GoldenViewSplit
+" jump to next and previous window
+nmap <silent> <C-w>j  <Plug>GoldenViewNext
+nmap <silent> <C-w>k  <Plug>GoldenViewPrevious
+" <C-w>s split window
+" <C-w>w switch between windows
+" <C-w>v split windows vertically
+" <C-w>c close window but save buffer
+" <C-w>q quit window
+" <C-w>o only view current window 
 "]]]
 " ]]]
