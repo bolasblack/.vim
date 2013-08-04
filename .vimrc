@@ -104,6 +104,8 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle "mileszs/ack.vim"
 " 比 dwn 更可配置的的平铺窗口管理
 NeoBundle "zhaocai/GoldenView.Vim"
+" speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
+NeoBundle 'tpope/vim-speeddating'
 " FuzzyFinder 必须的库
 NeoBundle 'L9'
 " 快速找到、打开文件
