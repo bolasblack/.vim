@@ -104,6 +104,8 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle "mileszs/ack.vim"
 " 比 dwn 更可配置的的平铺窗口管理
 NeoBundle "zhaocai/GoldenView.Vim"
+" automatically search for & insert URL targets for links in Markdown & ReST
+NeoBundle 'sampsyo/autolink.vim'
 " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
 NeoBundle 'tpope/vim-speeddating'
 " FuzzyFinder 必须的库
