@@ -100,6 +100,8 @@ NeoBundle "sudo.vim"
 NeoBundle 'Shougo/neocomplete'
 " 代码片段引擎
 NeoBundle 'Shougo/neosnippet'
+" 代码片段模板
+NeoBundle 'honza/vim-snippets'
 " 快速移动光标到指定位置
 NeoBundle 'Lokaltog/vim-easymotion'
 " 一个更好用的 grep ，需要安装 ack
@@ -646,6 +648,12 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " ]]]
 " NeoSnippet 设置 [[[
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets"
+let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
