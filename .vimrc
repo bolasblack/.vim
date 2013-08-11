@@ -59,6 +59,8 @@ NeoBundle 'Shougo/vimproc', {
 " base 
 " 快速查找的工具，可以配合 Neobundle 查找插件，十分好用
 NeoBundle 'Shougo/unite.vim'
+" vim shell
+NeoBundle 'Shougo/vimshell.vim'
 " 给vim增加url的识别功能，当然功能远远不止这些
 NeoBundle 'utl.vim'
 " 自动添加作者信息
@@ -670,6 +672,11 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+" ]]]
+" VimShell 设置 [[[
+" Use current directory as vimshell prompt.
+let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
+let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 " ]]]
 " SuperTab 设置 [[[
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
