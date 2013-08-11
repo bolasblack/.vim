@@ -268,8 +268,7 @@ set gcr=n-v-c:block-Cursor/lCursor-blinkon0,ve:ver35-Cursor-blinkon0,o:hor50-Cur
 set encoding=utf-8
 set termencoding=utf-8
 set langmenu=zh_CN.utf-8
-"set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 language message zh_CN.UTF-8
 if g:isCmd
   set encoding=chinese " 设置命令提示符下vim不乱码 
