@@ -1,0 +1,49 @@
+# Markdown
+
+# Includes octopress (http://octopress.org/) snippets
+
+snippet [
+	[${1:text}](http://${2:address} "${3:title}")
+snippet [*
+	[${1:link}](${2:`@*`} "${3:title}")${4}
+
+snippet [:
+	[${1:id}]: http://${2:url} "${3:title}"
+snippet [:*
+	[${1:id}]: ${2:`@*`} "${3:title}"
+
+snippet ![
+	![${1:alttext}](${2:/images/image.jpg} "${3:title}")
+snippet ![*
+	![${1:alt}](${2:`@*`} "${3:title}")${4}
+
+snippet ![:
+	![${1:id}]: ${2:url} "${3:title}"
+snippet ![:*
+	![${1:id}]: ${2:`@*`} "${3:title}"
+
+snippet ===
+	`repeat('=', strlen(getline(line(".") - 1)) - strlen(getline('.')))`
+
+	${1}
+snippet ---
+	`repeat('-', strlen(getline(line(".") - 1)) - strlen(getline('.')))`
+
+	${1}
+
+snippet codeblock-short
+	\`\`\`
+	${1:code_snippet}
+	\`\`\`
+snippet codeblock-full
+	\`\`\`${1:language} ${2:title} ${3:URL} ${4:link_text}
+	${5:code_snippet}
+	\`\`\`
+snippet js-codeblock
+	\`\`\`javascript
+	${1:code_snippet}
+	\`\`\`
+
+snippet indent
+  `repeat(' ', 4)`${0:content}
+
