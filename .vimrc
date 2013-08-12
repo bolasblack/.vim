@@ -189,7 +189,7 @@ NeoBundle 'mako.vim'
 
 " Front
 " zencoding
-NeoBundle 'ZenCoding.vim'
+NeoBundle 'mattn/emmet-vim'
 " 美化js代码，并不是简单的缩进，而是整个优化
 NeoBundle 'jsbeautify'
 " 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
