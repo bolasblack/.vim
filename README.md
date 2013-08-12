@@ -1,5 +1,35 @@
 ## 使用说明
 
+### Quick Start (*nix only)
+
+#### Install
+
+**via 'curl'**
+
+```bash
+curl -L https://raw.github.com/bolasblack/.vim/master/scripts/bootstrap.sh | bash
+```
+
+**via 'wget'**
+
+```bash
+wget --no-check-certificate https://raw.github.com/bolasblack/.vim/master/scripts/bootstrap.sh -O - | bash
+```
+
+#### Update
+
+```bash
+bash $HOME/.vim/scripts/update.sh
+```
+
+#### Remove
+
+```bash
+bash $HOME/.vim/scripts/remove.sh
+```
+
+### 其他方式
+
 首先，你需要安装有 Git 。Linux 怎么装 Git 我就不说了，Windows 用户可以看一下 https://github.com/gmarik/vundle/wiki/Vundle-for-Windows 。
 
 然后克隆仓库：
