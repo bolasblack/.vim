@@ -54,6 +54,8 @@ git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HO
 
 然后再执行 `:NeoBundleInstall` 命令等待插件安装完毕。
 
+最后，参考 [Powerline](://github.com/Lokaltog/powerline) 项目安装必需的字体。
+
 ## 问题集
 
 ### 打开 Vim 时报错说当前版本不支持 `NeoComplete` ，需要更高版本的 Vim 和对 lua 的支持
