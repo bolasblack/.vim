@@ -35,7 +35,7 @@ bash $HOME/.vim/scripts/remove.sh
 然后克隆仓库：
 
 ```bash
-git clone https://github.com/bolasblack/.vim.git $HOME/.vim && git --git-dir=$HOME/.vim/.git submodule update --init
+git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HOME/.vim
 ```
 
 **之后先去 `conf/pluginManager.vim` 看一下我列出的所有插件**，不要的全部删除或者注释掉，推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释。
