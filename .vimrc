@@ -85,7 +85,7 @@ NeoBundle 'scrooloose/nerdtree'
 " 多国语翻译为指定语言的插件
 NeoBundle 'bolasblack/gtrans.vim'
 " vim 中文文档
-NeoBundle 'bolasblack/vimcdoc'
+"NeoBundle 'bolasblack/vimcdoc'
 " 漂亮的 mode line
 " Monaco for Powerline  https://gist.github.com/baopham/1838072
 " Powerline fonts       https://github.com/Lokaltog/powerline-fonts
@@ -221,6 +221,8 @@ behave mswin
 filetype plugin indent on
 " 设置主题
 colorscheme lucius "lilypink
+
+"set runtimepath+=~/.vim/vimcdoc/trunk/
 
 let mapleader = ','   " Set mapleader
 set linebreak         " 不在单词中间断行

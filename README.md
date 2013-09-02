@@ -2,11 +2,15 @@
 
 首先，你需要安装有 Git 。Linux 怎么装 Git 我就不说了，Windows 用户可以看一下 https://github.com/gmarik/vundle/wiki/Vundle-for-Windows 。
 
-Linux 用户把整个文件夹复制到家目录。
+然后克隆仓库：
+
+```bash
+git clone https://github.com/bolasblack/.vim.git $HOME/.vim && git --git-dir=$HOME/.vim/.git submodule update --init
+```
 
 **之后先去 `conf/pluginManager.vim` 看一下我列出的所有插件**，不要的全部删除或者注释掉，推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释。
 
-然后把目录里的 .vimrc 文件也软连接到家目录下即可。这样如果我更新了的话，只要在 .vim 目录下 `git pull` 就能同步到最新啦。
+然后把目录里的 `.vimrc` 文件也软连接到家目录下。这样如果我更新了的话，只要在 `.vim` 目录下 `git pull` 就能同步到最新啦。
 
 软链接的命令：
 

@@ -1,0 +1,3 @@
+[submodule "vimcdoc"]
+	path = vimcdoc
+	url = https://github.com/bolasblack/vimcdoc.git
