@@ -40,12 +40,16 @@ printf '\033[0;34m%s\033[0m\n' "Installing NeoBundle..."
 mkdir -p $HOME/.vim/bundle
 git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 
-#printf '\033[0;34m%s\033[0m\n' "Installing font for powerline..."
-#mkdir $HOME/.fonts
-#wget -O $HOME/.fonts/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
-#fc-cache -vf $HOME/.fonts
-#mkdir $HOME/.fonts.conf.d
-#wget -O $HOME/.fonts.conf.d/10-powerline-symbols.conf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+if [ `uname` = 'Darwin' ]; then
+  printf '\033[0;31m%s\033[0m\n' "Download patched powerline font file from: https://github.com/Lokaltog/powerline-fonts..."
+else
+  printf '\033[0;34m%s\033[0m\n' "Installing font for powerline..."
+  mkdir $HOME/.fonts
+  wget -O $HOME/.fonts/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+  fc-cache -vf $HOME/.fonts
+  mkdir $HOME/.fonts.conf.d
+  wget -O $HOME/.fonts.conf.d/10-powerline-symbols.conf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+fi
 
 printf '\033[0;34m%s\033[0m\n' "Installing plugins using NeoBundle..."
 vim +'set nospell' +NeoBundleInstall!
