@@ -1,5 +1,5 @@
 " ----------- path variable setting [[[
-if has("win32")
+if has('win32')
   let $vim = $VIM.'/vimfiles'
 else
   let $vim = $HOME.'/.vim'
@@ -13,16 +13,16 @@ let g:isLinux=0
 let g:isTerminal=0
 let g:isWindows=0
 let g:isCmd=0
-if !has("unix")
+if !has('unix')
   let g:isWindows=1
-  if !has("gui_running")
+  if !has('gui_running')
     let g:isCmd=1
   endif
 else
-  if !has("gui_running")
+  if !has('gui_running')
     let g:isTerminal=1
   else
-    if !has("mac")
+    if !has('mac')
       let g:isLinux=1
     else
       let g:isMac=1
@@ -30,11 +30,11 @@ else
   endif
 endif
 function! Env()
-  echo "isMac: "      . g:isMac
-  echo "isLinux: "    . g:isLinux
-  echo "isTerminal: " . g:isTerminal
-  echo "isWndows: "   . g:isWindows
-  echo "isCmd: "      . g:isCmd
+  echo 'isMac: '      . g:isMac
+  echo 'isLinux: '    . g:isLinux
+  echo 'isTerminal: ' . g:isTerminal
+  echo 'isWndows: '   . g:isWindows
+  echo 'isCmd: '      . g:isCmd
 endfunction
 " ]]]
 " ----------- Plugin Manager Config [[[
@@ -67,7 +67,7 @@ NeoBundle 'utl.vim'
 NeoBundle 'AuthorInfo'
 " 在默认启动界面显示最近打开过的文件等
 NeoBundle 'mhinz/vim-startify'
-" 快速给单词/句子两边增加符号（包括html标签），缺点是不用用"."来重复命令，repeat.vim可以解决这个问题
+" 快速给单词/句子两边增加符号（包括html标签），缺点是不用用'.'来重复命令，repeat.vim可以解决这个问题
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 " 提供命令模式和高亮模式下的补全，通过 C-n | C-p 补全缓冲区中出现过的单词
@@ -85,13 +85,15 @@ NeoBundle 'scrooloose/nerdtree'
 " 多国语翻译为指定语言的插件
 NeoBundle 'bolasblack/gtrans.vim'
 " vim 中文文档
-NeoBundle "bolasblack/vimcdoc"
+NeoBundle 'bolasblack/vimcdoc'
 " 漂亮的 mode line
-NeoBundle "Lokaltog/vim-powerline"
+" Monaco for Powerline  https://gist.github.com/baopham/1838072
+" Powerline fonts       https://github.com/Lokaltog/powerline-fonts
+NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 " 自动闭合标点
-NeoBundle "Raimondi/delimitMate"
+NeoBundle 'Raimondi/delimitMate'
 " 在 Vim 中使用 sudo
-NeoBundle "sudo.vim"
+NeoBundle 'sudo.vim'
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
   "NeoBundle 'FencView.vim' 
@@ -107,9 +109,9 @@ NeoBundle 'honza/vim-snippets'
 " 快速移动光标到指定位置
 NeoBundle 'Lokaltog/vim-easymotion'
 " 一个更好用的 grep ，需要安装 ack
-NeoBundle "mileszs/ack.vim"
+NeoBundle 'mileszs/ack.vim'
 " 比 dwn 更可配置的的平铺窗口管理
-NeoBundle "zhaocai/GoldenView.Vim"
+NeoBundle 'zhaocai/GoldenView.Vim'
 " automatically search for & insert URL targets for links in Markdown & ReST
 NeoBundle 'sampsyo/autolink.vim'
 " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
@@ -277,7 +279,7 @@ if g:isCmd
   set termencoding=chinese " 终端下的编码，对gvim来说没有必要设置 
 endif
 
-if &term =~ "screen"
+if &term =~ 'screen'
   set t_Co=256
 endif
 
@@ -301,14 +303,14 @@ endif
 "au GUIEnter * set lines=44 columns=84
 
 " 分启动方式设定尺寸
-if has("gui_running")
+if has('gui_running')
    set columns=82
 else
   " This is console Vim.
-  if exists("+lines")
+  if exists('+lines')
 "    set lines=140
   endif
-  if exists("+columns")
+  if exists('+columns')
 "    set columns=82
   endif
 endif
@@ -419,7 +421,7 @@ endfunction
 vmap <silent> <TAB> >
 vmap <silent> <S-TAB> <
 
-au BufWritePost nginx.conf exe "!sudo nginx -s reload"
+au BufWritePost nginx.conf exe '!sudo nginx -s reload'
 
 " edit from http://www.vim.org/scripts/script.php?script_id=3341
 au FileType python,ruby,sh,cpp,c,cc,h,html :call Cc()
@@ -453,7 +455,7 @@ func! AutoSpace() "[[[
 endf
 "]]]
 func! Cc() "[[[
-  if exists("$DISPLAY")
+  if exists('$DISPLAY')
     nm JJ :call DebugInGui()<CR>
     im JJ <ESC> :call DebugInGui()<CR>
   el
@@ -463,42 +465,42 @@ func! Cc() "[[[
 endf
 "]]]
 func! DebugInGui() "[[[
-  exe "w"
+  exe 'w'
   if &filetype == 'c'
-    exe "!gcc -Wall % -o %<"
-    exe "!clear;./%< 2>/dev/null && rm -f %<"
+    exe '!gcc -Wall % -o %<'
+    exe '!clear;./%< 2>/dev/null && rm -f %<'
   elsei &filetype == 'cpp'
-    exe "!g++ -Wall % -o %<"
-    exe "!clear;./%< 2>/dev/null && rm -f %<"
+    exe '!g++ -Wall % -o %<'
+    exe '!clear;./%< 2>/dev/null && rm -f %<'
   elsei &filetype == 'python'
-    exe "!clear;python %"
+    exe '!clear;python %'
   elsei &filetype == 'ruby'
-    exe "!clear;ruby  %"
+    exe '!clear;ruby  %'
   elsei &filetype == 'sh'
-    exe "!clear;bash %"
+    exe '!clear;bash %'
   elsei &filetype == 'perl'
-    exe "!clear;perl %"
+    exe '!clear;perl %'
   en
 endf
 "]]]
 func! DebugInTerminal() "[[[
-  exe "w"
+  exe 'w'
   if &filetype == 'c'
-    exe "!gcc -Wall % -o %<"
-    exe "!./%< 2>/dev/null && rm -f %<"
+    exe '!gcc -Wall % -o %<'
+    exe '!./%< 2>/dev/null && rm -f %<'
   elsei &filetype == 'cpp'
-    exe "!g++ -Wall % -o %<"
-    exe "!./%< 2>/dev/null && rm -f %<"
+    exe '!g++ -Wall % -o %<'
+    exe '!./%< 2>/dev/null && rm -f %<'
   elsei &filetype == 'python'
-    exe "!python %"
+    exe '!python %'
   elsei &filetype == 'ruby'
-    exe "!ruby  %"
+    exe '!ruby  %'
   elsei &filetype == 'sh'
-    exe "!bash %"
+    exe '!bash %'
   elsei &filetype == 'perl'
-    exe "!perl %"
+    exe '!perl %'
   elsei &filetype =='html'
-    exe "!firefox %"
+    exe '!firefox %'
   en
 endf
 "]]]
@@ -522,44 +524,28 @@ let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必�
 "set tags += tags;
 " ]]]
 " AuthorInfo 配置 [[[
-let g:vimrc_author='yicuan' 
+let g:vimrc_author='c4605' 
 let g:vimrc_email='bolasblack@gmail.com' 
-let g:vimrc_homepage='http://plafer.tk' 
+let g:vimrc_homepage='http://plafer.info' 
 " ]]]
 " Tagbar 配置 [[[
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
 " ]]]
 " Doxygen 配置 [[[
-let g:DoxygenToolkit_briefTag_funcName = "yes"
+let g:DoxygenToolkit_briefTag_funcName = 'yes'
 let g:Doxygen_enhanced_color = 1
-let g:DoxygenToolkit_authorName = "yicuan bolasblack[at]gmail.com"
-let g:DoxygenToolkit_licenseTag = "Do any thing you like"
-let g:DoxygenToolkit_blockHeader = "======================================="
-let g:DoxygenToolkit_briefTag_pre = "@Description:"
-let g:DoxygenToolkit_paramTag_pre = "@Param:"
-let g:DoxygenToolkit_returnTag_pre = "@Return:"
-let g:DoxygenToolkit_blockFooter = "======================================="
+let g:DoxygenToolkit_authorName = 'c4605 bolasblack[at]gmail.com'
+let g:DoxygenToolkit_licenseTag = 'Do any thing you like'
+let g:DoxygenToolkit_blockHeader = '======================================='
+let g:DoxygenToolkit_briefTag_pre = '@Description:'
+let g:DoxygenToolkit_paramTag_pre = '@Param:'
+let g:DoxygenToolkit_returnTag_pre = '@Return:'
+let g:DoxygenToolkit_blockFooter = '======================================='
 " ]]]
 " TxtBrowser 设置 [[[
 au BufEnter *.txt setlocal ft=txt
 " let g:default_web_browser=chrome
-" ]]]
-" Zen Coding 配置 [[[
-let g:user_zen_settings = { 
-  \  'indentation' : '  ', 
-  \  'perl' : { 
-  \    'aliases' : { 
-  \      'req' : 'require ' 
-  \    }, 
-  \    'snippets' : { 
-  \      'use' : "use strict\nuse warnings\n\n", 
-  \      'warn' : "warn \"|\";", 
-  \    } 
-  \  } 
-  \} 
-  let g:user_zen_expandabbr_key = '<c-y>' " 设置为ctrl+y展开
-  let g:use_zen_complete_tag = 1
 " ]]]
 " NeoComplate 设置 [[[
 " Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -719,14 +705,14 @@ set noshowmode
 let g:Powerline_symbols = 'fancy'
 "]]]
 "[[[syntastic
-let s:syntastic_conf_folder = "~/.vim/syntastic.conf/"
+let s:syntastic_conf_folder = '~/.vim/syntastic.conf/'
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
 
-let g:syntastic_coffee_lint_options = "-f ".s:syntastic_conf_folder."coffee.json"
+let g:syntastic_coffee_lint_options = '-f '.s:syntastic_conf_folder.'coffee.json'
 "]]]
 "[[[Tasklist
 let g:tlTokenList = []
