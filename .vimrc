@@ -136,7 +136,7 @@ NeoBundle 'kien/ctrlp.vim'
 " 写 Doxygen 风格注释
 NeoBundle 'DoxygenToolkit.vim'
 " 代码注释工具
-NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tomtom/tcomment_vim'
 " 在 Vim 里快捷的使用 Git
 NeoBundle 'tpope/vim-fugitive'
 " 一个 quicklist 来显示标注有 TODO: 的行
@@ -733,5 +733,9 @@ nmap <silent> <C-w>k  <Plug>GoldenViewPrevious
 " <C-w>c close window but save buffer
 " <C-w>q quit window
 " <C-w>o only view current window 
+"]]]
+"[[[TComment
+call tcomment#DefineType('sql_block', g:tcommentBlockC)
+call tcomment#DefineType('coffee_block', {'commentstring': '###%s###'})
 "]]]
 " ]]]
