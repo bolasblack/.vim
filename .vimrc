@@ -143,6 +143,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'TaskList.vim'
 " 多语言语法检查
 NeoBundle 'scrooloose/syntastic'
+" Gist 支持
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
 
 " Python
@@ -737,5 +739,14 @@ nmap <silent> <C-w>k  <Plug>GoldenViewPrevious
 "[[[TComment
 call tcomment#DefineType('sql_block', g:tcommentBlockC)
 call tcomment#DefineType('coffee_block', {'commentstring': '###%s###'})
+"]]]
+"[[[Gist
+if g:isMac
+  let g:gist_clip_command = 'pbcopy'
+else
+  if g:isLinux
+    let g:gist_clip_command = 'xclip -selection clipboard'
+  endif
+endif
 "]]]
 " ]]]
