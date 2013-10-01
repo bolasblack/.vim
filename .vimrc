@@ -145,6 +145,8 @@ NeoBundle 'TaskList.vim'
 NeoBundle 'scrooloose/syntastic'
 " Gist 支持
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+" EditorConfig
+NeoBundle 'editorconfig/editorconfig-vim'
 
 
 " Python
