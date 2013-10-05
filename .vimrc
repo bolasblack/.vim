@@ -92,6 +92,8 @@ NeoBundle 'bolasblack/gtrans.vim'
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 " 自动闭合标点
 NeoBundle 'Raimondi/delimitMate'
+" 为某个区域的内容设置高亮
+NeoBundle 'vim-scripts/SyntaxRange'
 " 在 Vim 中使用 sudo
 NeoBundle 'sudo.vim'
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
