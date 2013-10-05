@@ -173,8 +173,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 
 
 " Language
-" 提供 markdown 着色功能，顺便也提供了 snippet
-NeoBundle 'hallison/vim-markdown'
+" 提供 markdown 着色功能
+NeoBundle 'tpope/vim-markdown'
 " mustache 支持
 NeoBundle 'juvenn/mustache.vim'
 " 提供 JSON 的语法高亮
