@@ -56,6 +56,10 @@ git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HO
 
 最后，参考 [Powerline](://github.com/Lokaltog/powerline) 项目安装必需的字体。
 
+## 一些有意思的 Vim 扩展工具推荐
+
+[Vimdeck](http://vimdeck.tybenz.com/)：用 Markdown 来制作，用 Vim 来演示 Slide 。
+
 ## 问题集
 
 ### 打开 Vim 时报错说当前版本不支持 `NeoComplete` ，需要更高版本的 Vim 和对 lua 的支持
