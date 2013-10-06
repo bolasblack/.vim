@@ -149,6 +149,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 " EditorConfig
 NeoBundle 'editorconfig/editorconfig-vim'
+" 自动去除行末空格
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 
 " Python
