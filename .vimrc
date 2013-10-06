@@ -56,7 +56,7 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 
-" base 
+" base
 " 快速查找的工具，可以配合 Neobundle 查找插件，十分好用
 NeoBundle 'Shougo/unite.vim'
 " vim shell
@@ -98,7 +98,7 @@ NeoBundle 'vim-scripts/SyntaxRange'
 NeoBundle 'sudo.vim'
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
-  "NeoBundle 'FencView.vim' 
+  "NeoBundle 'FencView.vim'
 "endif
 
 " quick edit
@@ -128,7 +128,7 @@ NeoBundle 'kien/ctrlp.vim'
 
 
 " coding
-" 代码浏览工具，似乎更适合 C 
+" 代码浏览工具，似乎更适合 C
 " *依赖 Vim 插件 TxtBrowser *
 "NeoBundle 'taglist.vim'
 " 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
@@ -285,8 +285,8 @@ set langmenu=zh_CN.utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 language message zh_CN.UTF-8
 if g:isCmd
-  set encoding=chinese " 设置命令提示符下vim不乱码 
-  set termencoding=chinese " 终端下的编码，对gvim来说没有必要设置 
+  set encoding=chinese " 设置命令提示符下vim不乱码
+  set termencoding=chinese " 终端下的编码，对gvim来说没有必要设置
 endif
 
 if &term =~ 'screen'
@@ -295,8 +295,8 @@ endif
 
 " 字体设置 [[[
 if g:isWindows
-    set guifont=Courier:h12:cANSI 
-    set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效 
+    set guifont=Courier:h12:cANSI
+    set guifontwide=NSimSun:h12 " guifontwide只有在encoding=utf-8时才生效
 elseif g:isMac
     set guifont=Monaco:h11
     set guifontwide=YaHei\ Consolas\ Hybrid:h11
@@ -534,9 +534,9 @@ let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必�
 "set tags += tags;
 " ]]]
 " AuthorInfo 配置 [[[
-let g:vimrc_author='c4605' 
-let g:vimrc_email='bolasblack@gmail.com' 
-let g:vimrc_homepage='http://plafer.info' 
+let g:vimrc_author='c4605'
+let g:vimrc_email='bolasblack@gmail.com'
+let g:vimrc_homepage='http://plafer.info'
 " ]]]
 " Tagbar 配置 [[[
 let g:tagbar_ctags_bin = 'ctags'
@@ -680,7 +680,7 @@ let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 " Netrw 设置 [[[
 let g:netrw_winsize = 30
 "输入',fe'时，就会打开一个垂直分隔的窗口浏览当前文件所在的目录，窗口的宽度为30
-"nmap <silent> <leader>ntf :Sexplore!<cr> 
+"nmap <silent> <leader>ntf :Sexplore!<cr>
 " ]]]
 " ConqueTerm 设置 [[[
 let g:ConqueTerm_Color = 2
@@ -740,7 +740,7 @@ nmap <silent> <C-w>k  <Plug>GoldenViewPrevious
 " <C-w>v split windows vertically
 " <C-w>c close window but save buffer
 " <C-w>q quit window
-" <C-w>o only view current window 
+" <C-w>o only view current window
 "]]]
 "[[[TComment
 call tcomment#DefineType('sql_block', g:tcommentBlockC)
