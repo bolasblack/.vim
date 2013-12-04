@@ -124,6 +124,10 @@ NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder', {'depends': 'L9'}
 NeoBundle 'kien/ctrlp.vim'
 " CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
 
+" CtrlP Extensions
+" a ctrlp.vim extension - Navigate and jump to function defs
+NeoBundle 'tacahiroy/ctrlp-funky'
+
 
 " coding
 " 代码浏览工具，似乎更适合 C
@@ -514,6 +518,22 @@ endf
 "]]]
 " ]]]
 " ----------- Normal Plugins Configure [[[
+" AuthorInfo 配置 [[[
+let g:vimrc_author='c4605'
+let g:vimrc_email='bolasblack@gmail.com'
+let g:vimrc_homepage='http://plafer.info'
+" ]]]
+" Doxygen 配置 [[[
+let g:DoxygenToolkit_briefTag_funcName = 'yes'
+let g:Doxygen_enhanced_color = 1
+let g:DoxygenToolkit_authorName = 'c4605 bolasblack[at]gmail.com'
+let g:DoxygenToolkit_licenseTag = 'Do any thing you like'
+let g:DoxygenToolkit_blockHeader = '======================================='
+let g:DoxygenToolkit_briefTag_pre = '@Description:'
+let g:DoxygenToolkit_paramTag_pre = '@Param:'
+let g:DoxygenToolkit_returnTag_pre = '@Return:'
+let g:DoxygenToolkit_blockFooter = '======================================='
+" ]]]
 " Taglist 配置 [[[
 "TlistUpdate可以更新tags
 "map <F3> :silent! Tlist<CR> "按下F3就可以呼出了
@@ -531,25 +551,9 @@ let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必�
 " 设置tags文件的寻找路径
 "set tags += tags;
 " ]]]
-" AuthorInfo 配置 [[[
-let g:vimrc_author='c4605'
-let g:vimrc_email='bolasblack@gmail.com'
-let g:vimrc_homepage='http://plafer.info'
-" ]]]
 " Tagbar 配置 [[[
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 30
-" ]]]
-" Doxygen 配置 [[[
-let g:DoxygenToolkit_briefTag_funcName = 'yes'
-let g:Doxygen_enhanced_color = 1
-let g:DoxygenToolkit_authorName = 'c4605 bolasblack[at]gmail.com'
-let g:DoxygenToolkit_licenseTag = 'Do any thing you like'
-let g:DoxygenToolkit_blockHeader = '======================================='
-let g:DoxygenToolkit_briefTag_pre = '@Description:'
-let g:DoxygenToolkit_paramTag_pre = '@Param:'
-let g:DoxygenToolkit_returnTag_pre = '@Return:'
-let g:DoxygenToolkit_blockFooter = '======================================='
 " ]]]
 " TxtBrowser 设置 [[[
 au BufEnter *.txt setlocal ft=txt
@@ -691,12 +695,15 @@ let g:gtrans_Engine = 'google'
 "]]]
 "[[[ CtrlP 设置
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_working_path_mode = 2
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$|node_modules',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-  \ }
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_user_command = {
+\   'types': {
+\     1: ['.git', 'cd %s && git ls-files'],
+\     2: ['.hg', 'hg --cwd %s locate -I .'],
+\   },
+\   'fallback': 'find %s -type f'
+\ }
 "]]]
 "[[[ gjsLint
 " gjsLint
