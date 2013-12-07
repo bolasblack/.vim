@@ -146,7 +146,14 @@ NeoBundle 'tpope/vim-fugitive'
 " 一个 quicklist 来显示标注有 TODO: 的行
 NeoBundle 'TaskList.vim'
 " 多语言语法检查
-NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic', {
+      \ 'build' : {
+      \     'windows' : 'npm install jsonlint csslint -g',
+      \     'cygwin' : 'npm install jsonlint csslint -g',
+      \     'mac' : 'npm install jsonlint csslint -g',
+      \     'unix' : 'npm install jsonlint csslint -g',
+      \    },
+      \ }
 " Gist 支持
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 " EditorConfig
@@ -212,8 +219,6 @@ endi
 NeoBundle 'gregsexton/MatchTag'
 " 按 % 可以跳转到对应的标点或标签
 NeoBundle 'matchit.zip'
-" csslint 的 Vim 插件
-NeoBundle 'bolasblack/csslint.vim'
 " brunch 约定的文件组织方式的支持
 NeoBundle 'drichard/vim-brunch'
 
