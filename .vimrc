@@ -143,6 +143,8 @@ NeoBundle 'DoxygenToolkit.vim'
 NeoBundle 'tomtom/tcomment_vim'
 " 在 Vim 里快捷的使用 Git
 NeoBundle 'tpope/vim-fugitive'
+" 在 Vim 中显示当前编辑文件在版本控制工具中的状态
+NeoBundle 'airblade/vim-gitgutter'
 " 一个 quicklist 来显示标注有 TODO: 的行
 NeoBundle 'TaskList.vim'
 " 多语言语法检查
