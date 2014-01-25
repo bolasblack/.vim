@@ -19,14 +19,13 @@ if !has('unix')
     let g:isCmd=1
   endif
 else
+  if !has('mac')
+    let g:isLinux=1
+  else
+    let g:isMac=1
+  endif
   if !has('gui_running')
     let g:isTerminal=1
-  else
-    if !has('mac')
-      let g:isLinux=1
-    else
-      let g:isMac=1
-    endif
   endif
 endif
 function! Env()
@@ -135,8 +134,12 @@ NeoBundle 'tacahiroy/ctrlp-funky'
 "NeoBundle 'taglist.vim'
 " 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
 "NeoBundle 'TxtBrowser'
-" 代码浏览工具，更适合 OO 语言，由于不明原因，会与 powerline 冲突
-"NeoBundle 'majutsushi/tagbar'
+" 代码浏览工具
+NeoBundle 'majutsushi/tagbar', {
+      \ 'build' : {
+      \     'mac' : 'brew install ctags'
+      \    },
+      \ }
 " 写 Doxygen 风格注释
 NeoBundle 'DoxygenToolkit.vim'
 " 代码注释工具
@@ -559,7 +562,11 @@ let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必�
 "set tags += tags;
 " ]]]
 " Tagbar 配置 [[[
-let g:tagbar_ctags_bin = 'ctags'
+if g:isMac
+  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+else
+  let g:tagbar_ctags_bin = 'ctags'
+endif
 let g:tagbar_width = 30
 " ]]]
 " TxtBrowser 设置 [[[
