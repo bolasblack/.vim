@@ -89,7 +89,7 @@ NeoBundle 'bolasblack/gtrans.vim'
 " 漂亮的 mode line
 " Monaco for Powerline  https://gist.github.com/baopham/1838072
 " Powerline fonts       https://github.com/Lokaltog/powerline-fonts
-NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+NeoBundle 'bling/vim-airline'
 " 自动闭合标点
 NeoBundle 'Raimondi/delimitMate'
 " 为某个区域的内容设置高亮
@@ -768,5 +768,21 @@ endif
 "]]]
 "[[[delimitMate
 let g:delimitMate_balance_matchpairs=1
+"]]]
+"[[[Airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_theme='bubblegum'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.paste = 'PASTE'
+let g:airline_symbols.whitespace = 'Ξ'
 "]]]
 " ]]]
