@@ -167,6 +167,10 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 
 
+" Fun
+NeoBundle 'edkolev/tmuxline.vim'
+
+
 " Python
 " 提供 python 的语法缩进，比默认的要好很多(vimer.cn修改)
 "NeoBundle 'indentpython.vim--nianyang'
@@ -791,5 +795,24 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.paste = 'PASTE'
 let g:airline_symbols.whitespace = 'Ξ'
+"]]]
+"[[[Tmuxline
+let g:tmuxline_theme = 'airline'
+let g:tmuxline_preset = {
+        \ 'a': '#S',
+        \ 'win': '#I:#W#F',
+        \ 'cwin': '#I:#W#F',
+        \ 'y': '#(uptime | sed -e "s/^.*average: //" | sed -e "s/,//g")',
+        \ 'z': ['%Y-%m-%d', '%H:%M', '#22T'],
+        \ 'options': {
+          \'status-justify': 'left'}
+        \}
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '
+    \}
 "]]]
 " ]]]
