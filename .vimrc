@@ -776,6 +776,8 @@ else
     let g:gist_clip_command = 'xclip -selection clipboard'
   endif
 endif
+" Only :w! updates a gist.
+let g:gist_update_on_write = 2
 "]]]
 "[[[delimitMate
 let g:delimitMate_balance_matchpairs=1
