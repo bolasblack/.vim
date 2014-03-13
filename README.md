@@ -16,6 +16,8 @@ curl -L https://raw.github.com/bolasblack/.vim/master/scripts/bootstrap.sh | bas
 wget --no-check-certificate https://raw.github.com/bolasblack/.vim/master/scripts/bootstrap.sh -O - | bash
 ```
 
+**之后先去 `.vimrc` 看一下我列出的所有插件**，不要的全部删除或者注释掉，推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释。
+
 #### Update
 
 ```bash
@@ -38,8 +40,6 @@ bash $HOME/.vim/scripts/remove.sh
 git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HOME/.vim
 ```
 
-**之后先去 `conf/pluginManager.vim` 看一下我列出的所有插件**，不要的全部删除或者注释掉，推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释。
-
 然后把目录里的 `.vimrc` 文件也软连接到家目录下。这样如果我更新了的话，只要在 `.vim` 目录下 `git pull` 就能同步到最新啦。
 
 软链接的命令：
@@ -51,6 +51,8 @@ git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HO
     mkdir -p .vim/bundle && git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 这样 git 就会自动的 clone neobundle 插件到家目录下的 `.vim/bundle/neobundle` 文件夹啦。
+
+**之后先去 `.vimrc` 看一下我列出的所有插件**，不要的全部删除或者注释掉，推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释。
 
 然后再执行 `:NeoBundleInstall` 命令等待插件安装完毕。
 
