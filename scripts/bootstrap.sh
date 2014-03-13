@@ -20,7 +20,7 @@ which lua || die "No lua installed!\nPlease install lua from http://www.lua.org/
 printf '\033[0;34m%s\033[0m\n' "Checking vim version..."
 vim --version | grep 7.4 || die "Your vim's version is too low!\nPlease download higher version(7.4+) from http://www.vim.org/download.php"
 printf '\033[0;34m%s\033[0m\n' "Checking vim feature..."
-vim --version | grep lua || die "Your build without lua feature!\nPlease compile vim with lua"
+vim --version | grep +lua || die "Your build without lua feature!\nPlease compile vim with lua"
 
 # back up existing vim stuff
 printf '\033[0;34m%s\033[0m\n' "Backing up current vim config..."
