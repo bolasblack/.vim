@@ -13,14 +13,14 @@ die () {
 
 # check requirements
 printf '\033[0;34m%s\033[0m\n' "Checking requirements for vim..."
+printf '\033[0;34m%s\033[0m\n' "Checking if git exists..."
+which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
+printf '\033[0;34m%s\033[0m\n' "Checking if lua exists..."
+which lua || die "No lua installed!\nPlease install lua from http://www.lua.org/"
 printf '\033[0;34m%s\033[0m\n' "Checking vim version..."
 vim --version | grep 7.4 || die "Your vim's version is too low!\nPlease download higher version(7.4+) from http://www.vim.org/download.php"
 printf '\033[0;34m%s\033[0m\n' "Checking vim feature..."
 vim --version | grep lua || die "Your build without lua feature!\nPlease compile vim with lua"
-printf '\033[0;34m%s\033[0m\n' "Checking if git exists..."
-which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
-printf '\033[0;34m%s\033[0m\n' "Checking if lua exists..."
-which git || die "No lua installed!\nPlease install lua from http://www.lua.org/"
 
 # back up existing vim stuff
 printf '\033[0;34m%s\033[0m\n' "Backing up current vim config..."
