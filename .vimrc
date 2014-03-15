@@ -106,6 +106,7 @@ NeoBundle 'Shougo/neocomplete'
 " 代码片段引擎
 NeoBundle 'Shougo/neosnippet'
 " 代码片段模板
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 " 快速移动光标到指定位置
 NeoBundle 'Lokaltog/vim-easymotion'
