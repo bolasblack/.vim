@@ -166,6 +166,8 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 NeoBundle 'editorconfig/editorconfig-vim'
 " 自动去除行末空格
 NeoBundle 'bronson/vim-trailing-whitespace'
+" 缩进辅助线
+NeoBundle 'Yggdroot/indentLine'
 
 
 " Fun
@@ -818,4 +820,10 @@ let g:tmuxline_separators = {
     \ 'space' : ' '
     \}
 "]]]
+"[[[ indentLine
+let g:indentLine_char = '¦'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_color_term = 239
+"]]]
 " ]]]
+
