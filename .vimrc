@@ -247,7 +247,7 @@ syntax on
 behave mswin
 filetype plugin indent on
 " 设置主题
-colorscheme lucius "lilypink
+colorscheme chaos
 
 "set runtimepath+=~/.vim/vimcdoc/trunk/
 

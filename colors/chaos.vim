@@ -1,30 +1,19 @@
 " Vim color file
-" Maintainer:   Jonathan Filip <jfilip1024@gmail.com>
-" Last Modified: Mon Apr 19, 2010  10:24AM
-" Version: 3.5
+" Maintainer:   c4605 <bolasblack@gmail.com>
+" Last Modified: 2014-03-17 14:26
+" Description: Modified from Lucius.vim
 "
 " GUI / 256 color terminal
 "
-" I started out trying to combine my favorite parts of other schemes and ended
-" up with this (oceandeep, moria, peaksea, wombat, zenburn).
-"
-" This file also tries to have descriptive comments for each higlighting group
-" so it is easy to understand what each part does.
 
 
 set background=dark
 hi clear
 if exists("syntax_on")
-    syntax reset
+  syntax reset
 endif
-let colors_name="lucius"
+let colors_name="chaos"
 
-" Some other colors to save
-" blue: 3eb8e5
-" green: 92d400
-" c green: d5f876, cae682
-" new blue: 002D62
-" new gray: CCCCCC
 
 
 "  Base color
@@ -70,8 +59,8 @@ hi CursorColumn     guifg=NONE              guibg=#404448           gui=none
 hi CursorColumn     ctermfg=NONE            ctermbg=236             cterm=none
 "  cursor line/row
 "  CursorLine       置位 'cursorline' 时，光标所在的屏幕行
-hi CursorLine       gui=NONE                guibg=#404448           gui=none
-hi CursorLine       cterm=NONE              ctermbg=236             cterm=none
+hi CursorLine                               guibg=#404448           gui=none
+hi CursorLine                               ctermbg=236             cterm=none
 
 
 "  Misc
@@ -246,15 +235,6 @@ hi VisualNOS        guifg=fg                                        gui=underlin
 hi VisualNOS        ctermfg=fg                                      cterm=underline
 
 
-"  GitGutter
-"  ------
-hi GitGutterAdd     guifg=#009900           guibg=#363946
-hi GitGutterAdd     ctermfg=2               ctermbg=237
-hi GitGutterChange  guifg=#bbbb00           guibg=#363946
-hi GitGutterChange  ctermfg=3               ctermbg=237
-hi GitGutterDelete  guifg=#ff2222           guibg=#363946
-hi GitGutterDelete  ctermfg=1               ctermbg=237
-hi link GitGutterChangeDelete GitGutterChange
 
 "  语法高亮组
 "  -------------
@@ -407,3 +387,20 @@ hi Error            ctermfg=167             ctermbg=52            cterm=none
 "  todo, fixme, note, xxx
 hi Todo             guifg=#efef8f           guibg=NONE              gui=underline
 hi Todo             ctermfg=228             ctermbg=NONE            cterm=underline
+
+
+
+"  插件高亮
+"  -------------
+
+
+"  GitGutter
+"  ------
+hi GitGutterAdd     guifg=#009900           guibg=#363946
+hi GitGutterAdd     ctermfg=2               ctermbg=237
+hi GitGutterChange  guifg=#bbbb00           guibg=#363946
+hi GitGutterChange  ctermfg=3               ctermbg=237
+hi GitGutterDelete  guifg=#ff2222           guibg=#363946
+hi GitGutterDelete  ctermfg=1               ctermbg=237
+hi link GitGutterChangeDelete GitGutterChange
+
