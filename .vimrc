@@ -280,7 +280,7 @@ set nowritebackup
 " [Show invisibles](http://vimcasts.org/episodes/show-invisibles/)
 " [语虚](http://yyq123.blogspot.tw/2011/11/vim-listchars.html)
 set list
-set listchars=tab:>>,trail:-,eol:¬
+set listchars=tab:>>,trail:-
 
 " modified from http://www.vim.org/scripts/script.php?script_id=3341
 set backspace=2                        " 允许在插入开始的位置上退格；CTRL-W 和 CTRL-U 到达插入开始的位置时停留一次
