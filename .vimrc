@@ -110,8 +110,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 " 快速移动光标到指定位置
 NeoBundle 'Lokaltog/vim-easymotion'
-" 一个更好用的 grep ，需要安装 ack
-NeoBundle 'mileszs/ack.vim'
+" 仿 Sublime Text 风格的全局搜索工具，使用 ack 或者 ag
+NeoBundle 'dyng/ctrlsf.vim'
 " 比 dwn 更可配置的的平铺窗口管理
 NeoBundle 'zhaocai/GoldenView.Vim'
 " automatically search for & insert URL targets for links in Markdown & ReST
