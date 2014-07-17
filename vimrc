@@ -4,8 +4,8 @@ if has('win32')
 else
   let $vim = $HOME.'/.vim'
 endif
-let $v = $vim.'/.vimrc'
-let $rc = $vim.'/.vimrc'
+let $v = $vim.'/vimrc'
+let $rc = $vim.'/vimrc'
 " ]]]
 " ----------- environment [[[
 let g:isMac=0

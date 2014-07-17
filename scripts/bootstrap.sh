@@ -34,7 +34,6 @@ for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do
   [ -e $i ] && rm -rf $i
 done
 git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HOME/.vim
-ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
 printf '\033[0;34m%s\033[0m\n' "Installing NeoBundle..."
 mkdir -p $HOME/.vim/bundle
