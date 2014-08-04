@@ -110,6 +110,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
 " 快速移动光标到指定位置
 NeoBundle 'Lokaltog/vim-easymotion'
+" 加强版的 fFtT
+NeoBundle 'rhysd/clever-f.vim'
 " 仿 Sublime Text 风格的全局搜索工具，使用 ack 或者 ag
 NeoBundle 'dyng/ctrlsf.vim'
 " 比 dwn 更可配置的的平铺窗口管理
