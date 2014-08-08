@@ -75,8 +75,8 @@ NeoBundle 'CmdlineComplete'
 NeoBundle 'Gundo'
 " 高亮对应的标点，如 [] {}
 NeoBundle 'matchparenpp'
-" supertab
-NeoBundle 'ervandew/supertab'
+" 按 % 可以跳转到对应的标点或标签
+NeoBundle 'matchit.zip'
 " 标点对齐
 NeoBundle 'godlygeek/tabular'
 " 目录树
@@ -231,14 +231,10 @@ if !g:isTerminal
 endi
 " 高亮对应的 HTML 标签
 NeoBundle 'gregsexton/MatchTag'
-" 按 % 可以跳转到对应的标点或标签
-NeoBundle 'matchit.zip'
-" brunch 约定的文件组织方式的支持
-NeoBundle 'drichard/vim-brunch'
 
 "" non github repos
 "" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
-"" 但是和 CtrlP.vim 重复了，所以干掉
+"" 但是和 CtrlP.vim 重复了，所以干掉，这里只是做一个示例
 ""NeoBundle 'git://git.wincent.com/command-t.git'
 
 NeoBundleCheck
@@ -620,11 +616,11 @@ function! s:my_cr_function()
   "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
