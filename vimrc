@@ -183,9 +183,6 @@ NeoBundle 'edkolev/tmuxline.vim'
 "NeoBundle 'python.vim'
 " 更好的 Python 语法高亮
 "NeoBundle 'python.vim--Vasiliev'
-" 基于 PEP8 的 Python 代码风格检查插件
-" *依赖 Python 的第三方包 PEP8 *
-"NeoBundle 'jbking/vim-pep8'
 
 
 " Ruby
@@ -699,9 +696,6 @@ let g:netrw_winsize = 30
 " ConqueTerm 设置 [[[
 let g:ConqueTerm_Color = 2
 " ]]]
-" PEP8.vim 设置 [[[
-let g:pep8_ignore = 'E401,E501,E261' "代码过长与一行import多个模块不报错
-" ]]]
 " gtrans.vim 设置 [[[
 let g:gtrans_Engine = 'google'
 "]]]
@@ -717,29 +711,21 @@ let g:ctrlp_user_command = {
 \   'fallback': 'find %s -type f'
 \ }
 "]]]
-"[[[ gjsLint
-" gjsLint
-" 由 jsLint http://www.vim.org/scripts/script.php?script_id=2729 修改而来
-" 修改文件在 https://github.com/ktmud/vim-unix/raw/master/.vim/ftplugin/javascript/
-" 作者文章：http://wiki.ktmud.com/tips/Vim.html
-
-"]]]
 " [[[ syntastic
-let g:syntastic_check_on_open=1
-" ]]]
-"[[[ PowerLine
-set noshowmode
-let g:Powerline_symbols = 'fancy'
-"]]]
-"[[[syntastic
-let s:syntastic_conf_folder = '~/.vim/syntastic.conf/'
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
 
-let g:syntastic_coffee_coffeelint_args = "--csv ".'-f '.s:syntastic_conf_folder.'coffee.json'
+let s:syntastic_conf_folder = '~/.vim/syntastic.conf/'
+let g:syntastic_coffee_coffeelint_args = '-f '.s:syntastic_conf_folder.'coffee.json'
+let g:syntastic_python_pep8_args = '--ignore E401,E501,E261' "代码过长与一行import多个模块不报错
+" ]]]
+"[[[ PowerLine
+set noshowmode
+let g:Powerline_symbols = 'fancy'
 "]]]
 "[[[Tasklist
 let g:tlTokenList = []
