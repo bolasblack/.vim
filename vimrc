@@ -219,15 +219,15 @@ NeoBundle 'mako.vim'
 
 " Front
 " zencoding
-NeoBundle 'mattn/emmet-vim'
+"NeoBundle 'mattn/emmet-vim'
 " 美化js代码，并不是简单的缩进，而是整个优化
-NeoBundle 'jsbeautify'
+"NeoBundle 'jsbeautify'
 " 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
-if !g:isTerminal
-  NeoBundle 'css_color.vim'
-endi
+"if !g:isTerminal
+"  NeoBundle 'css_color.vim'
+"endi
 " 高亮对应的 HTML 标签
-NeoBundle 'gregsexton/MatchTag'
+"NeoBundle 'gregsexton/MatchTag'
 
 "" non github repos
 "" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
