@@ -15,6 +15,8 @@ die () {
 printf '\033[0;34m%s\033[0m\n' "Checking requirements for vim..."
 printf '\033[0;34m%s\033[0m\n' "Checking if git exists..."
 which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
+printf '\033[0;34m%s\033[0m\n' "Checking if mercurial exists..."
+which hg || die "No mercurial installed!\nPlease install mercurial from http://mercurial.selenic.com/"
 printf '\033[0;34m%s\033[0m\n' "Checking if lua exists..."
 which lua || die "No lua installed!\nPlease install lua from http://www.lua.org/"
 printf '\033[0;34m%s\033[0m\n' "Checking vim version..."
