@@ -39,10 +39,15 @@ endfunction
 " ----------- Plugin Manager Config [[[
 
 if has('vim_starting')
+  if &compatible
+    set nocompatible          " Be iMproved
+  endif
+
+  " Required
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 " neobundle asynchronous update/install
@@ -233,6 +238,11 @@ NeoBundle 'mako.vim'
 "" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
 "" 但是和 CtrlP.vim 重复了，所以干掉，这里只是做一个示例
 ""NeoBundle 'git://git.wincent.com/command-t.git'
+
+call neobundle#end()
+
+" Required
+filetype plugin indent on
 
 NeoBundleCheck
 " ]]]
@@ -746,7 +756,7 @@ nmap <silent> <C-w>k  <Plug>GoldenViewPrevious
 " <C-w>o only view current window
 "]]]
 "[[[TComment
-call tcomment#DefineType('sql_block', g:tcommentBlockC)
+call tcomment#DefineType('sql_block', g:tcommentBlockC2)
 call tcomment#DefineType('coffee_block', {'commentstring': '###%s###'})
 "]]]
 "[[[Gist
