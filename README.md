@@ -54,7 +54,8 @@ git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HO
 
 ## 一些有意思的 Vim 扩展工具推荐
 
-[Vimdeck](http://vimdeck.tybenz.com/)：用 Markdown 来制作，用 Vim 来演示 Slide 。
+* [Vimdeck](http://vimdeck.tybenz.com/)：用 Markdown 来制作，用 Vim 来演示 Slide 。
+* [VimAwesome](http://vimawesome.com/)：一个列出 Vim 插件的网站，比 [www.vim.org](http://www.vim.org/) 好看，而且插件数据来自于 GitHub 。
 
 ## 问题集
 
@@ -68,7 +69,7 @@ git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HO
 
 执行 `mv ~/.vimVundle ~/.vim/bundle` 就可以啦。
 
-### 运行 vim 后报错说有 ^M 
+### 运行 vim 后报错说有 ^M
 
 可以运行我放在目录里的 re^m.py 脚本，脚本需要 dos2unix 程序支持，命令：
 
@@ -107,4 +108,3 @@ git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HO
 当插件比较多的时候，我们可以明显的感觉出来，按 `<C-c>` 返回普通模式的速度要远远快于 `<C-[>` 。
 
 参考资料：http://stackoverflow.com/questions/80677/what-is-the-difference-between-c-c-and-c-in-vim
-
