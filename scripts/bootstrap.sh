@@ -11,12 +11,20 @@ die () {
   exit 1
 }
 
+is-version-greater-than() {
+  requiredVer="$1"
+  checkingVer="$2"
+
+  printf '%s\n%s\n' "$requiredVer" "$checkingVer" | sort --check=quiet --version-sort
+}
+
 # check requirements
 printf '\033[0;34m%s\033[0m\n' "Checking requirements for vim..."
 printf '\033[0;34m%s\033[0m\n' "Checking if git exists..."
 which git || die "No git installed!\nPlease install git from http://git-scm.com/downloads/"
 printf '\033[0;34m%s\033[0m\n' "Checking vim version..."
-vim --version | grep 7.4 || die "Your vim's version is too low!\nPlease download higher version(7.4+) from http://www.vim.org/download.php"
+vimVer="$(vim --version | head -n1 | cut -d' ' -f5)"
+is-version-greater-than '7.4' "$vimVer" || "Your vim's version is too low!\nPlease download higher version(7.4+) from http://www.vim.org/download.php"
 printf '\033[0;34m%s\033[0m\n' "Checking vim feature..."
 vim --version | grep +lua || die "Your build without lua feature!\nPlease compile vim with lua"
 

@@ -93,7 +93,8 @@ NeoBundle 'bolasblack/gtrans.vim'
 " 漂亮的 mode line
 " Monaco for Powerline  https://gist.github.com/baopham/1838072
 " Powerline fonts       https://github.com/Lokaltog/powerline-fonts
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 " 自动闭合标点
 NeoBundle 'Raimondi/delimitMate'
 " 为某个区域的内容设置高亮
@@ -126,7 +127,7 @@ NeoBundle 'sampsyo/autolink.vim'
 " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
 NeoBundle 'tpope/vim-speeddating'
 " 快速找到、打开文件
-NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder', {'depends': 'L9'}
+NeoBundle 'https://github.com/vim-scripts/FuzzyFinder', {'depends': 'L9'}
 " 用于快速的打开文件和跳转 Buffer
 NeoBundle 'kien/ctrlp.vim'
 " CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
@@ -756,8 +757,8 @@ nmap <silent> <C-w>k  <Plug>GoldenViewPrevious
 " <C-w>o only view current window
 "]]]
 "[[[TComment
-call tcomment#DefineType('sql_block', g:tcommentBlockC2)
-call tcomment#DefineType('coffee_block', {'commentstring': '###%s###'})
+call tcomment#type#Define('sql_block', g:tcomment#block2_fmt_c)
+call tcomment#type#Define('coffee_block', {'commentstring': '###%s###'})
 "]]]
 "[[[Gist
 if g:isMac
