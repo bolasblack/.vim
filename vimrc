@@ -43,209 +43,202 @@ if has('vim_starting')
     set nocompatible          " Be iMproved
   endif
 
+  " Install vim-plug if not found
+  if empty(glob('~/.vim/.vim-plug/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/.vim-plug/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  endif
+
+  " Run PlugInstall if there are missing plugins
+  autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \| PlugInstall --sync | source $MYVIMRC
+  \| endif
+
   " Required
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/.vim-plug/
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
+" from https://github.com/junegunn/vim-plug/wiki/tips#conditional-activation
+function! PlugCond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-" neobundle asynchronous update/install
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+call plug#begin(expand('~/.vim/bundle'))
 
 " base
 " 快速查找的工具，可以配合 Neobundle 查找插件，十分好用
-NeoBundle 'Shougo/unite.vim'
+Plug 'Shougo/unite.vim'
 " vim shell
-NeoBundle 'Shougo/vimshell.vim'
+Plug 'Shougo/vimshell.vim'
 " 给vim增加url的识别功能，当然功能远远不止这些
-NeoBundle 'utl.vim'
+Plug 'vim-scripts/utl.vim'
 " 自动添加作者信息
-NeoBundle 'AuthorInfo'
+Plug 'vim-scripts/AuthorInfo'
 " 在默认启动界面显示最近打开过的文件等
-NeoBundle 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 " 快速给单词/句子两边增加符号（包括html标签），缺点是不用用'.'来重复命令，repeat.vim可以解决这个问题
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 " 提供命令模式和高亮模式下的补全，通过 C-n | C-p 补全缓冲区中出现过的单词
-NeoBundle 'CmdlineComplete'
+Plug 'vim-scripts/CmdlineComplete'
 " Undo tree
-NeoBundle 'Gundo'
+Plug 'vim-scripts/Gundo'
 " 高亮对应的标点，如 [] {}
-NeoBundle 'matchparenpp'
+Plug 'vim-scripts/matchparenpp'
 " 按 % 可以跳转到对应的标点或标签
-NeoBundle 'matchit.zip'
+Plug 'vim-scripts/matchit.zip'
 " 标点对齐
-NeoBundle 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 " 目录树
-NeoBundle 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " 多国语翻译为指定语言的插件
-NeoBundle 'bolasblack/gtrans.vim'
+Plug 'bolasblack/gtrans.vim'
 " vim 中文文档
-"NeoBundle 'bolasblack/vimcdoc'
+"Plug 'bolasblack/vimcdoc'
 " 漂亮的 mode line
 " Monaco for Powerline  https://gist.github.com/baopham/1838072
 " Powerline fonts       https://github.com/Lokaltog/powerline-fonts
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " 自动闭合标点
-NeoBundle 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 " 为某个区域的内容设置高亮
-NeoBundle 'vim-scripts/SyntaxRange'
+Plug 'vim-scripts/SyntaxRange'
 " 在 Vim 中使用 sudo
-NeoBundle 'sudo.vim'
+Plug 'vim-scripts/sudo.vim'
 " 打开文件时自动检测文件编码，似乎在 Mac 下会出现问题，检测编码出错
 "if !g:isMac
-  "NeoBundle 'FencView.vim'
+  "Plug 'FencView.vim'
 "endif
 
 " quick edit
 " 强大的自动补全
-NeoBundle 'Shougo/neocomplete'
+Plug 'Shougo/neocomplete'
 " 代码片段引擎
-NeoBundle 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet'
 " 代码片段模板
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
 " 快速移动光标到指定位置
-NeoBundle 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion', PlugCond(!exists('g:vscode'))
+Plug 'asvetliakov/vim-easymotion', PlugCond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
 " 加强版的 fFtT
-NeoBundle 'rhysd/clever-f.vim'
+Plug 'rhysd/clever-f.vim'
 " 仿 Sublime Text 风格的全局搜索工具，使用 ack 或者 ag
-NeoBundle 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim'
 " 比 dwn 更可配置的的平铺窗口管理
-NeoBundle 'zhaocai/GoldenView.Vim'
+Plug 'zhaocai/GoldenView.Vim'
 " automatically search for & insert URL targets for links in Markdown & ReST
-NeoBundle 'sampsyo/autolink.vim'
+Plug 'sampsyo/autolink.vim'
 " speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
-NeoBundle 'tpope/vim-speeddating'
+Plug 'tpope/vim-speeddating'
 " 快速找到、打开文件
-NeoBundle 'https://github.com/vim-scripts/FuzzyFinder', {'depends': 'L9'}
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/FuzzyFinder'
 " 用于快速的打开文件和跳转 Buffer
-NeoBundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " CtrlP 用于快速打开本项目文件，FuzzyFinder用于打开其他文件
 
 " CtrlP Extensions
 " a ctrlp.vim extension - Navigate and jump to function defs
-NeoBundle 'tacahiroy/ctrlp-funky'
+Plug 'tacahiroy/ctrlp-funky'
 
 
 " coding
 " 代码浏览工具，似乎更适合 C
 " *依赖 Vim 插件 TxtBrowser *
-"NeoBundle 'taglist.vim'
+"Plug 'taglist.vim'
 " 文本浏览工具，不过最近的版本会导致无法查阅 Vim 的帮助文档，所以不再使用
-"NeoBundle 'TxtBrowser'
+"Plug 'TxtBrowser'
 " 代码浏览工具
-NeoBundle 'majutsushi/tagbar', {
-      \ 'build' : {
-      \     'mac' : 'brew install ctags'
-      \    },
-      \ }
+Plug 'majutsushi/tagbar'
 " 写 Doxygen 风格注释
-NeoBundle 'DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 " 代码注释工具
-NeoBundle 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 " 在 Vim 里快捷的使用 Git
-NeoBundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " 在 Vim 中显示当前编辑文件在版本控制工具中的状态
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " 一个 quicklist 来显示标注有 TODO: 的行
-NeoBundle 'TaskList.vim'
+Plug 'vim-scripts/TaskList.vim'
 " 多语言语法检查
-NeoBundle 'scrooloose/syntastic', {
-      \ 'build' : {
-      \     'windows' : 'npm install jsonlint csslint -g',
-      \     'cygwin' : 'npm install jsonlint csslint -g',
-      \     'mac' : 'npm install jsonlint csslint -g',
-      \     'unix' : 'npm install jsonlint csslint -g',
-      \    },
-      \ }
+Plug 'scrooloose/syntastic', { 'do' : 'npm install jsonlint csslint -g' }
 " Gist 支持
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
 " EditorConfig
-NeoBundle 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 " 自动去除行末空格
-NeoBundle 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 " 缩进辅助线
-NeoBundle 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
 
 " Fun
-NeoBundle 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 
 " Python
 " 提供 python 的语法缩进，比默认的要好很多(vimer.cn修改)
-"NeoBundle 'indentpython.vim--nianyang'
+"Plug 'indentpython.vim--nianyang'
 " 为编写 Python 代码作的一些快捷键，比如选择一个代码块等
-"NeoBundle 'python.vim'
+"Plug 'python.vim'
 " 更好的 Python 语法高亮
-"NeoBundle 'python.vim--Vasiliev'
+"Plug 'python.vim--Vasiliev'
 
 
 " Ruby
 " rails 支持
-"NeoBundle 'tpope/vim-rails'
+"Plug 'tpope/vim-rails'
 " 自动输入 end
-"NeoBundle 'tpope/vim-endwise'
+"Plug 'tpope/vim-endwise'
 " ruby 支持
-"NeoBundle 'vim-ruby/vim-ruby'
+"Plug 'vim-ruby/vim-ruby'
 
 
 " Language
 " 提供 markdown 着色功能
-NeoBundle 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 " mustache 支持
-NeoBundle 'juvenn/mustache.vim'
+Plug 'juvenn/mustache.vim'
 " 提供 JSON 的语法高亮
-NeoBundle 'JSON.vim'
+Plug 'vim-scripts/JSON.vim'
 " coffeeScript 支持
-NeoBundle 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 " Stylus 支持
-NeoBundle 'wavded/vim-stylus'
+Plug 'wavded/vim-stylus'
 " Jade 高亮
-NeoBundle 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-jade'
 " Less css 高亮
-NeoBundle 'groenewege/vim-less'
+Plug 'groenewege/vim-less'
 " nginx 语法高亮
-NeoBundle 'nginx.vim'
+Plug 'vim-scripts/nginx.vim'
 " Jinja 语法
-NeoBundle 'Jinja'
+Plug 'vim-scripts/Jinja'
 " Mako 语法
-NeoBundle 'mako.vim'
+Plug 'vim-scripts/mako.vim'
 
 
 " Front
 " zencoding
-"NeoBundle 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 " 美化js代码，并不是简单的缩进，而是整个优化
-"NeoBundle 'jsbeautify'
+"Plug 'jsbeautify'
 " 在 CSS 文件中实时显示色彩，如 #eaeaea，或者 red
 "if !g:isTerminal
-"  NeoBundle 'css_color.vim'
+"  Plug 'css_color.vim'
 "endi
 " 高亮对应的 HTML 标签
-"NeoBundle 'gregsexton/MatchTag'
+"Plug 'gregsexton/MatchTag'
 
 "" non github repos
 "" 快速的文件导航，可以在要打开文件或者在如入路径的时候按 command-t 试试看
 "" 但是和 CtrlP.vim 重复了，所以干掉，这里只是做一个示例
-""NeoBundle 'git://git.wincent.com/command-t.git'
+""Plug 'git://git.wincent.com/command-t.git'
 
-call neobundle#end()
-
-" Required
-filetype plugin indent on
-
-NeoBundleCheck
+call plug#end()
 " ]]]
 " ----------- base setting [[[
 " 高亮语法
@@ -815,4 +808,3 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_color_term = 239
 "]]]
 " ]]]
-

@@ -40,15 +40,9 @@ bash $HOME/.vim/scripts/remove.sh
 git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HOME/.vim
 ```
 
-先安装必须的 neobundle 插件：
-
-    mkdir -p .vim/bundle && git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-
-这样 git 就会自动的 clone neobundle 插件到家目录下的 `.vim/bundle/neobundle` 文件夹啦。
-
 **之后先去 `vimrc` 看一下我列出的所有插件**，不要的全部删除或者注释掉，推荐注释掉 coding 大类后的 Python，Ruby，Language 和 Front 四个大类，等要用到的时候再取消注释。
 
-然后再执行 `:NeoBundleInstall` 命令等待插件安装完毕。
+然后再执行 `:PlugInstall` 命令等待插件安装完毕。
 
 最后，参考 [Powerline](://github.com/Lokaltog/powerline) 项目安装必需的字体。
 

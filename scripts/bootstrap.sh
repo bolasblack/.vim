@@ -3,7 +3,7 @@
 # modified from [ivim](https://github.com/kepbod/ivim)
 
 warn () {
-  printf '\033[0;31m%s\033[0m\n' "$1" >&2
+  printf '\032[0;31m%s\033[0m\n' "$1" >&2
 }
 
 die () {
@@ -41,10 +41,6 @@ for i in $HOME/.vim $HOME/.vimrc $HOME/.gvimrc; do
 done
 git clone --recursive --branch master https://github.com/bolasblack/.vim.git $HOME/.vim
 
-printf '\033[0;34m%s\033[0m\n' "Installing NeoBundle..."
-mkdir -p $HOME/.vim/bundle
-git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
-
 if [ `uname` = 'Darwin' ]; then
   printf '\033[0;31m%s\033[0m\n' "Download patched powerline font file from: https://github.com/Lokaltog/powerline-fonts..."
 else
@@ -56,8 +52,8 @@ else
   wget -O $HOME/.fonts.conf.d/10-powerline-symbols.conf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 fi
 
-printf '\033[0;34m%s\033[0m\n' "Installing plugins using NeoBundle..."
-vim +'set nospell' +NeoBundleInstall!
+printf '\033[0;34m%s\033[0m\n' "Installing plugins..."
+vim -es -u $HOME/.vim/vimrc -i NONE -c "PlugInstall" -c "qa"
 
 printf '\033[0;34m%s\033[0m\n' "Config has been initialized. Just enjoy!"
 
