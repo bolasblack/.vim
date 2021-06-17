@@ -532,12 +532,12 @@ endf
 "]]]
 " ]]]
 " ----------- Normal Plugins Configure [[[
-" AuthorInfo 配置 [[[
+" AuthorInfo [[[
 let g:vimrc_author='c4605'
 let g:vimrc_email='bolasblack@gmail.com'
 let g:vimrc_homepage='http://plafer.info'
 " ]]]
-" Doxygen 配置 [[[
+" Doxygen [[[
 let g:DoxygenToolkit_briefTag_funcName = 'yes'
 let g:Doxygen_enhanced_color = 1
 let g:DoxygenToolkit_authorName = 'c4605 bolasblack[at]gmail.com'
@@ -548,7 +548,7 @@ let g:DoxygenToolkit_paramTag_pre = '@Param:'
 let g:DoxygenToolkit_returnTag_pre = '@Return:'
 let g:DoxygenToolkit_blockFooter = '======================================='
 " ]]]
-" Taglist 配置 [[[
+" Taglist [[[
 "TlistUpdate可以更新tags
 "map <F3> :silent! Tlist<CR> "按下F3就可以呼出了
 let Tlist_Ctags_Cmd='ctags' "因为我们放在环境变量里，所以可以直接执行
@@ -565,7 +565,7 @@ let Tlist_Process_File_Always=0 "不是一直实时更新tags，因为没有必�
 " 设置tags文件的寻找路径
 "set tags += tags;
 " ]]]
-" Tagbar 配置 [[[
+" Tagbar [[[
 if g:isMac
   let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 else
@@ -573,11 +573,11 @@ else
 endif
 let g:tagbar_width = 30
 " ]]]
-" TxtBrowser 设置 [[[
+" TxtBrowser [[[
 au BufEnter *.txt setlocal ft=txt
 " let g:default_web_browser=chrome
 " ]]]
-" NeoComplate 设置 [[[
+" NeoComplate [[[
 " Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -663,7 +663,7 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " ]]]
-" NeoSnippet 设置 [[[
+" NeoSnippet [[[
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
 
@@ -684,26 +684,26 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 " ]]]
-" VimShell 设置 [[[
+" VimShell [[[
 " Use current directory as vimshell prompt.
 let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
 let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
 " ]]]
-" SuperTab 设置 [[[
+" SuperTab [[[
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 " ]]]
-" Netrw 设置 [[[
+" Netrw [[[
 let g:netrw_winsize = 30
 "输入',fe'时，就会打开一个垂直分隔的窗口浏览当前文件所在的目录，窗口的宽度为30
 "nmap <silent> <leader>ntf :Sexplore!<cr>
 " ]]]
-" ConqueTerm 设置 [[[
+" ConqueTerm [[[
 let g:ConqueTerm_Color = 2
 " ]]]
-" gtrans.vim 设置 [[[
+" gtrans.vim [[[
 let g:gtrans_Engine = 'google'
 "]]]
-"[[[ CtrlP 设置
+"[[[ CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_open_new_file = 'r'
