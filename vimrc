@@ -177,7 +177,7 @@ Plug 'Yggdroot/indentLine'
 
 
 " Fun
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 
 
 " Python
@@ -768,20 +768,12 @@ let g:gist_update_on_write = 2
 let g:delimitMate_balance_matchpairs=1
 "]]]
 "[[[Airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+let g:airline_symbols_ascii = 1
 let g:airline_theme='bubblegum'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.paste = 'PASTE'
-let g:airline_symbols.whitespace = 'Ξ'
 "]]]
 "[[[Tmuxline
 let g:tmuxline_theme = 'airline'
